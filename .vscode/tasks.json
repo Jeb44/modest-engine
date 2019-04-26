@@ -1,16 +1,16 @@
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
-    "version": "2.0.0",
+	"version": "2.0.0",
     "tasks": [
         {
             "label": "echo",
-            "type": "shell",
+			"type": "shell",
             "command": "g++",   //call "g++" in cmd.exe
             "args": [           //with the arguments
                 "-g",           //debugging mode and
                 "engine/main.cpp"      //file name
-            ],
+			],
             "group": {          //what kind of task this is
                 "kind": "build",
                 "isDefault": true

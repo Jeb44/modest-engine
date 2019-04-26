@@ -1,19 +1,20 @@
 #pragma once
 
-#define ASSERTION_ENABLED true //use non-zero value to "enable" this macro 
+#define ASSERTION_ENABLED
 
-#if ASSERTION_ENABLED
+#ifdef ASSERTION_ENABLED
+	//Evaluate expr: if false, show error message and abort program
+	#define ASSERT(expr) ((expr) ? (void)0 : doAssert(#expr, __FILE__, __LINE__))
 
-	#define DEBUG_BREAK() asm {int 3};
+	void doAssert(const char* expr, const char* file, const int line){
+		std::cerr << "Assertion failed at " << file << ":" << line << std::endl;
+		std::cerr << "Expression is: " << expr << std::endl;
 
-	#define REPORT_ASSERTION_FAILURE(expr, file, line) {}
+		std::cout << std::endl << "[ERROR] Press any key to close program..." << std::endl;
+		getchar();
+		abort();
+	}
 
-	#define ASSERT(expr) \
-		if(expr) { } \
-		else { \
-			REPORT_ASSERTION_FAILURE(#expr, __FILE__, __LINE__); \
-			DEBUG_BREAK(); \
-		} 
 #else
-#define ASSERT(expr){} //evaluates to nothing
+  #define ASSERT(expr) //evaluate nothing
 #endif
