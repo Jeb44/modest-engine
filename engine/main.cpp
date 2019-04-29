@@ -11,7 +11,7 @@ int main(){
 
 	ASSERT(a == 4);
 
-	std::cout << std::endl << "[END]Press any key to close program..." << std::endl;
+	std::cout << std::endl << "[END] Press any key to close program..." << std::endl;
 	getchar();
 
 	return 0;
