@@ -9,8 +9,6 @@
 int main(){
 	int a = 5;
 
-	ASSERT(a == 4);
-
 	std::cout << std::endl << "[END] Press any key to close program..." << std::endl;
 	getchar();
 
