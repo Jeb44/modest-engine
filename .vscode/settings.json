@@ -1,5 +1,8 @@
 {
     "C_Cpp.errorSquiggles": "Enabled",
     "editor.detectIndentation": false,
-    "editor.insertSpaces": false
+	"editor.insertSpaces": false,
+	"files.associations": {
+		"ostream": "cpp"
+	}
 }
