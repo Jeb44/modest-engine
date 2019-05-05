@@ -1,18 +1,14 @@
-#pragma once
-
 #include <iostream>
-#include <cfloat>
-#include <climits>
 
 #include "common/typedef.h"
-#include "common/assert.h"
 #include <assert.h>
 
+#include "subsystem/NewClass.h"
 
-=======
 int main(){	
 
 	// ...
+	NewClass _class;
 	
 	std::cout << std::endl << "[END] Press any key to close program..." << std::endl;
 	getchar();

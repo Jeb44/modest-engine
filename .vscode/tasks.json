@@ -9,7 +9,8 @@
             "command": "g++",   //call "g++" in cmd.exe
             "args": [           //with the arguments
                 "-g",           //debugging mode and
-                "engine/main.cpp"      //file name
+				"engine/main.cpp"      //file name
+				//"engine/subsystem/NewClass.cpp"
 			],
             "group": {          //what kind of task this is
                 "kind": "build",
