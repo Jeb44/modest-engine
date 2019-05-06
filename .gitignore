@@ -1,5 +1,7 @@
-# Created by https://www.gitignore.io/api/c++,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=c++,visualstudiocode
+# Created by https://www.gitignore.io/api/c++,visualstudiocode,cmake
+# Edit at https://www.gitignore.io/?templates=c++,visualstudiocode,cmake
+
+# Modified by Jeb (Natschu)
 
 ### C++ ###
 # Prerequisites
@@ -48,4 +50,24 @@
 # Ignore all local history of files
 .history
 
-# End of https://www.gitignore.io/api/c++,visualstudiocode
+### CMake ###
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+### CMake Patch ###
+# External projects
+*-prefix/
+
+*builds*/
+
+# End of https://www.gitignore.io/api/c++,visualstudiocode,cmake
+

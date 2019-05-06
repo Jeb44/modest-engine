@@ -1,0 +1,4 @@
+// the configured options and settings for Tutorial
+#define ME_VERSION_MAJOR @ME_VERSION_MAJOR@
+#define ME_VERSION_MINOR @ME_VERSION_MINOR@
+#define ME_VERSION_PATCH @ME_VERSION_PATCH@
