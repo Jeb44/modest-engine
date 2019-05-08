@@ -1,7 +1,11 @@
 #include <iostream>
 
+#include "../builds/meConfig.h"
+
 #include "common/typedef.h"
 #include "common/assert.h"
+
+#define MS_PER_UPDATE 60
 
 // This interface serves only as a function blueprint for every module.
 // There is no array of "ISubsystemModule"s. This is just for clarity.
@@ -12,8 +16,6 @@ public:
 	virtual void startUp() = 0;
 	virtual void shutDown() = 0;	
 };
-
-#define MS_PER_UPDATE 60
 
 class GameWorldModule /*: public ISubsystemModule */{
 public:
@@ -64,8 +66,22 @@ void GameWorldModule::processInputs(){}
 void GameWorldModule::update(){}
 void GameWorldModule::render(){}
 
-int main(){	
+//TODO: add (console) logger (avoiding)
+void engineStartMessage(int argc, char* argv[]){
+	if(argc < 2){
+		std::cout << "Path: "	<< argv[0] 	<< std::endl
+		<< "Version "
+			<< ME_VERSION_MAJOR << "."
+			<< ME_VERSION_MINOR << "."
+			<< ME_VERSION_PATCH
+		<< std::endl;
+	}
+}
 
+int main(int argc, char* argv[]){	
+	
+	engineStartMessage(argc, argv);
+	
 	// List of the modules
 	GameWorldModule modGameWorld;
 
@@ -85,3 +101,4 @@ int main(){
 
 	return 0;
 }
+

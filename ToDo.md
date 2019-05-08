@@ -7,6 +7,7 @@
 
 ## Current ToDo's
 
+- add snippets for creating classes (.h and .cpp files)
 - implement custom math library (see 1.)
 - implement precompiled header
 - implement typedef for characters/strings, and can this be combined with Unicode, etc.?
@@ -14,7 +15,7 @@
 - implement flexible logger (static visibility), see "Chain Of Responsibility"-Pattern
 - inform about precompiled headers
 
-### Extended Details of ToDo's
+### Extended Details for ToDo's
 
 1. math library
 
