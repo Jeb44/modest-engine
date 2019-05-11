@@ -1,6 +1,11 @@
 #include <iostream>
+#include <time.h>
+#include <ctime>
+#include <chrono>
 
 #include "../builds/meConfig.h"
+#include "subsystem/NewClass.h"
+#include "NewClassTest.h"
 
 #include "common/typedef.h"
 #include "common/assert.h"
@@ -17,13 +22,13 @@ public:
 	virtual void shutDown() = 0;	
 };
 
-class GameWorldModule /*: public ISubsystemModule */{
+class GameWorldModule {
 public:
-	GameWorldModule(){};
-	~GameWorldModule(){};
+	GameWorldModule();
+	~GameWorldModule();
 
-	void startUp() /*final override*/; //final so okay?
-	void shutDown() /*final override*/;
+	void startUp(); //final so okay?
+	void shutDown();
 
 	void run();
 
@@ -35,10 +40,19 @@ private:
 	void render();
 };
 
-void GameWorldModule::startUp(){}
-void GameWorldModule::shutDown(){}
+GameWorldModule::GameWorldModule(){}
+GameWorldModule::~GameWorldModule(){}
+
+void GameWorldModule::startUp(){
+	std::cout << "[Startup] GameWorldModule" << std::endl;
+}
+void GameWorldModule::shutDown(){
+	std::cout << "[Shutdown] GameWorldModule" << std::endl;
+}
 
 void GameWorldModule::run(){
+	B8 quitGame = false;
+
 	F32 previous = getCurrentTime();
 	F32 lag = 0.0f;
 
@@ -56,15 +70,27 @@ void GameWorldModule::run(){
 		}
 
 		render();
+
+		if(quitGame){
+			break;
+		}
 	}
 }
 
 F32 GameWorldModule::getCurrentTime(){
-	return 0.0f;
+	return (F32)std::chrono::system_clock::to_time_t(
+		std::chrono::system_clock::now()
+		);
 }
-void GameWorldModule::processInputs(){}
-void GameWorldModule::update(){}
-void GameWorldModule::render(){}
+void GameWorldModule::processInputs(){
+	std::cout << "Input!" << std::endl;
+}
+void GameWorldModule::update(){
+	std::cout << "Update!" << std::endl;
+}
+void GameWorldModule::render(){
+	std::cout << "Render!" << std::endl;
+}
 
 //TODO: add (console) logger (avoiding)
 void engineStartMessage(int argc, char* argv[]){
@@ -81,7 +107,11 @@ void engineStartMessage(int argc, char* argv[]){
 int main(int argc, char* argv[]){	
 	
 	engineStartMessage(argc, argv);
-	
+
+	//NewClass aClass;
+
+	NewClassTest test;
+	NewClass aClass;
 	// List of the modules
 	GameWorldModule modGameWorld;
 
@@ -90,7 +120,7 @@ int main(int argc, char* argv[]){
 	modGameWorld.startUp();
 	
 	// Run game
-	modGameWorld.run();
+	//modGameWorld.run();
 
 	// Shut down engine in REVERSE order
 	modGameWorld.shutDown();
