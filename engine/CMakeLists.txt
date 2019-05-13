@@ -1,10 +1,8 @@
-# add_library(engine NewClassTest.cpp)
-
 list (APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/engine")
 
-list (APPEND EXTRA_SOURCES engine/NewClassTest.cpp)
+target_sources(modest_engine
+	PRIVATE
+		${PROJECT_SOURCE_DIR}/engine/NewClassTest.cpp
+)
 
-#add_subdirectory(subsystem)
-
-#list (APPEND EXTRA_LIBS subsystem)
-#list (APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/subsystem")
+add_subdirectory(${PROJECT_SOURCE_DIR}/engine/subsystem)
