@@ -4,5 +4,7 @@
 	"editor.insertSpaces": false,
 	"files.associations": {
 		"ostream": "cpp"
-	}
+	},
+	
+	"cmake.buildDirectory": "${workspaceRoot}/builds"
 }

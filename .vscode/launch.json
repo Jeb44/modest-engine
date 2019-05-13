@@ -8,15 +8,16 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/a.exe", //a.exe is the compiled file to execute debugging on
-            "args": [],
+            //"program": "${workspaceFolder}/a.exe", //a.exe is the compiled file to execute debugging on
+			"program": "${command:cmake.launchTargetPath}",
+			"args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
             "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe", //this may vary on your system
-            "preLaunchTask": "echo", //launch the task "echo" before debugging (echo is specified in tasks.json)
+            //"preLaunchTask": "echo", //launch the task "echo" before debugging (echo is specified in tasks.json)
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",

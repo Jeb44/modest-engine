@@ -16,6 +16,16 @@
                 "kind": "build",
                 "isDefault": true
             }
-        }
-    ]
+		},
+		{
+			"label": "cmake",
+			"type": "shell",
+			"command": "cmake -G \"MinGW Makefiles\" ..",
+			"args": [
+				"-G",
+				"\"MinGW Makefiles\"",
+				
+			]
+		}
+	]
 }

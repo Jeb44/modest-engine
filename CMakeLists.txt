@@ -19,12 +19,12 @@
 # todo: c++11 okay this way with variables?
 
 cmake_minimum_required (VERSION 3.3 FATAL_ERROR)
-project(modest_engine) # "m"odest-"e"ngine => ME
+project(modest-engine) # "m"odest-"e"ngine => ME
 
 # The version number
 set (ME_VERSION_MAJOR 0)
 set (ME_VERSION_MINOR 1)
-set (ME_VERSION_PATCH 1)
+set (ME_VERSION_PATCH 2)
 
 # c++11
 set(CMAKE_CXX_STANDARD 11)
@@ -45,12 +45,15 @@ endif()
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libstdc++")
 
 # add the executable
-add_executable(modest_engine engine/main.cpp)
+add_executable(modest-engine engine/main.cpp)
 
 # add subdirectories
 list (APPEND EXTRA_INCLUDES "")
 
-include_directories(${PROJECT_SOURCE_DIR})
+include_directories(
+	${PROJECT_SOURCE_DIR}
+	${PROJECT_SOURCE_DIR}/engine/include
+)
 add_subdirectory(${PROJECT_SOURCE_DIR}/engine)
 
 # configure a header file to pass some of the CMake setting to the source code
@@ -63,7 +66,7 @@ configure_file (
 
 # add the binary tree to the search path for include files so that we will find "meConfig.h"
 # this has to be placed AFTER add_executable & find_package
-target_include_directories(	modest_engine PUBLIC
+target_include_directories(	modest-engine PUBLIC
 							"${PROJECT_BINARY_DIR}"
 							${EXTRA_INCLUDES}
 )

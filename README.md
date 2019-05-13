@@ -14,3 +14,5 @@ And makes excensive use of Robert Nystorm's "Game Programming Patterns".
 - Monokai Pro <https://marketplace.visualstudio.com/items?itemName=monokai.theme-monokai-pro-vscode>
 
 - EasyZoom <https://marketplace.visualstudio.com/items?itemName=NabeelValley.easyzoom>
+
+- CMake Tools <https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools>
