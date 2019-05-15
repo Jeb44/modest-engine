@@ -1,6 +1,7 @@
 //ConsoleCI.cpp
 #include "common/ConsoleCI.h"
 
-ConsoleCI::ConsoleCI() {}
-ConsoleCI::~ConsoleCI() {}
+ConsoleCI::ConsoleCI() = default;
+
+ConsoleCI::~ConsoleCI() = default;
 

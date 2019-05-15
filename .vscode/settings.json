@@ -6,5 +6,6 @@
 		"ostream": "cpp"
 	},
 	
-	"cmake.buildDirectory": "${workspaceRoot}/builds"
+	"cmake.buildDirectory": "${workspaceRoot}/builds",
+	"C_Cpp.configurationWarnings": "Disabled"
 }

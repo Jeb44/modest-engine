@@ -1,21 +1,16 @@
 //ConsoleCI.h
 #pragma once
 
-// #include <iostream>
-// #define quote(x) #x
-// class one {};
-// int main(){
-//     one A;
-//     std::cout<<typeid(A).name()<<"\t"<< quote(A) <<"\n";
-//     return 0;
-// }
+#include "typedef.h"
+#include <typeinfo>
+
+ #define QUOTE(x) #x
 
 class ConsoleCI {
 public:
-	explicit ConsoleCI();
 	virtual ~ConsoleCI();
+	virtual void print(C8* message) = 0;
 	
-	
-private:
-	
+protected:
+	explicit ConsoleCI();	
 };

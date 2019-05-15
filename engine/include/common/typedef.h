@@ -16,6 +16,8 @@
  * *lit[0] -> Game Engineering Architecture by Jason Gregory, Section 3.2.5
  */
 
+// Standard Data types
+
 typedef _Bool B8;				//1Byte [0 (false), 1 (true)]
 
 typedef char C8;				//1Byte 
@@ -32,3 +34,5 @@ typedef std::uint_least64_t U64;	//8Byte	[0,		18.446.744.073.709.551.615] (UINT_
 
 typedef float F32;				//4Byte		| Precision: 6 [-3,4E+38,		  +3,4E+38]
 typedef double F64;				//8Byte		| Precision: 15 [-1,7E+308,		 +1,7E+308]
+
+// Differnt Data types

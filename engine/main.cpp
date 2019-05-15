@@ -5,6 +5,10 @@
 
 #include "include/common/typedef.h"
 #include "include/common/assert.h"
+#include "include/common/WinCommandPromptCI.h"
+
+#include <string>
+#include <typeinfo>
 
 #define MS_PER_UPDATE 60
 
@@ -24,9 +28,35 @@ void engineStartMessage(int argc, char* argv[]){
 	}
 }
 
+namespace test{
+	template<class T>
+
+	//print(Printable)
+
+	void print(T sender, std::string message){
+		std::cout << "[" << typeid(sender).name() << ": " << QUOTE(sender) << "] " << message << std::endl;
+	
+		// locator.provide(string);
+	}
+}
+
+class one{
+public:
+	void printName(){
+		test::print(this, "hello");
+	}
+};
+
 int main(int argc, char* argv[]){
 
 	engineStartMessage(argc, argv);
+
+	// WinCommandPromptCI<asdf> console;
+	one hi;
+	float lul = 5;
+	hi.printName();
+	test::print(hi, "hewwo");
+	std::cout << "[" << typeid(lul).name() << ": " << QUOTE(lul) << "] " << "meow" << std::endl;
 
 	// List of the modules
 	ME::GameWorldModule modGameWorld;
