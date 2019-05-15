@@ -7,5 +7,3 @@ target_sources(modest-engine
 		${PROJECT_SOURCE_DIR}/engine/src/core/GameWorldModule.cpp
 )
 
-# Add another sub_directory (which calls another CMakeLists.txt)
-# ...

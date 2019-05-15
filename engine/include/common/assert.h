@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 #define ASSERTION_ENABLED true
 #define DEBUG true //debug -> mingw macro available?
 

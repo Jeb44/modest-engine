@@ -1,7 +1,8 @@
 {
+	// ===== C++ =====
 	"Insert Assertion":{
 		"scope": "cpp",
-		"prefix": "assert",
+		"prefix": "cpp: assert",
 		"body": [
 			"ASSERT(${1:expression});",
 			"$2"
@@ -11,7 +12,7 @@
 
 	"Print to console":{
 		"scope": "cpp",
-		"prefix": "print, cout, log",
+		"prefix": "cpp: iostream cout",
 		"body":[
 			"std::cout << \"$1\" << std::endl;",
 			"$2"
@@ -21,7 +22,7 @@
 
 	"New header file (class)":{
 		"scope": "cpp",
-		"prefix": "new header file",
+		"prefix": "cpp: new header",
 		"body":[
 			"//${1:NewClass}.h",
 			"#pragma once",
@@ -41,7 +42,7 @@
 
 	"New source file (class)":{
 		"scope": "cpp",
-		"prefix": "new source file",
+		"prefix": "cpp: new source",
 		"body":[
 			"//${1:NewClass}.cpp",
 			"#include \"${1:NewClass}.h\"",
@@ -52,6 +53,28 @@
 			"$2"
 		],
 		"description": "Create source file layout for a new class"
+	},
+
+
+
+	//===== CMAKE SNIPPETS =====
+	"New CMakeList.txt file":{
+		"prefix": "cmake: new CMakeList.txt file",
+		"body":[
+			"# CMakeList.txt",
+			"# Add this directory to target_include_directories",
+			"list (APPEND EXTRA_INCLUDES \"$\\{PROJECT_SOURCE_DIR\\}/engine/src/${1:...}\")",
+			"",
+			"# Add files to target_sources here:",
+			"target_sources(modest-engine)",
+			"\tPRIVATE",
+			"\t\t$\\{PROJECT_SOURCE_DIR\\}/engine/src/${1:...}/${2:...}",
+			")",
+			"",
+			"# Add another sub_directory (which calls another CMakeLists.txt)",
+			"add_subdirectory($\\{PROJECT_SOURCE_DIR\\}/engine/src/${1:...}/${3:...})"
+		],
+		"description": "Create CMakeList.txt for a subdirectory"
 	}
 
 }
