@@ -10,7 +10,7 @@
 		"description": "Check the expression for boolean value. If false, break the programm!"
 	},
 
-	"Print to console":{
+	"iostream cout":{
 		"scope": "cpp",
 		"prefix": "cpp: iostream cout",
 		"body":[
@@ -55,7 +55,14 @@
 		"description": "Create source file layout for a new class"
 	},
 
-
+	"Get console (service locator)":{
+		"scope": "cpp",
+		"prefix": "cpp: get console",
+		"body":[
+			""
+		],
+		"description": "Create source file layout for a new class"
+	},
 
 	//===== CMAKE SNIPPETS =====
 	"New CMakeList.txt file":{

@@ -5,7 +5,7 @@
 
 #include "include/common/typedef.h"
 #include "include/common/assert.h"
-#include "include/common/WinCommandPromptCI.h"
+#include "include/common/console/WinConsolePrinter.h"
 
 #include <string>
 #include <typeinfo>
@@ -51,12 +51,20 @@ int main(int argc, char* argv[]){
 
 	engineStartMessage(argc, argv);
 
-	// WinCommandPromptCI<asdf> console;
+	#pragma region  TEST AREA
+
+	// WinConsolePrinter console;
 	one hi;
 	float lul = 5;
 	hi.printName();
 	test::print(hi, "hewwo");
 	std::cout << "[" << typeid(lul).name() << ": " << QUOTE(lul) << "] " << "meow" << std::endl;
+
+
+
+
+
+	#pragma endregion
 
 	// List of the modules
 	ME::GameWorldModule modGameWorld;
