@@ -6,3 +6,4 @@ list (APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/engine/src")
 
 # Add another sub_directory (which calls another CMakeLists.txt)
 add_subdirectory(${PROJECT_SOURCE_DIR}/engine/src/core)
+add_subdirectory(${PROJECT_SOURCE_DIR}/engine/src/common)

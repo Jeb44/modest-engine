@@ -11,7 +11,7 @@ public:
 	explicit WinConsolePrinter();
 	virtual ~WinConsolePrinter();
 	
-	void print(C8* message) override;
+	void print(const C8* message) override;
 private:
 	
 };

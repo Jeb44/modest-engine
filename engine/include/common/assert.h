@@ -1,6 +1,6 @@
 #pragma once
 
-#include <iostream>
+void doAssert(const char* expr, const char* file, const int line);
 
 #define ASSERTION_ENABLED true
 #define DEBUG true //debug -> mingw macro available?
@@ -13,20 +13,11 @@
 	//Evaluate expr: if false, show error message and abort program (only debug) (Use this for high-performance code)
 	#define DEBUG_ASSERT(expr) ((expr) ? (void)0 : doAssert(#expr, __FILE, __LINE__))
 	#endif
-
-	void doAssert(const char* expr, const char* file, const int line){
-		std::cerr << "Assertion failed at " << file << ":" << line << std::endl;
-		std::cerr << "Expression is: " << expr << std::endl;
-
-		std::cout << std::endl << "[ASSERT] Press any key to close program..." << std::endl;
-		getchar();
-		abort(); //applies only to mingw?
-	}
 #endif
 
 #if !ASSERTION_ENABLED
 	//evaluate nothing
-	#define ASSERT(expr) 
+	#define ASSERT(expr)
 #endif
 
 #if !DEBUG

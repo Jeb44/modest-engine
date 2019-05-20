@@ -1,11 +1,13 @@
 #include <iostream>
 
+#include "common/assert.h"
+#include "common/typedef.h"
 #include "../builds/meConfig.h"
-#include "core/GameWorldModule.h"
 
-#include "include/common/typedef.h"
-#include "include/common/assert.h"
-#include "include/common/console/WinConsolePrinter.h"
+
+#include "common/Locator.h"
+#include "core/GameWorldModule.h"
+#include "include/common/console/Console.h"
 
 #include <string>
 #include <typeinfo>
@@ -51,20 +53,21 @@ int main(int argc, char* argv[]){
 
 	engineStartMessage(argc, argv);
 
-	#pragma region  TEST AREA
+	Console console;
+	console.startUp();
 
 	// WinConsolePrinter console;
-	one hi;
-	float lul = 5;
-	hi.printName();
-	test::print(hi, "hewwo");
-	std::cout << "[" << typeid(lul).name() << ": " << QUOTE(lul) << "] " << "meow" << std::endl;
+	// one hi;
+	// float lul = 5;
+	// hi.printName();
+	// test::print(hi, "hewwo");
+	// std::cout << "[" << typeid(lul).name() << ": " << QUOTE(lul) << "] " << "meow" << std::endl;
+
+	Console* test = Locator::getConsole();
+	test->print("hello");
 
 
 
-
-
-	#pragma endregion
 
 	// List of the modules
 	ME::GameWorldModule modGameWorld;
