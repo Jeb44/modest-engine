@@ -12,6 +12,8 @@ public:
 	virtual ~WinConsolePrinter();
 	
 	void print(const C8* message) override;
+	void print(const std::string message) override;
+	
 private:
 	
 };

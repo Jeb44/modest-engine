@@ -7,13 +7,13 @@
  * - by using _least for every type we can assure that all types are usable by every OS
  * - the first character describe what data it uses (B -> boolean, I -> Integer, U -> Unsigner Integer, F -> Floating-Point, ...)
  * - capizalizing the first letter also helps with distinction of the hungarian notation
- * - the following number shows the bit-size, this is useful for the object layout in Memory (*lit[0])
+ * - the following number shows the bit-size, this is useful for the object layout in Memory (lit[0])
  * 
  * Note: 
  * - For default use take B8, I32, U32, F32
  * - Keep in mind that I8 & U8 are converted into char when displaying on the console 
  * 
- * *lit[0] -> Game Engineering Architecture by Jason Gregory, Section 3.2.5
+ * lit[0] -> Game Engineering Architecture by Jason Gregory, Section 3.2.5
  */
 
 // Standard Data types
@@ -35,4 +35,5 @@ typedef std::uint_least64_t U64;	//8Byte	[0,		18.446.744.073.709.551.615] (UINT_
 typedef float F32;				//4Byte		| Precision: 6 [-3,4E+38,		  +3,4E+38]
 typedef double F64;				//8Byte		| Precision: 15 [-1,7E+308,		 +1,7E+308]
 
-// Differnt Data types
+// Different Data types
+// ...

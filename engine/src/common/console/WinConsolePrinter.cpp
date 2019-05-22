@@ -5,9 +5,12 @@ WinConsolePrinter::WinConsolePrinter() {}
 
 WinConsolePrinter::~WinConsolePrinter() {}
 
- void WinConsolePrinter::print(const C8* message){
-	// std::cout << "[" << typeid(sender) << ": " << QUOTE(sender) << "] " << message << std::endl;
-	// std::cout<<typeid(A).name()<<"\t"<< quote(A) <<"\n";
+void WinConsolePrinter::print(const C8* message){
 	std::cout << message << std::endl;
 	
- }
+}
+
+void WinConsolePrinter::print(const std::string message){
+	std::cout << message << std::endl;
+	
+}

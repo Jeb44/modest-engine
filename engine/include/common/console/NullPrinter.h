@@ -9,7 +9,8 @@ public:
 	explicit NullPrinter();
 	virtual ~NullPrinter();
 	
-	virtual void print(const C8* message) override;
+	void print(const C8* message) override;
+	void print(const std::string message) override;
 	
 private:
 	

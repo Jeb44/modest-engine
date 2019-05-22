@@ -1,4 +1,18 @@
-// the configured options and settings for Tutorial
-#define ME_VERSION_MAJOR @ME_VERSION_MAJOR@
-#define ME_VERSION_MINOR @ME_VERSION_MINOR@
-#define ME_VERSION_PATCH @ME_VERSION_PATCH@
+#pragma once
+
+// the configured options and settings for modest-engine
+
+// Bug? cmakedefine doesnt detect CMAKE_PROJECT_VERSION (but does detect the other ones?)
+// define does the trick, but it still confuses me
+#define ME_VERSION @CMAKE_PROJECT_VERSION@
+#define ME_VERSION_MAJOR @CMAKE_PROJECT_VERSION_MAJOR@
+#define ME_VERSION_MINOR @CMAKE_PROJECT_VERSION_MINOR@
+#define ME_VERSION_PATCH @CMAKE_PROJECT_VERSION_PATCH@
+
+#include <string>
+
+namespace ME {
+	static std::string getVersionNumber(){
+		return std::to_string(ME_VERSION_MAJOR) + "." + std::to_string(ME_VERSION_MINOR) + "." + std::to_string(ME_VERSION_PATCH);
+	}
+}

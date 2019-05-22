@@ -19,12 +19,11 @@
 # todo: c++11 okay this way with variables?
 
 cmake_minimum_required (VERSION 3.3 FATAL_ERROR)
-project(modest-engine) # "m"odest-"e"ngine => ME
-
-# The version number
-set (ME_VERSION_MAJOR 0)
-set (ME_VERSION_MINOR 1)
-set (ME_VERSION_PATCH 2)
+project(modest-engine
+	VERSION 0.1.2
+	DESCRIPTION "CMake root for modest-engine"
+	HOMEPAGE_URL "https://gitlab.kitware.com/Natschu/modest-engine"
+)
 
 # c++11
 set(CMAKE_CXX_STANDARD 11)
