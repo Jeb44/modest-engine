@@ -7,13 +7,16 @@
 
 ## Current ToDo's
 
-- add snippets for creating classes (.h and .cpp files)
 - implement custom math library (see 1.)
-- implement precompiled header
+- implement & research precompiled header
 - implement typedef for characters/strings, and can this be combined with Unicode, etc.?
 - implement Endian-Swapping (see Game Engine Architecture by Gregory, Jason: Section 3.2.1.6)
 - implement flexible logger (static visibility), see "Chain Of Responsibility"-Pattern
-- inform about precompiled headers
+
+- add snippets for:
+	- loops (while, for, do while)
+	- switch block
+
 
 ### Extended Details for ToDo's
 
@@ -34,3 +37,7 @@
 ## Finished ToDO's
 
 - custom assertions class
+- service locator for
+	- console
+- general data types
+- cmake implemented
