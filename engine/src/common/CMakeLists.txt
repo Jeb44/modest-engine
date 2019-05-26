@@ -7,6 +7,7 @@ target_sources(modest-engine
 	PRIVATE
 		${PROJECT_SOURCE_DIR}/engine/src/common/assert.cpp
 		${PROJECT_SOURCE_DIR}/engine/src/common/Locator.cpp
+		${PROJECT_SOURCE_DIR}/engine/src/common/StringHelper.cpp
 )
 
 # Add another sub_directory (which calls another CMakeLists.txt)
