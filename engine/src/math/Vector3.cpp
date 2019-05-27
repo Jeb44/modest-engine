@@ -143,6 +143,30 @@ F32 Vector3::dot(const Vector3& rhs){
 			this->z * rhs.z;
 }
 
+Vector3 Vector3::cross(const Vector3& lhs, const Vector3& rhs) {
+	return Vector3(
+		lhs.y * rhs.z - lhs.z * rhs.y,
+		lhs.z * rhs.x - lhs.x * rhs.z,
+		lhs.x * rhs.y - lhs.y * rhs.x
+	);
+}
+
+Vector3 Vector3::cross(const Vector3& rhs) {
+	return Vector3(
+		this->y * rhs.z - this->z * rhs.y,
+		this->z * rhs.x - this->x * rhs.z,
+		this->x * rhs.y - this->y * rhs.x
+	);
+}
+
+Vector3 Vector3::project(const Vector3& lhs, const Vector3& rhs) {
+	return Vector3(lhs * (dot(lhs, rhs) / squareMagnitude(lhs)));
+}
+
+Vector3 Vector3::project(const Vector3& rhs) {
+	float s = this->dot(rhs) / this->squareMagnitude();
+	return *this * s;
+}
 
 
 Vector3 Vector3::right(){

@@ -55,6 +55,10 @@ public:
 	Vector3 normalize();
 	static F32 dot(const Vector3& lhs, const Vector3& rhs);
 	F32 dot(const Vector3& rhs);
+	static Vector3 cross(const Vector3& lhs, const Vector3& rhs);
+	Vector3 cross(const Vector3& rhs);
+	static Vector3 project(const Vector3& lhs, const Vector3& rhs);
+	Vector3 project(const Vector3& rhs);
 
 
 	// Static functions
@@ -68,5 +72,5 @@ public:
 
 };
 
-// 	Vector project(const Vector& rhs); <- continue here
-// 	Vector cross(const Vector& rhs);
+// komponentenprodukt (lhs.x * rhs.x, ..., ...)
+// orthonormalbasis (Alg. s. GPH script)
