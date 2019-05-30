@@ -5,13 +5,15 @@
 #include <math.h>
 
 #include "common/typedef.h"
-#include "common/StringHelper.h"
+#include "common/assert.h"
+#include "common/Helper.h"
 
 // Add F64 support (see how Matthias handled it)
 
 class Vector3 {
 public:
 	explicit Vector3();
+	explicit Vector3(F32 scalar);
 	explicit Vector3(F32 x, F32 y, F32 z);
 	virtual ~Vector3();
 

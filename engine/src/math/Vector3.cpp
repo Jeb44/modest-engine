@@ -7,6 +7,12 @@ Vector3::Vector3() {
 	this->z = 0.0f;
 }
 
+Vector3::Vector3(F32 scalar){
+	this->x = scalar;
+	this->y = scalar;
+	this->z = scalar;
+}
+
 Vector3::Vector3(F32 x, F32 y, F32 z){
 	this->x = x;
 	this->y = y;
@@ -124,11 +130,15 @@ F32 Vector3::squareMagnitude(){
 }
 
 Vector3 Vector3::normalize(Vector3& v){
+	F32 magnitude = v.magnitude();
+	ASSERT(magnitude > 0);
 	return  v *= (1 / v.magnitude());
 }
 
 Vector3 Vector3::normalize(){
-	return *this *= (1 / this->magnitude());
+	F32 magnitude = this->magnitude();
+	ASSERT(magnitude > 0);
+	return *this *= (1 / magnitude);
 }
 
 F32 Vector3::dot(const Vector3& lhs, const Vector3& rhs){
@@ -182,13 +192,13 @@ Vector3 Vector3::forward(){
 }
 
 std::string Vector3::toString(const Vector3& v){
-	return "(" + StringHelper::floatToString(v.x)
-		+ ", " + StringHelper::floatToString(v.y)
-		+ ", " + StringHelper::floatToString(v.z) + ")";
+	return "(" + Helper::toString(v.x)
+		+ ", " + Helper::toString(v.y)
+		+ ", " + Helper::toString(v.z) + ")";
 }
 
 std::string Vector3::toString(){
-	return "(" + StringHelper::floatToString(this->x)
-		+ ", " + StringHelper::floatToString(this->y)
-		+ ", " + StringHelper::floatToString(this->z) + ")";
+	return "(" + Helper::toString(this->x)
+		+ ", " + Helper::toString(this->y)
+		+ ", " + Helper::toString(this->z) + ")";
 }

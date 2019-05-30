@@ -39,23 +39,7 @@ int main(int argc, char* argv[]){
 	// Run game
 	//modGameWorld.run();
 
-	Vector3 a;
-	Vector3 b(1.0f, 0.0f, 0.0f);
-	Vector3 c(0.0f, 1.0f, 0.0f);
-	console.print("A" + a.toString());
-	console.print("B" + b.toString());
-	console.print("C" + c.toString());
 
-	// b.normalize();
-	//c.normalize();
-	Vector3 s = c.cross(b);
-	Vector3 t = b.cross(c);
-
-	console.print("A" + a.toString());
-	console.print("B" + b.toString());
-	console.print("C" + c.toString());
-	console.print("t" + t.toString());
-	console.print("s" + s.toString());
 
 	// Shut down engine in REVERSE order
 	modGameWorld.shutDown();
@@ -64,9 +48,3 @@ int main(int argc, char* argv[]){
 
 	return 0;
 }
-
-// Todo:
-// - add scalar constructor for vectors
-// - stringHelper: add ToString for bool, float, int, char
-// - test stringHelper with typedef data types (F32, co.)
-// - normalizing (0.00, 0.00, 0.00) results in (na, na, na)
