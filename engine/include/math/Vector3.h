@@ -45,6 +45,8 @@ public:
 	friend bool operator !=(const Vector3& lhs, const Vector3& rhs);
 
 	// Vector functions
+	// use "normal" variants to change your current vector
+	// use static variants to return a new vector
 	static Vector3 negate(const Vector3& v);
 	Vector3 negate();
 	static F32 magnitude(const Vector3& v);
@@ -59,7 +61,6 @@ public:
 	Vector3 cross(const Vector3& rhs);
 	static Vector3 project(const Vector3& lhs, const Vector3& rhs);
 	Vector3 project(const Vector3& rhs);
-
 
 	// Static functions
 	static Vector3 right();
