@@ -40,22 +40,22 @@ int main(int argc, char* argv[]){
 	//modGameWorld.run();
 
 	Vector3 a;
-	Vector3 b(1.00f, 1.5f, 3.0f);
-	Vector3 c = b * 2;
+	Vector3 b(1.0f, 0.0f, 0.0f);
+	Vector3 c(0.0f, 1.0f, 0.0f);
 	console.print("A" + a.toString());
 	console.print("B" + b.toString());
 	console.print("C" + c.toString());
 
+	// b.normalize();
+	//c.normalize();
+	Vector3 s = c.cross(b);
+	Vector3 t = b.cross(c);
 
-	console.print("B	| " + StringHelper::floatToString(Vector3::magnitude(b)));
-	console.print("B2	| " + StringHelper::floatToString(Vector3::squareMagnitude(b)));
-	console.print("C	| " + StringHelper::floatToString(Vector3::magnitude(c)));
-	console.print("C2	| " + StringHelper::floatToString(Vector3::squareMagnitude(c)));
-
-	console.print("B	| " + StringHelper::floatToString(b.magnitude()));
-	console.print("B2	| " + StringHelper::floatToString(b.squareMagnitude()));
-	console.print("C	| " + StringHelper::floatToString(c.magnitude()));
-	console.print("C2	| " + StringHelper::floatToString(c.squareMagnitude()));
+	console.print("A" + a.toString());
+	console.print("B" + b.toString());
+	console.print("C" + c.toString());
+	console.print("t" + t.toString());
+	console.print("s" + s.toString());
 
 	// Shut down engine in REVERSE order
 	modGameWorld.shutDown();
@@ -69,3 +69,4 @@ int main(int argc, char* argv[]){
 // - add scalar constructor for vectors
 // - stringHelper: add ToString for bool, float, int, char
 // - test stringHelper with typedef data types (F32, co.)
+// - normalizing (0.00, 0.00, 0.00) results in (na, na, na)
