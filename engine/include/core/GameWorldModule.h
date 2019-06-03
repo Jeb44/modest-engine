@@ -1,6 +1,8 @@
 //GameWorldModule.h
 #pragma once
 #include "common/typedef.h"
+#include "core/Entity.h"
+#include <list>
 
 #define MS_PER_UPDATE 60
 
@@ -15,6 +17,9 @@ namespace ME{
 
 		void run();
 
+		void registerEntity(Entity* entity);
+		// void unregisterEntity(Entity* entity);
+
 	private:
 		F32 getCurrentTime();
 
@@ -22,6 +27,8 @@ namespace ME{
 		void update();
 		void render();
 		
+		std::list<Entity*> entities;
+
 	};
 }
 

@@ -12,6 +12,8 @@ namespace ME{
 
 	void GameWorldModule::startUp(){
 		std::cout << "[Startup] GameWorldModule" << std::endl;
+
+		
 	}
 	void GameWorldModule::shutDown(){
 		std::cout << "[Shutdown] GameWorldModule" << std::endl;
@@ -50,13 +52,17 @@ namespace ME{
 			);
 	}
 	void GameWorldModule::processInputs(){
-		std::cout << "Input!" << std::endl;
+		// std::cout << "Input!" << std::endl;
 	}
 	void GameWorldModule::update(){
-		std::cout << "Update!" << std::endl;
+		// std::cout << "Update!" << std::endl;
 	}
 	void GameWorldModule::render(){
-		std::cout << "Render!" << std::endl;
+		// std::cout << "Render!" << std::endl;
 	}
 
+
+	void GameWorldModule::registerEntity(Entity* entity){
+		entities.push_back(entity);
+	}
 }
