@@ -59,6 +59,11 @@ namespace ME{
 	}
 	void GameWorldModule::render(){
 		// std::cout << "Render!" << std::endl;
+
+		// switch buffer (console function i guess?)
+		// give console current time and framerate
+		// send console information to display (vector3, etc.) -> ConsoleMessage class (add persistence?)
+		// display new frame
 	}
 
 
