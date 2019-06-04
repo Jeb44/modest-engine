@@ -13,7 +13,12 @@ public:
 	
 	void print(const C8* message) override;
 	void print(const std::string message) override;
+
+	I32 getColumns() const override;
+	I32 getRows() const override;
 	
 private:
-	
+	// Define macro / cmake ?
+	const I32 numOfColumns;
+	const I32 numOfRows;
 };
