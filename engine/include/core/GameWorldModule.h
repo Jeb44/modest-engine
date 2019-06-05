@@ -2,9 +2,16 @@
 #pragma once
 #include "common/typedef.h"
 #include "core/Entity.h"
+#include "core/Goomba.h"
+#include "core/FlyingGoomba.h"
+#include "common/console/Console.h"
 #include <list>
+#include <iostream>
+#include <ctime>
+#include <chrono>
 
-#define MS_PER_UPDATE 60
+#define MAX_ENTITIES 10
+constexpr F32 timestep = 0.167;
 
 namespace ME{
 	class GameWorldModule {
@@ -21,14 +28,12 @@ namespace ME{
 		// void unregisterEntity(Entity* entity);
 
 	private:
-		F32 getCurrentTime();
-
 		void processInputs();
 		void update();
 		void render();
 		
-		std::list<Entity*> entities;
-
+		Entity* entities[MAX_ENTITIES];
+		size_t entitiesCount;
 	};
 }
 

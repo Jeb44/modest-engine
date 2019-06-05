@@ -1,9 +1,7 @@
 //GameWorldModule.cpp
 #include "core/GameWorldModule.h"
 
-#include <iostream>
-#include <ctime>
-#include <chrono>
+
 
 namespace ME{
 	
@@ -12,57 +10,51 @@ namespace ME{
 
 	void GameWorldModule::startUp(){
 		std::cout << "[Startup] GameWorldModule" << std::endl;
+		entitiesCount = 0;
 
-		
+		registerEntity(new Goomba("       Goomba"));
+		auto fastGoomba = new Goomba("Fast   Goomba");
+		fastGoomba->setMovespeed(1.35f);
+		registerEntity(fastGoomba);
+  		registerEntity(new FlyingGoomba("Flying Goomba"));
 	}
 	void GameWorldModule::shutDown(){
 		std::cout << "[Shutdown] GameWorldModule" << std::endl;
 	}
 
 	void GameWorldModule::run(){
-		B8 quitGame = false;
-
-		F32 previous = getCurrentTime();
-		F32 lag = 0.0f;
-
 		while(true){
-			F32 current = getCurrentTime();
-			F32 elapsed = current - previous;
-			previous = current;
-
-			lag += elapsed;
 			processInputs();
-
-			while (lag >= MS_PER_UPDATE){
-				update();
-				lag -= MS_PER_UPDATE;
-			}
-
+			update();
 			render();
-
-			if(quitGame){
-				break;
-			}
 		}
 	}
 
-	F32 GameWorldModule::getCurrentTime(){
-		return (F32)std::chrono::system_clock::to_time_t(
-			std::chrono::system_clock::now()
-			);
-	}
 	void GameWorldModule::processInputs(){
 		// std::cout << "Input!" << std::endl;
 	}
 	void GameWorldModule::update(){
-		// std::cout << "Update!" << std::endl;
-	}
-	void GameWorldModule::render(){
-		// std::cout << "Render!" << std::endl;
-	}
+		for(size_t i = 0, iLen = entitiesCount; i < iLen; i++){
+			if(entities[i]->isDead()){
+				continue;
+			}
+			entities[i]->update(timestep);
+		}
 
+		// Delete dead entities
+	}
+	
+	void GameWorldModule::render(){
+		Console* console = Locator::getConsole();
+
+		for(size_t i = 0, iLen = entitiesCount; i < iLen; i++){
+			console->print(entities[i]->getTransform()->getPosition()->toString(), entities[i]->getName());
+		}
+	}
 
 	void GameWorldModule::registerEntity(Entity* entity){
-		entities.push_back(entity);
+		if(entitiesCount < MAX_ENTITIES){
+			entities[entitiesCount++] = entity;
+		}
 	}
 }

@@ -9,9 +9,14 @@ namespace ME{
 		explicit Transform();
 		virtual ~Transform();
 		
-		MM::Vector3 getPosition();
-		MM::Vector3 getRotation();
-		MM::Vector3 getScale();
+		
+		void setPosition(MM::Vector3 newPosition);
+		void setRotation(MM::Vector3 newRotation);
+		void setScale(MM::Vector3 newScale);
+
+		MM::Vector3* getPosition();
+		MM::Vector3* getRotation();
+		MM::Vector3* getScale();
 		
 	private:
 		MM::Vector3 position;

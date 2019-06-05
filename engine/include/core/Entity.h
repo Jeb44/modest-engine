@@ -1,8 +1,9 @@
 //Entity.h
 #pragma once
 
+#include <string>
+#include "common/typedef.h"
 #include "core/Transform.h"
-#include "core/IEntityComponent.h"
 
 namespace ME {
 
@@ -11,22 +12,22 @@ namespace ME {
 	class Entity {
 	public:
 		explicit Entity();
+		explicit Entity(std::string name);
 		virtual ~Entity();
 		
-		void update();
+		virtual void update(F32 deltaTime) = 0;
 
-		Transform getTransform();
-
-		void addComponent(IEntityComponent* component);
-		void removeComponent(IEntityComponent* component);
-		IEntityComponent** getComponents();
+		Transform* getTransform();
+		void setName(std::string newName);
+		std::string getName();
+		B8 markDead();
+		B8 isDead();
 		
-	private:
+	protected:
 		Transform transform;
 
-		IEntityComponent** components; // Make List
-		int countComponents;
-		
+		std::string name;
+		B8 dead;		
 	};
 
 }
