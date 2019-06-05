@@ -37,8 +37,7 @@ int main(int argc, char* argv[]){
 
 
 	// Run game
-	//modGameWorld.run();
-
+	modGameWorld.run();
 
 
 	// Shut down engine in REVERSE order

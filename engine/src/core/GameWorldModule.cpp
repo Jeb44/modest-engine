@@ -64,6 +64,8 @@ namespace ME{
 		// give console current time and framerate
 		// send console information to display (vector3, etc.) -> ConsoleMessage class (add persistence?)
 		// display new frame
+		Console* console = Locator::getConsole();
+		console->drawNextFrame(currentFrameRate);
 	}
 
 

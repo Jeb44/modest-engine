@@ -36,7 +36,8 @@ void Console::print(const std::string message, const std::string sender){
 	if(sender != ""){
 		newMessage = buildSenderMessage(message, sender);
 	}
-	printer->print(newMessage);
+	// printer->print(newMessage);
+	messages.push_back(&newMessage);
 }
 
 void Console::engineStartMessage(int argc, char* argv[]){
@@ -88,23 +89,27 @@ void Console::drawNextFrame(F32 frameRate){
 
 // Printing Frames
 void Console::addFrameHeader(F32 frameRate){
-	print("[Modest-Engine] Framerate: " + Helper::toString(frameRate));
+	std::string message = "[Modest-Engine]"/*" Framerate: " + Helper::toString(frameRate)*/;
+	
+	messages.push_back(&message);
 }
 
 void Console::removeOverdueMessages(){
-	// check console size
-	// -> this is should be locate in the Printer-Class
-	// -> maybe use .net framework if possible
-	// -> else hard-code lines size (current solution)
-	// -> maybe cmake allows us to get console size and save it in config
+	auto numOfElemensToDelete = messages.size() - printer->getRows() - headerSize;
 
-	auto numOfRows = printer->getRows();
-	auto maxElements = numOfRows - headerSize;
-
-	// delete overdue elements
-	
-
-
+	if(numOfElemensToDelete <= 0){
+		for(size_t i = 0, iLen = numOfElemensToDelete; i < iLen; i++){
+			std::string newLine = "\n";
+			messages.push_back(&newLine);
+		}		
+	} 
+	else{
+		for(size_t i = 0, iLen = numOfElemensToDelete; i < iLen; i++){
+			auto element = messages.front();
+			messages.pop_front();
+			delete element;
+		}
+	}
 }
 
 void Console::drawEmptySpaces(){
@@ -113,4 +118,9 @@ void Console::drawEmptySpaces(){
 
 void Console::drawMessages(){
 	// print list in reverse order
+	for(auto it = messages.begin(); it != messages.end(); it++){
+		auto element = messages.front();
+		messages.pop_front();
+		delete element;
+	}
 }

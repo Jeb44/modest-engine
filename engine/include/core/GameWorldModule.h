@@ -2,6 +2,8 @@
 #pragma once
 #include "common/typedef.h"
 #include "core/Entity.h"
+#include "common/Locator.h"
+#include "common/console/Console.h"
 #include <list>
 
 #define MS_PER_UPDATE 60
@@ -22,6 +24,7 @@ namespace ME{
 
 	private:
 		F32 getCurrentTime();
+		F32 currentFrameRate;
 
 		void processInputs();
 		void update();

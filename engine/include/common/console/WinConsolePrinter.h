@@ -14,6 +14,9 @@ public:
 	void print(const C8* message) override;
 	void print(const std::string message) override;
 
+	// alternatives:
+	// - .net framework?
+	// - cmake config?
 	I32 getColumns() const override;
 	I32 getRows() const override;
 	
