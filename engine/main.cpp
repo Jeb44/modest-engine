@@ -14,8 +14,6 @@
 #include <string>
 #include <typeinfo>
 
-#define MS_PER_UPDATE 60
-
 int main(int argc, char* argv[]){
 
 	// WinConsolePrinter console;

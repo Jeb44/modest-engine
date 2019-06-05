@@ -23,12 +23,20 @@ void Console::assignPrinter(IConsolePrinter* printer){
 	this->printer = printer; 
 }
 
+
+void Console::testPrint(){
+	std::string* message = new std::string("Hello");
+	messages.push_back(message);
+}
+
 void Console::print(const C8* message, const C8* sender){
 	if(sender[0] != '\0' && sender != nullptr){
 		printer->print(buildSenderMessage(message, sender));
 		return;
 	}
-	printer->print(message);
+	printer->print(message);	
+	// std::string convert(message);
+	// messages.push_back(&convert);
 }
 
 void Console::print(const std::string message, const std::string sender){
@@ -37,7 +45,8 @@ void Console::print(const std::string message, const std::string sender){
 		newMessage = buildSenderMessage(message, sender);
 	}
 	// printer->print(newMessage);
-	messages.push_back(&newMessage);
+	std::string* ptr = &newMessage;
+	messages.push_back(ptr);
 }
 
 void Console::engineStartMessage(int argc, char* argv[]){
@@ -67,11 +76,14 @@ void Console::drawNextFrame(F32 frameRate){
 
 	// Clear next Buffer
 	// clear();
+	for(size_t i = 0, iLen = 50; i < iLen; i++){
+		printer->print("\n");
+	}
 
 	// Write into next Buffer
 	addFrameHeader(frameRate);
 	removeOverdueMessages();
-	drawEmptySpaces();
+	addEmptySpaces();
 	drawMessages();
 	
 	// Swap buffers
@@ -89,21 +101,16 @@ void Console::drawNextFrame(F32 frameRate){
 
 // Printing Frames
 void Console::addFrameHeader(F32 frameRate){
-	std::string message = "[Modest-Engine]"/*" Framerate: " + Helper::toString(frameRate)*/;
-	
-	messages.push_back(&message);
+	std::string* message = new std::string("[Modest-Engine]");	
+	messages.push_back(message);
 }
 
 void Console::removeOverdueMessages(){
 	auto numOfElemensToDelete = messages.size() - printer->getRows() - headerSize;
-
-	if(numOfElemensToDelete <= 0){
-		for(size_t i = 0, iLen = numOfElemensToDelete; i < iLen; i++){
-			std::string newLine = "\n";
-			messages.push_back(&newLine);
-		}		
-	} 
-	else{
+	
+	if(numOfElemensToDelete < 0){
+		// printer->print(Helper::toString((I32)numOfElemensToDelete));
+		printer->print("delete");
 		for(size_t i = 0, iLen = numOfElemensToDelete; i < iLen; i++){
 			auto element = messages.front();
 			messages.pop_front();
@@ -112,15 +119,20 @@ void Console::removeOverdueMessages(){
 	}
 }
 
-void Console::drawEmptySpaces(){
+void Console::addEmptySpaces(){
 	// insert required empty spaces (so the last message is on the bottom)
+	for(size_t i = messages.size(), iLen = printer->getRows() - headerSize; i < iLen; i++){
+		std::string* newLine = new std::string("\n");
+		messages.push_back(newLine);
+	}	
+
 }
 
 void Console::drawMessages(){
 	// print list in reverse order
+	printer->print(Helper::toString((I32)messages.size()));
 	for(auto it = messages.begin(); it != messages.end(); it++){
-		auto element = messages.front();
-		messages.pop_front();
-		delete element;
+		auto element = *it;
+		printer->print(element->c_str());
 	}
 }

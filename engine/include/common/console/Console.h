@@ -25,6 +25,8 @@ public:
 
 	void assignPrinter(IConsolePrinter* printer);
 
+	void testPrint();
+
 	void print(const C8* message, const C8* sender = "");
 	void print(const std::string message, const std::string sender = "");
 	void engineStartMessage(int argc, char* argv[]);
@@ -53,7 +55,7 @@ private:
 	// Functions for printing frames
 	void addFrameHeader(F32 frameRate);
 	void removeOverdueMessages();
-	void drawEmptySpaces();
+	void addEmptySpaces();
 	void drawMessages();
 
 };

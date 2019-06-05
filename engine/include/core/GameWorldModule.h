@@ -1,15 +1,21 @@
 //GameWorldModule.h
 #pragma once
+#include <list>
+#include <iostream>
+#include <ctime>
+#include <chrono>
+
 #include "common/typedef.h"
 #include "core/Entity.h"
 #include "common/Locator.h"
 #include "common/console/Console.h"
-#include <list>
 
-#define MS_PER_UPDATE 60
+constexpr std::chrono::nanoseconds timestep(16);
+
 
 namespace ME{
 	class GameWorldModule {
+
 	public:
 		explicit GameWorldModule();
 		virtual ~GameWorldModule();
@@ -23,13 +29,15 @@ namespace ME{
 		// void unregisterEntity(Entity* entity);
 
 	private:
-		F32 getCurrentTime();
-		F32 currentFrameRate;
+		F64 getCurrentTime();
+		F64 currentFrameRate;
 
 		void processInputs();
 		void update();
 		void render();
 		
+		Console* console;
+
 		std::list<Entity*> entities;
 
 	};
