@@ -72,6 +72,7 @@
 			"cfloat": "cpp",
 			"xlocale": "cpp",
 			"xstring": "cpp"
-		}
+		},
+		"window.zoomLevel": 0.1
 	}
 }

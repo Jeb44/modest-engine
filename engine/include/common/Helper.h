@@ -18,6 +18,11 @@ namespace Helper{
 	std::string toString(const I32 value);
 	std::string toString(const I64 value);
 	
+	std::string toString(const U8 value);
+	std::string toString(const U16 value);
+	std::string toString(const U32 value);
+	std::string toString(const U64 value);
+
 	std::string toString(const F32 value);
 	std::string toString(const F64 value);
 }

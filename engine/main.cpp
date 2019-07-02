@@ -10,6 +10,7 @@
 #include "common/console/Console.h"
 
 #include "math/Vector3.h"
+#include "common/datastructures/Array.h"
 
 #include <string>
 #include <typeinfo>
@@ -35,6 +36,20 @@ int main(int argc, char* argv[]){
 	modGameWorld.startUp();
 	// ...
 
+	Array<I32> array0;
+	console.print(Helper::toString(array0.getSize()));
+	console.print(Helper::toString(array0.getMaxSize()));
+	console.print(Helper::toString(array0.isEmpty()));
+	
+	Array<I32> array1(20);
+	console.print(Helper::toString(array1.getSize()));
+	console.print(Helper::toString(array1.getMaxSize()));
+	console.print(Helper::toString(array1.isEmpty()));
+
+	Array<I32> array2(10, 8);
+	console.print(Helper::toString(array2.getSize()));
+	console.print(Helper::toString(array2.getMaxSize()));
+	console.print(Helper::toString(array2.isEmpty()));
 
 	// Run game
 	//modGameWorld.run();
