@@ -40,16 +40,30 @@ int main(int argc, char* argv[]){
 	console.print(Helper::toString(array0.getSize()));
 	console.print(Helper::toString(array0.getMaxSize()));
 	console.print(Helper::toString(array0.isEmpty()));
+	console.print("");
 	
-	Array<I32> array1(20);
+	Array<I32> array1(8);
 	console.print(Helper::toString(array1.getSize()));
 	console.print(Helper::toString(array1.getMaxSize()));
 	console.print(Helper::toString(array1.isEmpty()));
+	console.print("");
 
-	Array<I32> array2(10, 8);
+	Array<I32> array2(10, 10);
 	console.print(Helper::toString(array2.getSize()));
 	console.print(Helper::toString(array2.getMaxSize()));
 	console.print(Helper::toString(array2.isEmpty()));
+	console.print("");
+
+	for(size_t i = 0, iLen = array1.getSize(); i < iLen; i++){
+		array1.at(i) = i;
+	}
+
+	for(size_t i = 0, iLen = array2.getSize(); i < iLen; i++){
+		array2.at(i) = i;
+	}
+	
+	console.print(Helper::toString(array2));
+	console.print(Helper::toString(array2.get(), array2.getSize()));
 
 	// Run game
 	//modGameWorld.run();

@@ -17,15 +17,18 @@
 			"std::cout << \"$1\" << std::endl;",
 			"$2"
 		],
-		"description": "Log output to console"
+		"description": "Log output with cout"
 	},
 
 	"New header file (class)":{
 		"scope": "cpp",
 		"prefix": "cpp: new header",
 		"body":[
-			"//${1:NewClass}.h",
+			"// ${1:NewClass}.h",
 			"#pragma once",
+			"",
+			"#include \"common/typedef.h\"",
+			"#include \"common/assert.h\"",
 			"",
 			"class ${1:NewClass} {",
 				"public:",
@@ -38,6 +41,30 @@
 			"};"
 		],
 		"description": "Create header file layout for a new class"
+	},
+
+	"New header file (template class)":{
+		"scope": "cpp",
+		"prefix": "cpp: new header",
+		"body":[
+			"// ${1:NewClass}.h",
+			"#pragma once",
+			"",
+			"#include \"common/typedef.h\"",
+			"#include \"common/assert.h\"",
+			"",
+			"template<class ${2:T}>",
+			"class ${1:NewClass}<${2:T}> {",
+				"private:",
+				"\t",
+				"public:",
+				"\texplicit ${1:NewClass}(){}",
+				"\tvirtual ~${1:NewClass}(){}",
+				"\t",
+				"\t$3",
+			"};"
+		],
+		"description": "Create header file layout for a new template class"
 	},
 
 	"New source file (class)":{
@@ -55,13 +82,59 @@
 		"description": "Create source file layout for a new class"
 	},
 
+	"New source file (template class)":{
+		"scope": "cpp",
+		"prefix": "cpp: new source",
+		"body":[
+			"//${1:NewClass}.cpp",
+			"#include \"${1:NewClass}.h\"",
+			"",
+			"// This file only exists, so cmake & include-path",
+			"// can work accoding to the current setup."
+		],
+		"description": "Create source file layout for a new template class"
+	},
+
 	"Get console (service locator)":{
 		"scope": "cpp",
 		"prefix": "cpp: get console",
 		"body":[
-			""
+			"Locator::getService() ???"
 		],
-		"description": "Create source file layout for a new class"
+		"description": "Get Console from Service Locator"
+	},
+
+	"For-Loop (forwards, size_t)":{
+		"scope": "cpp",
+		"prefix": "cpp: for-loop (0->size, size_t)",
+		"body":[
+			"for(size_t i = ${1:0}, iLen = ${2:size}; i < iLen; i++){",
+				"\t$3",
+			"}"
+		],
+		"description": "Create for-loop with size_t"
+	},
+
+	"For-Loop (backwards, size_t)":{
+		"scope": "cpp",
+		"prefix": "cpp: for-loop (0<-size, size_t)",
+		"body":[
+			"for(size_t i = ${1:size - 1}, iLen = ${2:0}; i >= iLen; i--){",
+				"\t$3",
+			"}"
+		],
+		"description": "Create for-loop with size_t"
+	},
+
+	"For-Loop (empty)":{
+		"scope": "cpp",
+		"prefix": "cpp: for-loop (empty)",
+		"body":[
+			"for(;;){",
+				"\t$1",
+			"}"
+		],
+		"description": "Create for-loop with size_t"
 	},
 
 	//===== CMAKE SNIPPETS =====

@@ -41,12 +41,25 @@ public:
 	}
 	#pragma endregion
 	
+	#pragma region Operators
+	T& operator [](U32 index) {
+		ASSERT(index < size || index < 0);
+		return array[index];
+	}
+
+	T operator [](U32 index) const {
+		ASSERT(index < size || index < 0);
+		return array[index];
+	}
+
+	#pragma endregion
+
 	#pragma region Access
 	T* get() {
 		return array;
 	}
 	T& at(U32 index) {
-		ASSERT(index > size || index < 0);
+		ASSERT(index < size || index < 0);
 		return array[index];
 	}
 	T& first() {
@@ -60,13 +73,13 @@ public:
 	#pragma endregion
 
 	#pragma region Capacity
-	B8 isEmpty() {
+	const B8 isEmpty() const {
 		return (size == 0)? true : false;
 	}
-	U32 getSize() {
+	const U32 getSize() const {
 		return size;
 	}
-	U32 getMaxSize() {
+	const U32 getMaxSize() const {
 		return maxSize;
 	}
 	#pragma endregion
