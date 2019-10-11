@@ -12,4 +12,3 @@ target_sources(modest-engine
 
 # Add another sub_directory (which calls another CMakeLists.txt)
 add_subdirectory(${PROJECT_SOURCE_DIR}/engine/src/common/console)
-add_subdirectory(${PROJECT_SOURCE_DIR}/engine/src/common/datastructures)

@@ -71,7 +71,12 @@
 			"valarray": "cpp",
 			"cfloat": "cpp",
 			"xlocale": "cpp",
-			"xstring": "cpp"
+			"xstring": "cpp",
+			"algorithm": "cpp",
+			"iterator": "cpp",
+			"memory_resource": "cpp",
+			"random": "cpp",
+			"string": "cpp"
 		},
 		"window.zoomLevel": 0.1
 	}

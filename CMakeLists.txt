@@ -8,6 +8,7 @@
 # cmd.exe: (cd to builds folder)
 # cmake -G "MinGW Makefiles" ..
 # mingw32-make
+# ./modest-engine.exe
 
 # Some useful links for CMake noobs (like me)
 # https://gitlab.kitware.com/cmake/cmake/blob/master/Tests/Tutorial/Step1/CMakeLists.txt

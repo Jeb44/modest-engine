@@ -49,11 +49,11 @@ namespace Helper{
 	}
 
 	#pragma region Arrays
-	std::string toString(const Array<B8>& array){
-		size_t size = array.getSize();
-		std::string str = "Array<B8>["+ toString(size) + "] {\n";
+	std::string toString(const std::vector<B8>& container){
+		size_t size = container.size();
+		std::string str = "Vector<B8>["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
-			str += "\t[" + toString(i) + "] " + toString(array[i]) + "\n";
+			str += "\t[" + toString(i) + "] " + toString(container[i]) + "\n";
 		}
 		str += "}";
 		return str;
@@ -68,11 +68,11 @@ namespace Helper{
 		return str;
 	}
 
-	std::string toString(const Array<C8*>& array){
-		size_t size = array.getSize();
-		std::string str = "Array<C8*>["+ toString(size) + "] {\n";
+	std::string toString(const std::vector<C8*>& container){
+		size_t size = container.size();
+		std::string str = "Vector<C8*>["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
-			str += "\t[" + toString(i) + "] " + toString(array[i]) + "\n";
+			str += "\t[" + toString(i) + "] " + toString(container[i]) + "\n";
 		}
 		str += "}";
 		return str;
@@ -87,11 +87,11 @@ namespace Helper{
 		return str;
 	}
 
-	std::string toString(const Array<I8>& array){
-		size_t size = array.getSize();
-		std::string str = "Array<I8>["+ toString(size) + "] {\n";
+	std::string toString(const std::vector<I8>& container){
+		size_t size = container.size();
+		std::string str = "Vector<I8>["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
-			str += "\t[" + toString(i) + "] " + toString(array[i]) + "\n";
+			str += "\t[" + toString(i) + "] " + toString(container[i]) + "\n";
 		}
 		str += "}";
 		return str;
@@ -106,11 +106,11 @@ namespace Helper{
 		return str;
 	}
 
-	std::string toString(const Array<I16>& array){
-		size_t size = array.getSize();
-		std::string str = "Array<I16>["+ toString(size) + "] {\n";
+	std::string toString(const std::vector<I16>& container){
+		size_t size = container.size();
+		std::string str = "Vector<I16>["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
-			str += "\t[" + toString(i) + "] " + toString(array[i]) + "\n";
+			str += "\t[" + toString(i) + "] " + toString(container[i]) + "\n";
 		}
 		str += "}";
 		return str;
@@ -125,11 +125,11 @@ namespace Helper{
 		return str;
 	}
 
-	std::string toString(const Array<I32>& array){
-		size_t size = array.getSize();
-		std::string str = "Array<I32>["+ toString(size) + "] {\n";
+	std::string toString(const std::vector<I32>& container){
+		size_t size = container.size();
+		std::string str = "Vector<I32>["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
-			str += "\t[" + toString(i) + "] " + toString(array[i]) + "\n";
+			str += "\t[" + toString(i) + "] " + toString(container[i]) + "\n";
 		}
 		str += "}";
 		return str;
@@ -144,11 +144,11 @@ namespace Helper{
 		return str;
 	}
 
-	std::string toString(const Array<I64>& array){
-		size_t size = array.getSize();
-		std::string str = "Array<I64>["+ toString(size) + "] {\n";
+	std::string toString(const std::vector<I64>& container){
+		size_t size = container.size();
+		std::string str = "Vector<I64>["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
-			str += "\t[" + toString(i) + "] " + toString(array[i]) + "\n";
+			str += "\t[" + toString(i) + "] " + toString(container[i]) + "\n";
 		}
 		str += "}";
 		return str;
@@ -163,18 +163,18 @@ namespace Helper{
 		return str;
 	}
 
-	std::string toString(const Array<U8>& array){
-		size_t size = array.getSize();
-		std::string str = "Array<I8>["+ toString(size) + "] {\n";
+	std::string toString(const std::vector<U8>& container){
+		size_t size = container.size();
+		std::string str = "Vector<U8>["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
-			str += "\t[" + toString(i) + "] " + toString(array[i]) + "\n";
+			str += "\t[" + toString(i) + "] " + toString(container[i]) + "\n";
 		}
 		str += "}";
 		return str;
 	}
 
 	std::string toString(const U8* start, size_t size){
-		std::string str = "I8["+ toString(size) + "] {\n";
+		std::string str = "U8["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
 			str += "\t[" + toString(i) + "] " + toString(start[i]) + "\n";
 		}
@@ -182,18 +182,18 @@ namespace Helper{
 		return str;
 	}
 
-	std::string toString(const Array<U16>& array){
-		size_t size = array.getSize();
-		std::string str = "Array<I16>["+ toString(size) + "] {\n";
+	std::string toString(const std::vector<U16>& container){
+		size_t size = container.size();
+		std::string str = "Vector<U16>["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
-			str += "\t[" + toString(i) + "] " + toString(array[i]) + "\n";
+			str += "\t[" + toString(i) + "] " + toString(container[i]) + "\n";
 		}
 		str += "}";
 		return str;
 	}
 
 	std::string toString(const U16* start, size_t size){
-		std::string str = "I16["+ toString(size) + "] {\n";
+		std::string str = "U16["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
 			str += "\t[" + toString(i) + "] " + toString(start[i]) + "\n";
 		}
@@ -201,18 +201,18 @@ namespace Helper{
 		return str;
 	}
 
-	std::string toString(const Array<U32>& array){
-		size_t size = array.getSize();
-		std::string str = "Array<I32>["+ toString(size) + "] {\n";
+	std::string toString(const std::vector<U32>& container){
+		size_t size = container.size();
+		std::string str = "Vector<U32>["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
-			str += "\t[" + toString(i) + "] " + toString(array[i]) + "\n";
+			str += "\t[" + toString(i) + "] " + toString(container[i]) + "\n";
 		}
 		str += "}";
 		return str;
 	}
 
 	std::string toString(const U32* start, size_t size){
-		std::string str = "I32["+ toString(size) + "] {\n";
+		std::string str = "U32["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
 			str += "\t[" + toString(i) + "] " + toString(start[i]) + "\n";
 		}
@@ -220,18 +220,18 @@ namespace Helper{
 		return str;
 	}
 
-	std::string toString(const Array<U64>& array){
-		size_t size = array.getSize();
-		std::string str = "Array<I64>["+ toString(size) + "] {\n";
+	std::string toString(const std::vector<U64>& container){
+		size_t size = container.size();
+		std::string str = "Vector<U64>["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
-			str += "\t[" + toString(i) + "] " + toString(array[i]) + "\n";
+			str += "\t[" + toString(i) + "] " + toString(container[i]) + "\n";
 		}
 		str += "}";
 		return str;
 	}
 
 	std::string toString(const U64* start, size_t size){
-		std::string str = "I64["+ toString(size) + "] {\n";
+		std::string str = "U64["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
 			str += "\t[" + toString(i) + "] " + toString(start[i]) + "\n";
 		}
@@ -239,18 +239,18 @@ namespace Helper{
 		return str;
 	}
 
-	std::string toString(const Array<F32>& array){
-		size_t size = array.getSize();
-		std::string str = "Array<I64>["+ toString(size) + "] {\n";
+	std::string toString(const std::vector<F32>& container){
+		size_t size = container.size();
+		std::string str = "Vector<F32>["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
-			str += "\t[" + toString(i) + "] " + toString(array[i]) + "\n";
+			str += "\t[" + toString(i) + "] " + toString(container[i]) + "\n";
 		}
 		str += "}";
 		return str;
 	}
 
 	std::string toString(const F32* start, size_t size){
-		std::string str = "I64["+ toString(size) + "] {\n";
+		std::string str = "F32["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
 			str += "\t[" + toString(i) + "] " + toString(start[i]) + "\n";
 		}
@@ -258,18 +258,18 @@ namespace Helper{
 		return str;
 	}
 
-	std::string toString(const Array<F64>& array){
-		size_t size = array.getSize();
-		std::string str = "Array<I64>["+ toString(size) + "] {\n";
+	std::string toString(const std::vector<F64>& container){
+		size_t size = container.size();
+		std::string str = "Vector<F64>["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
-			str += "\t[" + toString(i) + "] " + toString(array[i]) + "\n";
+			str += "\t[" + toString(i) + "] " + toString(container[i]) + "\n";
 		}
 		str += "}";
 		return str;
 	}
 
 	std::string toString(const F64* start, size_t size){
-		std::string str = "I64["+ toString(size) + "] {\n";
+		std::string str = "F64["+ toString(size) + "] {\n";
 		for(size_t i = 0; i < size; i++){
 			str += "\t[" + toString(i) + "] " + toString(start[i]) + "\n";
 		}
