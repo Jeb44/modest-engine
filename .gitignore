@@ -69,5 +69,11 @@ _deps
 
 *builds*/
 
+### SFML ###
+!SFML-2.5.1/bin/*.dll
+!SFML-2.5.1/examples
+!SFML-2.5.1/include
+!SFML-2.5.1/lib/*.a
+
 # End of https://www.gitignore.io/api/c++,visualstudiocode,cmake
 
