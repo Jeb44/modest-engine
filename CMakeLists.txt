@@ -16,6 +16,10 @@
 # https://preshing.com/20170511/how-to-build-a-cmake-based-project/
 # https://www.johnlamp.net/cmake-tutorial-3-gui-tool.html
 
+# SFML Helps
+# cmake: https://github.com/SFML/SFML/blob/master/cmake/SFMLConfig.cmake.in (forum: https://en.sfml-dev.org/forums/index.php?topic=24070.0)
+# example code: file:///C:/Users/gabri/Documents/GitHub/modest-engine/SFML-2.5.1/doc/html/index.html
+
 # todo: version number in project() ?
 # todo: c++11 okay this way with variables?
 
@@ -23,12 +27,21 @@ cmake_minimum_required (VERSION 3.3 FATAL_ERROR)
 project(modest-engine
 	VERSION 0.1.2
 	DESCRIPTION "CMake root for modest-engine"
-	HOMEPAGE_URL "https://gitlab.kitware.com/Natschu/modest-engine"
+	HOMEPAGE_URL "https://github.com/Natschu/modest-engine"
 )
 
 # c++11
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED  True)
+set(SFML_STATIC_LIBRARIES TRUE)
+
+# Link standard c++ library staticly to the programm
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libstdc++")
+
+## In most cases better set in the CMake cache
+# set(SFML_DIR "<sfml root prefix>/lib/cmake/SFML")
+
+find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
 # enable warnings for GNU 
 if ("${CMAKE_CXX_COMPLIER_ID}" STREQUAL "GNU")
@@ -40,9 +53,6 @@ if ("${CMAKE_CXX_COMPLIER_ID}" STREQUAL "GNU")
 			CACHE STRING "Flags used by the compiler during all build types." FORCE)
 	endif()
 endif()
-
-# Link standard c++ library staticly to the programm
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libstdc++")
 
 # add the executable
 add_executable(modest-engine engine/main.cpp)
@@ -70,6 +80,9 @@ target_include_directories(	modest-engine PUBLIC
 							"${PROJECT_BINARY_DIR}"
 							${EXTRA_INCLUDES}
 )
+
+# SFML
+target_link_libraries(SFMLTest sfml-graphics sfml-audio)
 
 # see builds/CMakeCache.txt to view it unter "internal"
 set(CONFIGURED_ONCE TRUE CACHE INTERNAL 
