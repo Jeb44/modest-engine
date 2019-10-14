@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include <SFML/Graphics.hpp>
+
 #include "common/assert.h"
 #include "common/typedef.h"
 #include "../builds/meConfig.h"
@@ -36,12 +38,16 @@ int main(int argc, char* argv[]){
 	modGameWorld.startUp();
 	// ...
 
+	sf::RenderWindow window(sf::VideoMode(640, 480), "SFML Application");
+	window.display();
 
-
+	
 	// Run game
 	//modGameWorld.run();
 
+	while(window.isOpen()){
 
+	}
 
 	// Shut down engine in REVERSE order
 	modGameWorld.shutDown();
