@@ -178,6 +178,21 @@ Vector3 Vector3::project(const Vector3& rhs) {
 	return *this * s;
 }
 
+Vector3 Vector3::lerp(const Vector3& lhs, const Vector3& rhs, const F32 t) {
+	return Vector3(
+		(1-t)*lhs.x + t*rhs.x,
+		(1-t)*lhs.y + t*rhs.y,
+		(1-t)*lhs.z + t*rhs.z
+	);	
+}
+
+Vector3 Vector3::lerp(const Vector3& rhs, const F32 t) {
+	return Vector3(
+		(1-t)*this->x + t*rhs.x,
+		(1-t)*this->y + t*rhs.y,
+		(1-t)*this->z + t*rhs.z
+	);	
+}
 
 Vector3 Vector3::right(){
 	return Vector3(1.0f, 0.0f, 0.0f);

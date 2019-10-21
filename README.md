@@ -19,11 +19,13 @@ And makes excensive use of Robert Nystorm's "Game Programming Patterns".
 
 2. Open the build directory in the modest-engine folder
 
-3. Make: cmake -G "MinGW Makefiles" ..
+3. Optional: Generate CMakeLists.txt: with php ./../../cmakelistmaker/cmakeListMaker.php -r -t modest-engine ./../engine (script available [here](https://git.bosstrowski.de/flo/cmakelistmaker))
 
-4. Make: mingw32-make
+4. Make: cmake -G "MinGW Makefiles" ..
 
-5. Execute: ./modest-engine.exe
+5. Make: mingw32-make
+
+6. Execute: ./modest-engine.exe
 
 ## Useful links
 

@@ -63,8 +63,10 @@ public:
 	Vector3 cross(const Vector3& rhs);
 	static Vector3 project(const Vector3& lhs, const Vector3& rhs);
 	Vector3 project(const Vector3& rhs);
+	static Vector3 lerp(const Vector3& lhs, const Vector3& rhs, const F32 t);
+	Vector3 lerp(const Vector3& rhs, const F32 t);
 
-	// Static functions
+	// Static functions for directions
 	static Vector3 right();
 	static Vector3 up();
 	static Vector3 forward();

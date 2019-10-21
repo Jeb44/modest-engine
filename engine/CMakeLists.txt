@@ -1,8 +1,7 @@
-# Add directory to target_include_directories
-list (APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/engine")
+target_sources(modest-engine
+PRIVATE
+	${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
+)
 
-# Add files to target_sources here:
-# ...
 
-# Add another sub_directory (which calls another CMakeLists.txt)
-add_subdirectory(${PROJECT_SOURCE_DIR}/engine/src)
+add_subdirectory(src)

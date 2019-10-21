@@ -2,7 +2,11 @@
 #pragma once
 #include "common/typedef.h"
 
-#define MS_PER_UPDATE 60
+#include <vector>
+#include "core/Entity.h"
+#include "SFML/Graphics.hpp"
+
+#define MS_PER_UPDATE 0.167
 
 namespace ME{
 	class GameWorldModule {
@@ -10,18 +14,31 @@ namespace ME{
 		explicit GameWorldModule();
 		virtual ~GameWorldModule();
 		
-		void startUp(); //final so okay?
-		void shutDown();
+		void StartUp(); //final so okay?
+		void ShutDown();
 
-		void run();
+		void Run();
+
+		void AddEntity(Entity* entity);
+		bool RemoveEntity(Entity* entity);	//return true, if successfull delted
+		std::vector<Entity*> GetEnties();
 
 	private:
-		F32 getCurrentTime();
+		void ProcessInputs();
+		void Update(sf::Time deltaTime);
+		void Render();
 
-		void processInputs();
-		void update();
-		void render();
+		void HandlePlayerInput(sf::Keyboard::Key key, bool isPressed);
+
+		sf::RenderWindow* window;
+		sf::CircleShape* player;
 		
+		std::vector<Entity*> entities;
+
+		bool isMovingUp;
+		bool isMovingDown;
+		bool isMovingLeft;
+		bool isMovingRight;
 	};
 }
 

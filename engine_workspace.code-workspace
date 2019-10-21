@@ -76,7 +76,8 @@
 			"iterator": "cpp",
 			"memory_resource": "cpp",
 			"random": "cpp",
-			"string": "cpp"
+			"string": "cpp",
+			"map": "cpp"
 		},
 		"window.zoomLevel": 0.1
 	}
