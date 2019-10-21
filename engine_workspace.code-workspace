@@ -77,7 +77,21 @@
 			"memory_resource": "cpp",
 			"random": "cpp",
 			"string": "cpp",
-			"map": "cpp"
+			"map": "cpp",
+			"ios": "cpp",
+			"xutility": "cpp",
+			"locale": "cpp",
+			"queue": "cpp",
+			"xiosbase": "cpp",
+			"xlocbuf": "cpp",
+			"xlocmes": "cpp",
+			"xlocmon": "cpp",
+			"xlocnum": "cpp",
+			"xloctime": "cpp",
+			"xmemory": "cpp",
+			"xmemory0": "cpp",
+			"xtree": "cpp",
+			"*.rh": "cpp"
 		},
 		"window.zoomLevel": 0.1
 	}

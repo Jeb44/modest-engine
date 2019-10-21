@@ -31,7 +31,8 @@ namespace ME{
 		void HandlePlayerInput(sf::Keyboard::Key key, bool isPressed);
 
 		sf::RenderWindow* window;
-		sf::CircleShape* player;
+		sf::Texture* texPlayer;
+		sf::Sprite* sprPlayer;
 		
 		std::vector<Entity*> entities;
 

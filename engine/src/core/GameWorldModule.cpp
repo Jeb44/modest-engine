@@ -20,10 +20,13 @@ namespace ME{
 
 		window = new sf::RenderWindow(sf::VideoMode(640, 480), "Modest-Engine");
 		
-		player = new sf::CircleShape();
-		player->setRadius(40.0f);
-		player->setPosition(100.0f, 100.0f);
-		player->setFillColor(sf::Color::Cyan);
+		texPlayer = new sf::Texture();
+		if(!texPlayer->loadFromFile("../graphics/me_github_preview.png")){
+			// Handle loading error
+		}
+
+		sprPlayer = new sf::Sprite(*texPlayer);
+		sprPlayer->setPosition(100.0f, 100.0f);
 	}
 	void GameWorldModule::ShutDown(){
 		Locator::getConsole()->print("Shutdown", "GameWorldModule");
@@ -124,13 +127,13 @@ namespace ME{
 			movement.x += 1.0f;
 		}
 
-		player->move(movement * deltaTime.asSeconds() * 10.0f);
+		sprPlayer->move(movement * deltaTime.asSeconds() * 10.0f);
 	}
 
 	void GameWorldModule::Render(){
 		// Locator::getConsole()->print("Render");
 		window->clear();
-		window->draw(*player);
+		window->draw(*sprPlayer);
 		window->display();
 	}
 
