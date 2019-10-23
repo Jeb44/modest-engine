@@ -30,12 +30,13 @@ int main(int argc, char* argv[]){
 
 	// List of the modules
 	Console console;
+	Random random;
 	ME::GameWorldModule modGameWorld;
 	
 	// Start up engine in the CORRECT order
 	Locator::initialize();
 	console.startUp();
-	// Random::StartUp();
+	random.StartUp();
 	console.engineStartMessage(argc, argv);
 	// ...
 	modGameWorld.StartUp();

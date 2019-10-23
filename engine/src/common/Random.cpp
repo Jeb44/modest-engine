@@ -6,6 +6,8 @@ Random::~Random() {}
 
 
 void Random::StartUp(){
+	Locator::provide(this);
+
 	std::srand(std::time(nullptr));
 
 	boolDistribution.resize(10);
@@ -13,9 +15,9 @@ void Random::StartUp(){
 	floatDistribution.resize(10);
 
 	for(size_t i = 0, iLen = 10; i < iLen; i++){
-		boolDistribution[i] = false;
-		intDistribution[i] = 0;
-		floatDistribution[i] = 0.0f;
+		boolDistribution[i] = GetBool();
+		intDistribution[i] = GetInt(-10, 10);
+		floatDistribution[i] = GetFloat();
 	}
 }
 
@@ -39,56 +41,228 @@ F32 Random::GetFloat(F32 start, F32 end){
 	return randomVar + start;
 }
 
+B8 Random::GetEqualBool(){
+	B8 newEntry = GetBool();
+	
+	// Compare numbers to rules
+	// 1. if at least same 4 numbers in sequence: negate the rolled number with 75% chance
+	if(boolDistribution[2] ==  boolDistribution[1]){
+		if(boolDistribution[2] == boolDistribution[0]){
+			if(boolDistribution[2] == newEntry){
+				newEntry = (GetFloat() <= 0.75? -newEntry : newEntry);
+			}
+		}
+	}
 
-I32 Random::GetIntNormalDistributed(I32 start, I32 end){
+	// 2. when entry 3 - 6 are the same as new - 2 then negate newest entry
+	if(boolDistribution[2] == boolDistribution[6]){
+		if(boolDistribution[1] == boolDistribution[5]){
+			if(boolDistribution[0] == boolDistribution[4]){
+				if(newEntry 		== boolDistribution[3]){
+					newEntry = -newEntry;
+				}
+			}
+		}
+	}
+
+	// 3. negate newest entry when entries new - 4 are 111000 or 000111
+	if(boolDistribution[4] 					== true){
+		if(boolDistribution[3] 				== true){
+			if(boolDistribution[2] 			== true){
+				if(boolDistribution[1] 		== false){
+					if(boolDistribution[0] 	== false){
+						if(newEntry			== false){
+							newEntry = -newEntry;
+						}
+					}
+				}
+			}
+		}
+	}
+	else {								//	== false
+		if(boolDistribution[3] 				== false){
+			if(boolDistribution[2] 			== false){
+				if(boolDistribution[1] 		== true){
+					if(boolDistribution[0] 	== true){
+						if(newEntry 		== true){
+							newEntry = -newEntry;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	SaveBool(newEntry);
+
+	return newEntry;
+}
+
+I32 Random::GetEqualInt(I32 start, I32 end){
 	ASSERT(start < end);
 	I32 range = end - start;
-	I32 randomVar = 0;
+	I32 newestEntry = 0;
 
-	for(size_t i = 0, iLen = 20; i < iLen; i++){
-		randomVar = std::rand() / ((RAND_MAX + 1u) / range) + start;
+	for(size_t i = 0, iLen = INT_ITERATIONS_MAX; i < iLen; i++){
+		newestEntry = GetInt(start, end);
 		
 		// Compare number to rules
 		// 1. not the same number as n_0
-		if(randomVar = intDistribution[0]) continue;
+		if(newestEntry = intDistribution[0]) continue;
 
 		// 2. not the same number as n_1
-		if(randomVar = intDistribution[1]) continue;
+		if(newestEntry = intDistribution[1]) continue;
 		
 		// 3. inc/dec sequences of 4 numbers
-		if(randomVar > intDistribution[0]){
-			if(intDistribution[0] > intDistribution[1]){
-				if(intDistribution[1] > intDistribution[2]){
-					if(intDistribution[2] > intDistribution[3]){
-						continue;
-					}
-				}
+		I32 checksCorrect = 0;
+		ASSERT(INT_SEQ_TOTAL_CHECKS > INT_SEQ_MAX_INC_DEC);
+		for(size_t i = 0, iLen = INT_SEQ_TOTAL_CHECKS; i < iLen; i++){
+			if(intDistribution[i] < intDistribution[i+1]){
+				checksCorrect++;
+				continue;
 			}
-		} else if(randomVar < intDistribution[0]){
-			if(intDistribution[0] < intDistribution[1]){
-				if(intDistribution[1] < intDistribution[2]){
-					if(intDistribution[2] < intDistribution[3]){
-						continue;
-					}
-				}
+			break;
+		}
+		if(checksCorrect >= FLT_SEQ_MAX_INC_DEC){
+			continue;
+		}
+
+		checksCorrect = 0;
+		for(size_t i = 0, iLen = INT_SEQ_TOTAL_CHECKS; i < iLen; i++){
+			if(intDistribution[i] > intDistribution[i+1]){
+				checksCorrect++;
+				continue;
 			}
+			break;
+		}
+		if(checksCorrect >= INT_SEQ_MAX_INC_DEC){
+			continue;
 		}
 
 		// 4. n numbers above/beneath average/median
 		I32 median = start + range / 2;
-		const size_t medianCheck = 4;
-		for(size_t i = 0, iLen = medianCheck - 1; i < iLen; i++){
-				
+		I32 medianCount = 0;
+
+		ASSERT(INT_MEDIAN_TOTAL_CHECKS <= intDistribution.size());
+		ASSERT(INT_MEDIAN_TOTAL_CHECKS > INT_MEDIAN_MAX_DEVIATIONS);
+		for(size_t i = 0, iLen = INT_MEDIAN_TOTAL_CHECKS; i < iLen; i++){
+			intDistribution[i] > median? medianCount++ : medianCount--;
+		}
+		newestEntry > median? medianCount++ : medianCount--;
+		if(std::abs(medianCount) > INT_MEDIAN_MAX_DEVIATIONS){
+			continue;
 		}
 
 		// 5. repeating pairs of numbers
+		I32 pairPartner = intDistribution[0];
+		B8 doContinue = false;
+		ASSERT(INT_PAIR_TOTAL_CHECKS <= intDistribution.size());
+		for(size_t i = 0, iLen = INT_PAIR_TOTAL_CHECKS; i < iLen; i++){
+			if(newestEntry == intDistribution[i] &&
+				pairPartner == intDistribution[i+1]){
+					doContinue = true;
+					break;
+			}
+		}
+		if(doContinue) continue;
+
 		// 6. max of n same numbers in the last 10 numbers
-		
+		I32 sameNumbersCount = 0;
+		for(size_t i = 0, iLen = INT_SAME_NUMBERS_TOTAL_CHECKS; i < iLen; i++){
+			if(intDistribution[i] == newestEntry){
+				sameNumbersCount++;
+			}
+		}
+		if(sameNumbersCount >= INT_MAX_SAME_NUMBERS){
+			continue;
+		}
+
 		break;
 	}
 	// Save number to array?
+	SaveInt(newestEntry);
 
-	return randomVar;
+	return newestEntry;
+}
+
+F32 Random::GetEqualFloat(F32 start, F32 end){
+	ASSERT(start < end);
+	F32 range = end - start;
+	F32 newestEntry = 0;
+
+	for(size_t i = 0, iLen = FLT_ITERATIONS_MAX; i < iLen; i++){
+		newestEntry = GetFloat(start, end);
+		
+		// Compare numbers to rules
+		// 1. Difference between to the first pair of numbers is > 0.02
+		F32 diff1 = std::abs(newestEntry - floatDistribution[0]);
+		if(diff1 < FLT_PAIR_MIN_DIFFERENCE){
+			continue;
+		}
+
+		// 2. Difference between the first trio of numbers is > 0.1
+		F32 diff2 = std::abs(newestEntry - floatDistribution[1]);
+		F32 diff3 = std::abs(floatDistribution[0] - floatDistribution[1]);
+		if(diff1 > diff2 && diff1 > diff3){
+			if(diff1 < FLT_TRIO_MIN_DIFFERENCE){
+				continue;
+			}
+		}
+		else if(diff2 > diff1 && diff2 > diff3){
+			if(diff2 < FLT_TRIO_MIN_DIFFERENCE){
+				continue;
+			}
+		}
+		else if(diff3 > diff1 && diff3 > diff2){
+			if(diff3 < FLT_TRIO_MIN_DIFFERENCE){
+				continue;
+			}
+		}
+
+		// 3. max inc/dec sequences of 5 numbers
+		I32 checksCorrect = 0;
+		ASSERT(FLT_SEQ_TOTAL_CHECKS > FLT_SEQ_MAX_INC_DEC);
+		for(size_t i = 0, iLen = FLT_SEQ_TOTAL_CHECKS; i < iLen; i++){
+			if(floatDistribution[i] < floatDistribution[i+1]){
+				checksCorrect++;
+				continue;
+			}
+			break;
+		}
+		if(checksCorrect >= FLT_SEQ_MAX_INC_DEC){
+			continue;
+		}
+
+		checksCorrect = 0;
+		for(size_t i = 0, iLen = FLT_SEQ_TOTAL_CHECKS; i < iLen; i++){
+			if(floatDistribution[i] > floatDistribution[i+1]){
+				checksCorrect++;
+				continue;
+			}
+			break;
+		}
+		if(checksCorrect >= FLT_SEQ_MAX_INC_DEC){
+			continue;
+		}
+
+		// 4. n numbers above/beneath average/median
+		F32 median = start + range / 2;
+		I32 medianCount = 0;
+		ASSERT(FLT_MEDIAN_TOTAL_CHECKS <= floatDistribution.size());
+		ASSERT(FLT_MEDIAN_TOTAL_CHECKS > FLT_MEDIAN_MAX_DEVIATIONS);
+		for(size_t i = 0, iLen = FLT_MEDIAN_TOTAL_CHECKS; i < iLen; i++){
+			floatDistribution[i] > median? medianCount++ : medianCount--;
+		}
+		newestEntry > median? medianCount++ : medianCount--;
+		if(std::abs(medianCount) > FLT_MEDIAN_MAX_DEVIATIONS){
+			continue;
+		}
+
+		break;
+	}
+	SaveFloat(newestEntry);
+
+	return newestEntry;
 }
 
 void Random::SaveBool(B8 number){

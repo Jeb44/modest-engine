@@ -3,8 +3,10 @@
 
 #include "common/assert.h"
 #include "common/console/Console.h"
+#include "common/Random.h"
 
 class Console;
+class Random;
 
 class Locator {
 public:
@@ -16,6 +18,10 @@ public:
 	static void provide(Console* service);
 	static Console* getConsole();
 
+	static void provide(Random* service);
+	static Random* getRandom();
+
 private:
 	static Console* console;
+	static Random* random;
 };
