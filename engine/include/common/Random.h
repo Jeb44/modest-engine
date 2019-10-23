@@ -6,19 +6,28 @@
 
 #include <cstdlib>
 #include <ctime>
+#include <vector>
 
 class Random {
 public:
 	explicit Random();
 	virtual ~Random();
 
-	static void StartUp();
-	static void ShutDown();
+	void StartUp();
+	void ShutDown();
 	
-	static B8 GetBool();
-	static I32 GetInt(I32 start = 0, I32 end = RAND_MAX);
-	static F32 GetFloat(F32 start = 0.0f, F32 end = 1.0f);
+	B8 GetBool();
+	I32 GetInt(I32 start = 0, I32 end = RAND_MAX);
+	F32 GetFloat(F32 start = 0.0f, F32 end = 1.0f);
 
-	static I32 GetIntNormalDistributed(I32 start = 0, I32 end = RAND_MAX);
+	I32 GetIntNormalDistributed(I32 start = 0, I32 end = RAND_MAX);
 	
+private:
+	void SaveBool(B8 number);
+	void SaveInt(I32 number);
+	void SaveFloat(F32 number);
+
+	std::vector<B8> boolDistribution;
+	std::vector<I32> intDistribution;
+	std::vector<F32> floatDistribution;
 };

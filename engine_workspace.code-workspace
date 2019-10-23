@@ -91,7 +91,13 @@
 			"xmemory": "cpp",
 			"xmemory0": "cpp",
 			"xtree": "cpp",
-			"*.rh": "cpp"
+			"*.rh": "cpp",
+			"set": "cpp",
+			"xfacet": "cpp",
+			"xhash": "cpp",
+			"xlocinfo": "cpp",
+			"xstddef": "cpp",
+			"xtr1common": "cpp"
 		},
 		"window.zoomLevel": 0.1
 	}
