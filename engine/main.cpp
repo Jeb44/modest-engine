@@ -47,8 +47,8 @@ int main(int argc, char* argv[]){
 	std::fstream file;
 	file.open("test.csv", std::fstream::out);
 	for(size_t i = 0, iLen = 200; i < iLen; i++){
-		auto var = random.GetEqualInt(0, 10);
-		console.print(Helper::toString(var));
+		auto var = random.GetEqualFloat();
+		console.print("[i]" + Helper::toString(var));
 		file << Helper::toString(var) << std::endl;
 	}
 	file.close();

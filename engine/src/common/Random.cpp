@@ -9,7 +9,7 @@ void Random::StartUp(){
 	std::srand(std::time(nullptr));
 
 	ResizeBool(10);
-	ResizeInt(0, RAND_MAX, 10);
+	ResizeInt(0, 10, 10);
 	ResizeFloat(0.0f, 1.0f, 10);
 }
 
@@ -35,7 +35,7 @@ F32 Random::GetFloat(F32 start, F32 end){
 
 B8 Random::GetEqualBool(){
 	B8 newEntry = GetBool();
-	
+
 	// Compare numbers to rules
 	// 1. if at least same 4 numbers in sequence: negate the rolled number with 75% chance
 	if(boolDistribution[2] ==  boolDistribution[1]){
@@ -84,7 +84,7 @@ B8 Random::GetEqualBool(){
 			}
 		}
 	}
-
+	
 	SaveBool(newEntry);
 
 	return newEntry;
@@ -96,7 +96,9 @@ I32 Random::GetEqualInt(I32 start, I32 end){
 	I32 newestEntry = 0;
 
 	for(size_t i = 0, iLen = INT_ITERATIONS_MAX; i < iLen; i++){
+		
 		newestEntry = GetInt(start, end);
+		std::cout << newestEntry << std::endl;
 		
 		// Compare number to rules
 		// 1. not the same number as n_0
@@ -105,9 +107,9 @@ I32 Random::GetEqualInt(I32 start, I32 end){
 		// 2. not the same number as n_1
 		if(newestEntry = intDistribution[1]) continue;
 		
-		// 3. inc/dec sequences of 4 numbers
+		#pragma region | Inc / Dec sequences of 4 numbers
 		I32 checksCorrect = 0;
-		ASSERT(INT_SEQ_TOTAL_CHECKS > INT_SEQ_MAX_INC_DEC);
+		ASSERT(INT_SEQ_TOTAL_CHECKS >= INT_SEQ_MAX_INC_DEC);
 		for(size_t i = 0, iLen = INT_SEQ_TOTAL_CHECKS; i < iLen; i++){
 			if(intDistribution[i] < intDistribution[i+1]){
 				checksCorrect++;
@@ -118,7 +120,6 @@ I32 Random::GetEqualInt(I32 start, I32 end){
 		if(checksCorrect >= FLT_SEQ_MAX_INC_DEC){
 			continue;
 		}
-
 		checksCorrect = 0;
 		for(size_t i = 0, iLen = INT_SEQ_TOTAL_CHECKS; i < iLen; i++){
 			if(intDistribution[i] > intDistribution[i+1]){
@@ -130,8 +131,9 @@ I32 Random::GetEqualInt(I32 start, I32 end){
 		if(checksCorrect >= INT_SEQ_MAX_INC_DEC){
 			continue;
 		}
+		#pragma endregion
 
-		// 4. n numbers above/beneath average/median
+		#pragma region | N numbers above/beneath average/median
 		I32 median = start + range / 2;
 		I32 medianCount = 0;
 
@@ -144,8 +146,9 @@ I32 Random::GetEqualInt(I32 start, I32 end){
 		if(std::abs(medianCount) > INT_MEDIAN_MAX_DEVIATIONS){
 			continue;
 		}
+		#pragma endregion
 
-		// 5. repeating pairs of numbers
+		#pragma region | repeating pairs of numbers
 		I32 pairPartner = intDistribution[0];
 		B8 doContinue = false;
 		ASSERT(INT_PAIR_TOTAL_CHECKS <= intDistribution.size());
@@ -157,8 +160,9 @@ I32 Random::GetEqualInt(I32 start, I32 end){
 			}
 		}
 		if(doContinue) continue;
+		#pragma endregion
 
-		// 6. max of n same numbers in the last 10 numbers
+		#pragma region | max of n same numbers in the last 10 numbers
 		I32 sameNumbersCount = 0;
 		for(size_t i = 0, iLen = INT_SAME_NUMBERS_TOTAL_CHECKS; i < iLen; i++){
 			if(intDistribution[i] == newestEntry){
@@ -168,6 +172,7 @@ I32 Random::GetEqualInt(I32 start, I32 end){
 		if(sameNumbersCount >= INT_MAX_SAME_NUMBERS){
 			continue;
 		}
+		#pragma endregion
 
 		break;
 	}
@@ -213,7 +218,7 @@ F32 Random::GetEqualFloat(F32 start, F32 end){
 
 		// 3. max inc/dec sequences of 5 numbers
 		I32 checksCorrect = 0;
-		ASSERT(FLT_SEQ_TOTAL_CHECKS > FLT_SEQ_MAX_INC_DEC);
+		ASSERT(FLT_SEQ_TOTAL_CHECKS >= FLT_SEQ_MAX_INC_DEC);
 		for(size_t i = 0, iLen = FLT_SEQ_TOTAL_CHECKS; i < iLen; i++){
 			if(floatDistribution[i] < floatDistribution[i+1]){
 				checksCorrect++;
@@ -261,9 +266,11 @@ F32 Random::GetEqualFloat(F32 start, F32 end){
 void Random::ResizeBool(I32 size){
 	ASSERT(size >= 6);
 	boolDistribution.resize(size);
+	
 	for(size_t i = 0, iLen = size; i < iLen; i++){
 		boolDistribution[i] = GetBool();
 	}
+	
 	for(size_t i = 0, iLen = size; i < iLen; i++){
 		GetEqualBool();
 	}
@@ -298,19 +305,19 @@ void Random::ResizeFloat(F32 start, F32 end, I32 size){
 }
 
 void Random::SaveBool(B8 number){
-	for(size_t i = boolDistribution.size() - 1, iLen = 1; i < iLen; i++){
+	for(size_t i = boolDistribution.size() - 1, iLen = 1; i > iLen; i--){
 		boolDistribution[i] = boolDistribution[i - 1];
 	}
 	boolDistribution[0] = number;
 }
 void Random::SaveInt(I32 number){
-	for(size_t i = intDistribution.size() - 1, iLen = 1; i < iLen; i++){
+	for(size_t i = intDistribution.size() - 1, iLen = 1; i > iLen; i--){
 		intDistribution[i] = intDistribution[i - 1];
 	}
 	intDistribution[0] = number;
 }
 void Random::SaveFloat(F32 number){
-	for(size_t i = floatDistribution.size() - 1, iLen = 1; i < iLen; i++){
+	for(size_t i = floatDistribution.size() - 1, iLen = 1; i > iLen; i--){
 		floatDistribution[i] = floatDistribution[i - 1];
 	}
 	floatDistribution[0] = number;
