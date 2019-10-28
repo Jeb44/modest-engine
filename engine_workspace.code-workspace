@@ -99,6 +99,6 @@
 			"xstddef": "cpp",
 			"xtr1common": "cpp"
 		},
-		"window.zoomLevel": 0.1
+		"window.zoomLevel": 0
 	}
 }

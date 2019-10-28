@@ -6,6 +6,7 @@
 #include "common/typedef.h"
 #include "../builds/meConfig.h"
 #include <iostream>
+#include <fstream>
 
 #include "common/Locator.h"
 #include "core/GameWorldModule.h"
@@ -36,15 +37,21 @@ int main(int argc, char* argv[]){
 	// Start up engine in the CORRECT order
 	Locator::initialize();
 	console.startUp();
+	Locator::provide(&console);
 	random.StartUp();
+	Locator::provide(&random);
 	console.engineStartMessage(argc, argv);
 	// ...
 	modGameWorld.StartUp();
 	
-	for(size_t i = 0, iLen = 20; i < iLen; i++){
-		// auto var = Random::GetFloat(0, 1);
-		// console.print(Helper::toString(var));	
+	std::fstream file;
+	file.open("test.csv", std::fstream::out);
+	for(size_t i = 0, iLen = 200; i < iLen; i++){
+		auto var = random.GetEqualInt(0, 10);
+		console.print(Helper::toString(var));
+		file << Helper::toString(var) << std::endl;
 	}
+	file.close();
 
 	// Run game
 	//modGameWorld.Run();

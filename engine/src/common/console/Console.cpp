@@ -10,7 +10,6 @@ Console::~Console() {}
 void Console::startUp(){
 	// printer = new NullPrinter(); // use cmake to specify start-console?
 	printer = new WinConsolePrinter();
-	Locator::provide(this);
 
 	versionNumber = ME::getVersionNumber();
 }

@@ -41,12 +41,15 @@ public:
 	I32 GetInt(I32 start = 0, I32 end = RAND_MAX);
 	F32 GetFloat(F32 start = 0.0f, F32 end = 1.0f);
 
-	
 	B8 GetEqualBool();
 	I32 GetEqualInt(I32 start = 0, I32 end = RAND_MAX);
 	F32 GetEqualFloat(F32 start = 0.0f, F32 end = 1.0f);
 	
 private:
+	void ResizeBool(I32 size);
+	void ResizeInt(I32 start, I32 end, I32 size);
+	void ResizeFloat(F32 start, F32 end, I32 size);
+
 	void SaveBool(B8 number);
 	void SaveInt(I32 number);
 	void SaveFloat(F32 number);
@@ -54,4 +57,10 @@ private:
 	std::vector<B8> boolDistribution;
 	std::vector<I32> intDistribution;
 	std::vector<F32> floatDistribution;
+
+	I32 intCurrentMin;
+	I32 intCurrentMax;
+
+	F32 floatCurrentMin;
+	F32 floatCurrentMax;
 };

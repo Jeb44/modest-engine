@@ -6,19 +6,11 @@ Random::~Random() {}
 
 
 void Random::StartUp(){
-	Locator::provide(this);
-
 	std::srand(std::time(nullptr));
 
-	boolDistribution.resize(10);
-	intDistribution.resize(10);
-	floatDistribution.resize(10);
-
-	for(size_t i = 0, iLen = 10; i < iLen; i++){
-		boolDistribution[i] = GetBool();
-		intDistribution[i] = GetInt(-10, 10);
-		floatDistribution[i] = GetFloat();
-	}
+	ResizeBool(10);
+	ResizeInt(0, RAND_MAX, 10);
+	ResizeFloat(0.0f, 1.0f, 10);
 }
 
 void Random::ShutDown(){}
@@ -263,6 +255,46 @@ F32 Random::GetEqualFloat(F32 start, F32 end){
 	SaveFloat(newestEntry);
 
 	return newestEntry;
+}
+
+
+void Random::ResizeBool(I32 size){
+	ASSERT(size >= 6);
+	boolDistribution.resize(size);
+	for(size_t i = 0, iLen = size; i < iLen; i++){
+		boolDistribution[i] = GetBool();
+	}
+	for(size_t i = 0, iLen = size; i < iLen; i++){
+		GetEqualBool();
+	}
+}
+
+void Random::ResizeInt(I32 start, I32 end, I32 size){
+	ASSERT(size >= 10);
+	intDistribution.resize(size);
+	intCurrentMin = start;
+	intCurrentMax = end;
+
+	for(size_t i = 0, iLen = size; i < iLen; i++){
+		intDistribution[i] = GetInt(start, end);
+	}
+	for(size_t i = 0, iLen = size; i < iLen; i++){
+		GetEqualInt(start, end);
+	}
+}
+
+void Random::ResizeFloat(F32 start, F32 end, I32 size){
+	ASSERT(size >= 10);
+	floatDistribution.resize(size);
+	floatCurrentMin = start;
+	floatCurrentMax = end;
+
+	for(size_t i = 0, iLen = size; i < iLen; i++){
+		floatDistribution[i] = GetFloat(start, end);
+	}
+	for(size_t i = 0, iLen = size; i < iLen; i++){
+		GetEqualFloat(start, end);
+	}
 }
 
 void Random::SaveBool(B8 number){
