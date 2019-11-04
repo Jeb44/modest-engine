@@ -9,8 +9,9 @@
 #include <fstream>
 
 #include "common/Locator.h"
-#include "core/GameWorldModule.h"
 #include "common/console/Console.h"
+#include "core/GameWorldModule.h"
+#include "core/RenderModule.h"
 
 #include "math/Vector3.h"
 #include "common/datastructures/Array.h"
@@ -30,37 +31,48 @@
 int main(int argc, char* argv[]){
 
 	// List of the modules
-	Console console;
-	Random random;
+	#pragma region List of modules
+	Console locConsole;
+	// Random locRandom;
+	RenderModule modRenderModule;
 	ME::GameWorldModule modGameWorld;
-	
-	// Start up engine in the CORRECT order
+	#pragma endregion
+
+	#pragma region Start up the engine modules in CORRECT order
 	Locator::initialize();
-	console.startUp();
-	Locator::provide(&console);
-	random.StartUp();
-	Locator::provide(&random);
-	console.engineStartMessage(argc, argv);
+	locConsole.startUp();
+	Locator::provide(&locConsole);
+	// random.StartUp();
+	// Locator::provide(&random);
+	locConsole.engineStartMessage(argc, argv);
 	// ...
+	modRenderModule.StartUp();
 	modGameWorld.StartUp();
 	
-	std::fstream file;
-	file.open("test.csv", std::fstream::out);
-	for(size_t i = 0, iLen = 200; i < iLen; i++){
-		auto var = random.GetEqualFloat();
-		console.print("[i]" + Helper::toString(var));
-		file << Helper::toString(var) << std::endl;
-	}
-	file.close();
+	// std::fstream file;
+	// file.open("test.csv", std::fstream::out);
+	// for(size_t i = 0, iLen = 200; i < iLen; i++){
+	// 	auto var = random.GetEqualFloat();
+	// 	console.print("[i]" + Helper::toString(var));
+	// 	file << Helper::toString(var) << std::endl;
+	// }
+	// file.close();
+	#pragma endregion
 
-	// Run game
+	#pragma region Run the game
+
 	//modGameWorld.Run();
 
-	// Shut down engine in REVERSE order
+	#pragma endregion
+
+	
+	#pragma region Shut down the engine modules in REVERSE order
 	modGameWorld.ShutDown();
+	modRenderModule.ShutDown();
 	// ... 
 	// Random::ShutDown();
-	console.engineEndMessage();
-	console.shutDown();
+	locConsole.engineEndMessage();
+	locConsole.shutDown();
+	#pragma endregion
 	return 0;
 }
