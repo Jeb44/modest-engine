@@ -8,7 +8,7 @@
 
 #include "SFML/Graphics.hpp"
 
-class SpriteComponent : IEntityComponent {
+class SpriteComponent : public IEntityComponent {
 public:
 	explicit SpriteComponent();
 	virtual ~SpriteComponent();
@@ -22,9 +22,9 @@ public:
 	virtual void SetTextureFilePath(std::string filePath);
 
 private:
-	sf::Sprite* sprPlayer;
-	sf::Texture* texPlayer;
-	std::string strTexturePath;
+	sf::Sprite* sprite;
+	sf::Texture* texture;
+	std::string texturePath;
 				
 	// texPlayer = new sf::Texture();
 	// if(!texPlayer->loadFromFile("../graphics/me_github_preview.png")){

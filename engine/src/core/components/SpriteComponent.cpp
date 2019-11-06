@@ -26,5 +26,5 @@ void SpriteComponent::OnEnd(Entity& go){
 
 void SpriteComponent::SetTextureFilePath(std::string filePath){
 	ASSERT(filePath != "");
-	strTexturePath = filePath;
+	texturePath = filePath;
 }

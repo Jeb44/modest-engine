@@ -12,6 +12,7 @@
 #include "common/console/Console.h"
 #include "core/GameWorldModule.h"
 #include "core/RenderModule.h"
+#include "core/resource/ResourceHolder.h"
 
 #include "math/Vector3.h"
 #include "common/datastructures/Array.h"
@@ -36,6 +37,11 @@ int main(int argc, char* argv[]){
 	// Random locRandom;
 	RenderModule modRenderModule;
 	ME::GameWorldModule modGameWorld;
+	#pragma endregion
+
+	#pragma region Resources
+	ResourceHolder<Textures::ID, sf::Texture*> texturesHolder;
+	texturesHolder.Load(Textures::ID::Basic_Quad, Textures::path + "basic_quad.png");
 	#pragma endregion
 
 	#pragma region Start up the engine modules in CORRECT order
