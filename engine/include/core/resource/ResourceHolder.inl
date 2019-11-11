@@ -1,8 +1,4 @@
-//ResourceHolder.cpp
-#include "core/resource/ResourceHolder.h"
-
-// This file only exists, so cmake & include-path
-// can work accoding to the current setup.
+//ResourceHolder.hpp
 
 template<typename Identifier, typename Resource>
 void ResourceHolder<Identifier, Resource>::Load(Identifier id, const std::string& filename){
@@ -13,7 +9,7 @@ void ResourceHolder<Identifier, Resource>::Load(Identifier id, const std::string
 	}
 
 	// If loading successful, insert resource to map
-	insertResource(id, std::move(resource));
+	InsertResource(id, std::move(resource));
 }
 
 template <typename Identifier, typename Resource>
@@ -24,23 +20,23 @@ void ResourceHolder<Identifier, Resource>::Load(Identifier id, const std::string
 	if (!resource->loadFromFile(filename, secondParam)){
 		throw std::runtime_error("ResourceHolder::load - Failed to load " + filename);
 	}
-
+	
 	// If loading successful, insert resource to map
-	insertResource(id, std::move(resource));
+	InsertResource(id, std::move(resource));
 }
 
 template <typename Identifier, typename Resource>
 Resource& ResourceHolder<Identifier, Resource>::Get(Identifier id){
-	auto found = mResourceMap.find(id);
-	assert(found != mResourceMap.end());
+	auto found = resourceMap.find(id);
+	ASSERT(found != resourceMap.end());
 
 	return *found->second;
 }
 
 template <typename Identifier, typename Resource>
 const Resource& ResourceHolder<Identifier, Resource>::Get(Identifier id) const{
-	auto found = mResourceMap.find(id);
-	assert(found != mResourceMap.end());
+	auto found = resourceMap.find(id);
+	ASSERT(found != resourceMap.end());
 
 	return *found->second;
 }
@@ -48,6 +44,8 @@ const Resource& ResourceHolder<Identifier, Resource>::Get(Identifier id) const{
 template <typename Identifier, typename Resource>
 void ResourceHolder<Identifier, Resource>::InsertResource(Identifier id, std::unique_ptr<Resource> resource) {
 	// Insert and check success
-	auto inserted = mResourceMap.insert(std::make_pair(id, std::move(resource)));
-	assert(inserted.second);
+	std::cout << "Hello" << std::endl;
+	auto inserted = resourceMap.insert(std::make_pair(id, std::move(resource)));
+	std::cout << "Hello" << std::endl;
+	ASSERT(inserted.second);
 }

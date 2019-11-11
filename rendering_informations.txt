@@ -1,0 +1,91 @@
+// === IMPLEMENTATION ========================================================================
+[ENTITY] public sf::Copyable ????
+- sf::Transformable
+- getWorldTransform(), getWorldPosition()
+- update(sf::Time dt) -> update yourself and children
+- draw(sf::RenderTarget& target, sf::RenderStates states) -> let components draw and children
+
+[COMPONENT] public sf::Copyable ????
+- sf::Drawable -> void draw(sf:.RenderTarget& target, sf::RenderStates states) const = 0;
+- update(sf::Time dt) -> update yourself and children
+- std::unique_ptr<COMPONENT> Ptr, std::vector<Ptr> children;
+
+// === CONTINUED =============================================================================
+
+typedef ResourceHolder<sf::Texture, Textures::ID> TextureHolder;
+
+Aircraft(Type type, const TextureHolder& textures);
+
+sf::FloatRect bound = sprite.getLocalBounds();
+sprite.setOrigin(bounds.width / 2.0f, bounds.height 2.0f); // = center
+
+enum Layer{
+	Background,
+	Air,
+	Count
+}
+
+class World : private sf::NonCopyable{
+	public:
+		explicit World(sf::RenderWindow& window);
+		void update(sf::Time dt);
+		void draw();
+	
+	private:
+		void loadTextures();
+		void buildSchene();
+		
+		enum Layer{
+			Background,
+			Air,
+			Count
+		};
+		
+		sf::RenderWindow& window;
+		sf::View worldView;
+		TextureHolder textures;
+		SceneNode sceneGraph;
+		std::array<SceneNode*, LayerCount> sceneLayers;
+		
+		sf::FloatRect worldBounds;
+		sf::Vector2f spawnPosition;
+		float scrollSpeed;
+		Aircraft* playerAircraft;
+};
+
+int main(){
+	try{
+		Game game;
+		game.run();
+	} catch(std::exception& e){
+		std::cout << "\nEXCEPTION: " << e.what() << std::endl;
+	}
+}
+
+World::buildScene() ...{
+	for(std::size_t i = 0; i < LayerCount; ++i){
+		SceneNode::Ptr layer(new SceneNode());
+		sceneLayers[i] = layer.get();
+		
+		sceneGraph.attackChild(std::move(layer));
+	}
+}
+
+
+sf::Texture& texture = textures.get(Textures::Desert);
+sf::IntRect textureRect(worldBounds);
+texture.setRepeated(true);
+
+
+std::unique_ptr<SpriteNode> backgroundSprite(new SpriteNode(texture, textureRect));
+backgroundSprite->setPosition(worldBounds.left, worldBounds.top);
+sceneLayers[Background]->attackChild(std::move(backgroundSprite));
+
+...
+
+void World::draw(){
+	window.setView(worldView);
+	window.draw(sceneGraph);
+}
+
+

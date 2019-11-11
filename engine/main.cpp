@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include <SFML/Graphics.hpp>
 
 #include "common/assert.h"
@@ -12,7 +10,7 @@
 #include "common/console/Console.h"
 #include "core/GameWorldModule.h"
 #include "core/RenderModule.h"
-#include "core/resource/ResourceHolder.h"
+#include "core/resource/ResourceHolder.hpp"
 
 #include "math/Vector3.h"
 #include "common/datastructures/Array.h"
@@ -40,8 +38,9 @@ int main(int argc, char* argv[]){
 	#pragma endregion
 
 	#pragma region Resources
-	ResourceHolder<Textures::ID, sf::Texture*> texturesHolder;
+	ResourceHolder<Textures::ID, sf::Texture> texturesHolder;
 	texturesHolder.Load(Textures::ID::Basic_Quad, Textures::path + "basic_quad.png");
+	texturesHolder.Get(Textures::ID::Basic_Quad);
 	#pragma endregion
 
 	#pragma region Start up the engine modules in CORRECT order

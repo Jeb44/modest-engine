@@ -64,3 +64,16 @@ bool Entity::RemoveComponent(IEntityComponent* component){
 std::vector<IEntityComponent*> Entity::GetComponents(){
 	return components;
 }
+
+void Entity::setVelocity(sf::Vector2f velocity){
+	this->velocity = velocity;
+}
+
+void Entity::setVelocity(float vx, float vy){
+	velocity.x = vx;
+	velocity.y = vy;
+}
+
+sf::Vector2f Entity::getVelocty() const{
+	return velocity;
+}

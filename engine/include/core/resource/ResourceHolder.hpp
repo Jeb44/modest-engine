@@ -7,8 +7,21 @@
 #include <map>
 #include <memory>
 #include <stdexcept>
+#include <iostream>
 
-#define RESOURCE_PATH "../res/"
+namespace Resources{
+	const std::string path = "../res/";
+	enum ID{
+		Test
+	};
+}
+
+namespace Textures{
+	const std::string path = "./../res/textures/";
+	enum ID{
+		Basic_Quad
+	};
+}
 
 template<typename Identifier, typename Resource>
 class ResourceHolder {
@@ -30,16 +43,4 @@ private:
 	std::map<Identifier, std::unique_ptr<Resource>> resourceMap;
 };
 
-namespace Resources{
-	const std::string path = "../res/";
-	enum struct ID{
-		Test
-	};
-}
-
-namespace Textures{
-	const std::string path = "../res/textures/";
-	enum struct ID{
-		Basic_Quad
-	};
-}
+#include "ResourceHolder.inl"
