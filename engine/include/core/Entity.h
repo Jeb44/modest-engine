@@ -26,15 +26,11 @@ public:
 	bool RemoveComponent(IEntityComponent* component);	//return true, if successfull delted
 	std::vector<IEntityComponent*> GetComponents();
 
-	void setVelocity(sf::Vector2f velocity);
-	void setVelocity(float vx, float vy);
-	sf::Vector2f getVelocty() const;
-
 private:
-	Vector2 position;
-	Vector2 scale;
-	sf::Vector2f velocity;
+	
 
-	std::vector<IEntityComponent*> components;
+	sf::Transformable transform;
+
+	std::vector<uPtr<IEntityComponent>> components;
 	bool hasNoComponents;
 };

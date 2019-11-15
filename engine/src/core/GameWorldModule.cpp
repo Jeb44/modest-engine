@@ -23,6 +23,15 @@ namespace ME{
 		sf::Time deltaTime = sf::Time::Zero;
 		sf::Time lag = sf::microseconds(0.0f);
 
+		/*
+		 * while(){
+		 * 	updateCamera();
+		 * 	updateSceneElements(); 
+		 * 	renderScene();
+		 * 	swapBuffers();
+		 * }
+		 */
+
 		while(!quitGame && modRender->WindowsIsOpen()){
 			ProcessInputs();
 			deltaTime += clock.restart();

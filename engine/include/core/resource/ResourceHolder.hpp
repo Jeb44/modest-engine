@@ -38,9 +38,9 @@ public:
 	const Resource& Get(Identifier id) const;
 
 private:
-	void InsertResource(Identifier id, std::unique_ptr<Resource> resource);
+	void InsertResource(Identifier id, uPtr<Resource> resource);
 
-	std::map<Identifier, std::unique_ptr<Resource>> resourceMap;
+	std::map<Identifier, uPtr<Resource>> resourceMap;
 };
 
 #include "ResourceHolder.inl"

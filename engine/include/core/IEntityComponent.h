@@ -15,5 +15,8 @@ public:
 	virtual void OnStart(Entity& go) = 0;
 	virtual void OnUpdate(Entity& go) = 0;
 	virtual void OnFixedUpdate(Entity& go) = 0;
-	virtual void OnEnd(Entity& go) = 0;	
+	virtual void OnEnd(Entity& go) = 0;
+
+private:
+	Entity* parent;
 };

@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <cstdbool>
 #include <cstdlib>
+#include <memory>
 
 /* These standard typedefs use the std libaries types and should be used for following reasons:
  * - by using _least for every type we can assure that all types are usable by every OS
@@ -37,3 +38,9 @@ typedef double F64;				//8Byte		| Precision: 15 [-1,7E+308,		 +1,7E+308]
 
 // Different Data types
 // ...
+
+template<typename T>
+using uPtr = std::unique_ptr<T>;
+
+template<typename T>
+using sPtr = std::shared_ptr<T>;
