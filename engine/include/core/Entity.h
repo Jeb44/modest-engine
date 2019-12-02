@@ -19,22 +19,17 @@ public:
 	void OnInit();
 	void OnStart();
 	void OnUpdate();
-	void OnFixedUpdate();
 	void OnEnd();
 
 	void AddComponent(IEntityComponent* component);
-	bool RemoveComponent(IEntityComponent* component);	//return true, if successfull delted
+	bool HasComponent(IEntityComponent* component);
+	bool RemoveComponent(IEntityComponent* component);	//return true, if successfully delted
 	std::vector<IEntityComponent*> GetComponents();
 
-	void setVelocity(sf::Vector2f velocity);
-	void setVelocity(float vx, float vy);
-	sf::Vector2f getVelocty() const;
-
 private:
-	Vector2 position;
-	Vector2 scale;
-	sf::Vector2f velocity;
-
 	std::vector<IEntityComponent*> components;
 	bool hasNoComponents;
+
+	// unsigned m_handle; //index location
+	// unsigned m_components[eNumComponents]; //array of components handles
 };

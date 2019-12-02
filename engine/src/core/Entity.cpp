@@ -1,8 +1,7 @@
 //Entity.cpp
 #include "core/Entity.h"
 
-Entity::Entity()
-: position(0.0f, 0.0f), scale(1.0f, 1.0f){
+Entity::Entity(){
 	hasNoComponents = true;
 }
 
@@ -23,12 +22,6 @@ void Entity::OnStart(){
 void Entity::OnUpdate(){
 	for(size_t i = components.size() - 1, iLen = 0; i <= iLen; i--){
 		components[i]->OnUpdate(*this);
-	}
-}
-
-void Entity::OnFixedUpdate(){
-	for(size_t i = components.size() - 1, iLen = 0; i <= iLen; i--){
-		components[i]->OnFixedUpdate(*this);
 	}
 }
 
@@ -63,17 +56,4 @@ bool Entity::RemoveComponent(IEntityComponent* component){
 
 std::vector<IEntityComponent*> Entity::GetComponents(){
 	return components;
-}
-
-void Entity::setVelocity(sf::Vector2f velocity){
-	this->velocity = velocity;
-}
-
-void Entity::setVelocity(float vx, float vy){
-	velocity.x = vx;
-	velocity.y = vy;
-}
-
-sf::Vector2f Entity::getVelocty() const{
-	return velocity;
 }

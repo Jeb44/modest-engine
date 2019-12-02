@@ -8,7 +8,7 @@
 
 #include "common/Locator.h"
 #include "common/console/Console.h"
-#include "core/GameWorldModule.h"
+#include "core/Engine.h"
 #include "core/RenderModule.h"
 #include "core/resource/ResourceHolder.hpp"
 
@@ -34,7 +34,7 @@ int main(int argc, char* argv[]){
 	Console locConsole;
 	// Random locRandom;
 	RenderModule modRenderModule;
-	ME::GameWorldModule modGameWorld;
+	ME::Engine modGameWorld;
 	#pragma endregion
 
 	#pragma region Resources
@@ -66,7 +66,7 @@ int main(int argc, char* argv[]){
 
 	#pragma region Run the game
 
-	//modGameWorld.Run();
+	//modGameWorld.MainLoop();
 
 	#pragma endregion
 
