@@ -11,11 +11,11 @@ void HandleManager::Reset(){
 	m_activeEntriesCount = 0;
 	m_firstAvailableEntry = 0;
 
-	//Iterate Entries, set last element flag
+	// Create all Entries, set last element flag
+	// HandleEntry(i + 1) set's up the chain of nextAvailableIndex's 
 	for(size_t i = 0, iLen = MaxEntries - 1; i < iLen; ++i){
 		m_entries[i] = HandleEntry(i + 1);
-	}
-	
+	}	
 	m_entries[MaxEntries - 1] = HandleEntry();
 	m_entries[MaxEntries - 1].m_endOfList = true;
 }
@@ -29,9 +29,10 @@ Handle HandleManager::Add(void* ptr, U32 type){
 	ASSERT(m_entries[newIndex].m_active == false);
 	ASSERT(!m_entries[newIndex].m_endOfList);
 
+	// nextAvailableIndex-"Chain" is created in Reset() [to be precise: in their constructor] 
 	m_firstAvailableEntry = m_entries[newIndex].m_nextAvailableIndex;
 
-	m_entries[newIndex].m_nextAvailableIndex = 0;
+	m_entries[newIndex].m_nextAvailableIndex = 0; // == is set
 	m_entries[newIndex].m_counter = m_entries[newIndex].m_counter + 1; // add ++ operator?
 	if(m_entries[newIndex].m_counter == 0){
 		m_entries[newIndex].m_counter = 1;

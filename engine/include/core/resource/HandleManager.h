@@ -7,6 +7,8 @@
 #include "core/resource/HandleEntry.h"
 #include "core/resource/Handle.h"
 
+#include <cassert>
+
 constexpr U32 MaxEntries = 16384; // 2 ^ 14
 
 class HandleManager {
@@ -37,7 +39,8 @@ template<typename Type>
 inline bool HandleManager::GetAs(Handle handle, Type& out) const {
 	void* outVoid;
 	const bool isAvailable = Get(handle, outVoid);
-	out = union_cast<Type>(outVoid);
+	// out = union_cast<Type>(outVoid);
+	out = static_cast<Type>(outVoid); // needs to be tested!
 
 	return isAvailable;
 }
