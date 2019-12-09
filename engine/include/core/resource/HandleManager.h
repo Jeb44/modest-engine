@@ -6,16 +6,22 @@
 
 #include "core/resource/HandleEntry.h"
 #include "core/resource/Handle.h"
+#include "core/System.h"
 
 #include <cassert>
 
 constexpr U32 MaxEntries = 16384; // 2 ^ 14
 
-class HandleManager {
+class HandleManager : public System {
 public:
-	explicit HandleManager();
 	virtual ~HandleManager();
 
+	virtual void Init();
+	virtual void Update(sf::Time deltaTime);
+
+	virtual IMessageHandler* GetParent() const;
+	virtual void SendToChildren(const Message& msg);
+	
 	void Reset();
 	Handle Add(void* ptr, U32 type);
 	void Update(Handle handle, void* ptr);
@@ -25,8 +31,7 @@ public:
 	bool Get(Handle handle, void*& out) const;
 	template<typename Type> bool GetAs(Handle handle, Type& out) const;
 
-	int GetCount() const;
-	
+	int GetCount() const;	
 	
 private:
 	HandleEntry m_entries[MaxEntries];
@@ -39,8 +44,7 @@ template<typename Type>
 inline bool HandleManager::GetAs(Handle handle, Type& out) const {
 	void* outVoid;
 	const bool isAvailable = Get(handle, outVoid);
-	// out = union_cast<Type>(outVoid);
-	out = static_cast<Type>(outVoid); // needs to be tested!
+	out = static_cast<Type>(outVoid);
 
 	return isAvailable;
 }
