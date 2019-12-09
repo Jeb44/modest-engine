@@ -1,11 +1,21 @@
 //HandleManager.cpp
 #include "core/resource/HandleManager.h"
 
-HandleManager::HandleManager() {
+HandleManager::~HandleManager() {}
+
+void HandleManager::Init(){
 	Reset();
 }
 
-HandleManager::~HandleManager() {}
+void HandleManager::Update(sf::Time deltaTime){}
+
+IMessageHandler* HandleManager::GetParent() const{
+	return new HandleManager(); //replace!!!
+}
+
+void HandleManager::SendToChildren(const Message& msg){
+
+}
 
 void HandleManager::Reset(){
 	m_activeEntriesCount = 0;
@@ -87,3 +97,5 @@ bool HandleManager::Get(const Handle handle, void*& out) const{
 int HandleManager::GetCount() const{
 	return m_activeEntriesCount;
 }
+
+

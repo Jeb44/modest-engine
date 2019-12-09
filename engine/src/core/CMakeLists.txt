@@ -10,4 +10,5 @@ PRIVATE
 
 
 add_subdirectory(components)
+add_subdirectory(message)
 add_subdirectory(resource)

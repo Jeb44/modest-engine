@@ -6,14 +6,15 @@
 
 #include <SFML/System/Time.hpp>
 
-class System {
-public:
-	explicit System();
-	virtual ~System();
+#include "core/message/IMessageHandler.h"
 
+class System : public IMessageHandler{
+public:
 	virtual void Init() = 0;
 	virtual void Update(sf::Time deltaTime) = 0;
-	virtual void SendMessage(/* Message* msg*/) = 0;
+	
+	virtual IMessageHandler* GetParent() const = 0;
+	virtual void SendToChildren(const Message& msg) = 0;
 };
 
 /*
