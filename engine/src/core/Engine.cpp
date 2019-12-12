@@ -13,6 +13,17 @@ namespace ME{
 		Locator::getConsole()->print("Shutdown", "GameWorldModule");
 	}
 
+	
+	IMessageHandler* Engine::GetParent() const{
+		return nullptr;
+	}
+
+	void Engine::SendToChildren(const Message& msg){
+		for(auto system : m_systems){
+			msg.Send(system);
+		}
+	}
+
 	void Engine::MainLoop(){
 		Locator::getConsole()->print("Run", "GameWorldModule");
 		

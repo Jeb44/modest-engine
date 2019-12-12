@@ -17,19 +17,25 @@
 #include "SFML/Graphics.hpp"
 
 #include "core/System.h"
+#include "core/message/Message.h"
+#include "core/message/IMessageHandler.h"
 
 #include "core/RenderModule.h"
 
 #define UPDATE_RATE 60.0f
 
 namespace ME{
-	class Engine {
+	class Engine : public IMessageHandler {
 	public:
 		explicit Engine();
 		virtual ~Engine();
+
 		
 		void StartUp(); //final so okay?
 		void ShutDown();
+		
+		virtual IMessageHandler* GetParent() const;
+		virtual void SendToChildren(const Message& msg);
 
 		void MainLoop();
 		void Update(sf::Time deltaTime);

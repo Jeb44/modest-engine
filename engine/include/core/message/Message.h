@@ -33,8 +33,5 @@ public:
 	virtual void Send(IMessageHandler& handler) const;
 	
 protected:
-	virtual void Dispatch(IMessageHandler& handler) const{
-		handler.HandleMessage(*this);
-	}
-	
+	virtual void Dispatch(IMessageHandler& handler) const;	
 };
