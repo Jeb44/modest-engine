@@ -10,6 +10,9 @@ class MouseMessage;
 
 class IMessageHandler {
 public:
+
+	virtual void SetParent(IMessageHandler& parent);
+
 	// Bubbling
 	virtual IMessageHandler* GetParent() const = 0;
 	// component -> return Entity
@@ -24,4 +27,7 @@ public:
 	virtual void HandleMessage(const KeyMessage& msg);
 	virtual void HandleMessage(const MouseMessage& msg);
 	// ...
+
+protected:
+	IMessageHandler* m_parent;
 };

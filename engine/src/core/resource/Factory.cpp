@@ -1,7 +1,6 @@
 //Factory.cpp
 #include "core/resource/Factory.h"
 
-Factory::Factory() {}
 Factory::~Factory() {}
 
 

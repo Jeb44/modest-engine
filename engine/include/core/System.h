@@ -10,11 +10,11 @@
 
 class System : public IMessageHandler{
 public:
-	virtual void Init() = 0;
-	virtual void Update(sf::Time deltaTime) = 0;
+	virtual void Init();
+	virtual void Update(sf::Time deltaTime);
 	
-	virtual IMessageHandler* GetParent() const = 0;
-	virtual void SendToChildren(const Message& msg) = 0;
+	virtual IMessageHandler* GetParent() const;
+	virtual void SendToChildren(const Message& msg);
 };
 
 /*

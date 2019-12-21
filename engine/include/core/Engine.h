@@ -47,7 +47,7 @@ namespace ME{
 		// void ProcessInputs(); // input system
 		// void Render(); // graphic system
 
-		std::vector<System> m_systems;
+		std::vector<System*> m_systems;
 	};
 }
 

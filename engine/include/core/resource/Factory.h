@@ -10,7 +10,7 @@ class Factory : public System {
 public:
 	virtual ~Factory();
 	
-	virtual void Init() ;
+	virtual void Init();
 	virtual void Update(sf::Time deltaTime);
 	
 	virtual IMessageHandler* GetParent() const;
