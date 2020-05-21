@@ -1,0 +1,91 @@
+\hypertarget{_message_8h}{}\doxysection{include/core/message/\+Message.h File Reference}
+\label{_message_8h}\index{include/core/message/Message.h@{include/core/message/Message.h}}
+{\ttfamily \#include \char`\"{}common/typedef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/assert.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}core/message/\+I\+Message\+Handler.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_message}{Message}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013}{Message\+Type}} \{ \newline
+\mbox{\hyperlink{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013a5c0bbfc9dbad9a9240d75abb3d745e60}{Message\+Type\+::\+M\+S\+G\+\_\+\+U\+N\+K\+O\+WN}} = 0, 
+\mbox{\hyperlink{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013a4bda0058c83d70938f15366e688581e1}{Message\+Type\+::\+M\+S\+G\+\_\+\+K\+E\+Y\+\_\+\+UP}}, 
+\mbox{\hyperlink{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013a93d553513c6966bcf4e8adad574497b1}{Message\+Type\+::\+M\+S\+G\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+WN}}, 
+\mbox{\hyperlink{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013ad6c9bc7a38fa52fad475e0f3e94a656f}{Message\+Type\+::\+M\+S\+G\+\_\+\+M\+O\+U\+S\+E\+\_\+\+M\+O\+V\+ED}}, 
+\newline
+\mbox{\hyperlink{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013a776931efc5811c2f5316a9af4b57abd3}{Message\+Type\+::\+M\+S\+G\+\_\+\+C\+O\+L\+L\+I\+S\+I\+ON}}, 
+\mbox{\hyperlink{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013a311f72b257c7c04048e12e36c0ca2cf3}{Message\+Type\+::\+M\+S\+G\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+D\+E\+S\+T\+R\+O\+Y\+ED}}
+ \}
+\item 
+enum \mbox{\hyperlink{_message_8h_add340b23dbfd771dd9fceea9c5a31c08}{Bubble}} \{ \mbox{\hyperlink{_message_8h_add340b23dbfd771dd9fceea9c5a31c08a3c040f18eac052699757b71dcb52b51f}{Bubble\+::\+B\+U\+B\+B\+L\+E\+\_\+\+N\+O\+PE}} = 0, 
+\mbox{\hyperlink{_message_8h_add340b23dbfd771dd9fceea9c5a31c08ad82223d65315215f837b8d2dc60e55c7}{Bubble\+::\+B\+U\+B\+B\+L\+E\+\_\+\+C\+H\+I\+L\+D\+R\+EN}}, 
+\mbox{\hyperlink{_message_8h_add340b23dbfd771dd9fceea9c5a31c08a520d5f9f9d739fa87125c214722bdce3}{Bubble\+::\+B\+U\+B\+B\+L\+E\+\_\+\+P\+A\+R\+E\+NT}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_message_8h_add340b23dbfd771dd9fceea9c5a31c08}\label{_message_8h_add340b23dbfd771dd9fceea9c5a31c08}} 
+\index{Message.h@{Message.h}!Bubble@{Bubble}}
+\index{Bubble@{Bubble}!Message.h@{Message.h}}
+\doxysubsubsection{\texorpdfstring{Bubble}{Bubble}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_message_8h_add340b23dbfd771dd9fceea9c5a31c08}{Bubble}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUBBLE\_NOPE@{BUBBLE\_NOPE}!Message.h@{Message.h}}\index{Message.h@{Message.h}!BUBBLE\_NOPE@{BUBBLE\_NOPE}}}\mbox{\Hypertarget{_message_8h_add340b23dbfd771dd9fceea9c5a31c08a3c040f18eac052699757b71dcb52b51f}\label{_message_8h_add340b23dbfd771dd9fceea9c5a31c08a3c040f18eac052699757b71dcb52b51f}} 
+B\+U\+B\+B\+L\+E\+\_\+\+N\+O\+PE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUBBLE\_CHILDREN@{BUBBLE\_CHILDREN}!Message.h@{Message.h}}\index{Message.h@{Message.h}!BUBBLE\_CHILDREN@{BUBBLE\_CHILDREN}}}\mbox{\Hypertarget{_message_8h_add340b23dbfd771dd9fceea9c5a31c08ad82223d65315215f837b8d2dc60e55c7}\label{_message_8h_add340b23dbfd771dd9fceea9c5a31c08ad82223d65315215f837b8d2dc60e55c7}} 
+B\+U\+B\+B\+L\+E\+\_\+\+C\+H\+I\+L\+D\+R\+EN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BUBBLE\_PARENT@{BUBBLE\_PARENT}!Message.h@{Message.h}}\index{Message.h@{Message.h}!BUBBLE\_PARENT@{BUBBLE\_PARENT}}}\mbox{\Hypertarget{_message_8h_add340b23dbfd771dd9fceea9c5a31c08a520d5f9f9d739fa87125c214722bdce3}\label{_message_8h_add340b23dbfd771dd9fceea9c5a31c08a520d5f9f9d739fa87125c214722bdce3}} 
+B\+U\+B\+B\+L\+E\+\_\+\+P\+A\+R\+E\+NT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 19 of file Message.\+h.
+
+\mbox{\Hypertarget{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013}\label{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013}} 
+\index{Message.h@{Message.h}!MessageType@{MessageType}}
+\index{MessageType@{MessageType}!Message.h@{Message.h}}
+\doxysubsubsection{\texorpdfstring{MessageType}{MessageType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013}{Message\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_UNKOWN@{MSG\_UNKOWN}!Message.h@{Message.h}}\index{Message.h@{Message.h}!MSG\_UNKOWN@{MSG\_UNKOWN}}}\mbox{\Hypertarget{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013a5c0bbfc9dbad9a9240d75abb3d745e60}\label{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013a5c0bbfc9dbad9a9240d75abb3d745e60}} 
+M\+S\+G\+\_\+\+U\+N\+K\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_KEY\_UP@{MSG\_KEY\_UP}!Message.h@{Message.h}}\index{Message.h@{Message.h}!MSG\_KEY\_UP@{MSG\_KEY\_UP}}}\mbox{\Hypertarget{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013a4bda0058c83d70938f15366e688581e1}\label{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013a4bda0058c83d70938f15366e688581e1}} 
+M\+S\+G\+\_\+\+K\+E\+Y\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_KEY\_DOWN@{MSG\_KEY\_DOWN}!Message.h@{Message.h}}\index{Message.h@{Message.h}!MSG\_KEY\_DOWN@{MSG\_KEY\_DOWN}}}\mbox{\Hypertarget{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013a93d553513c6966bcf4e8adad574497b1}\label{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013a93d553513c6966bcf4e8adad574497b1}} 
+M\+S\+G\+\_\+\+K\+E\+Y\+\_\+\+D\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_MOUSE\_MOVED@{MSG\_MOUSE\_MOVED}!Message.h@{Message.h}}\index{Message.h@{Message.h}!MSG\_MOUSE\_MOVED@{MSG\_MOUSE\_MOVED}}}\mbox{\Hypertarget{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013ad6c9bc7a38fa52fad475e0f3e94a656f}\label{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013ad6c9bc7a38fa52fad475e0f3e94a656f}} 
+M\+S\+G\+\_\+\+M\+O\+U\+S\+E\+\_\+\+M\+O\+V\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_COLLISION@{MSG\_COLLISION}!Message.h@{Message.h}}\index{Message.h@{Message.h}!MSG\_COLLISION@{MSG\_COLLISION}}}\mbox{\Hypertarget{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013a776931efc5811c2f5316a9af4b57abd3}\label{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013a776931efc5811c2f5316a9af4b57abd3}} 
+M\+S\+G\+\_\+\+C\+O\+L\+L\+I\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_OBJECT\_DESTROYED@{MSG\_OBJECT\_DESTROYED}!Message.h@{Message.h}}\index{Message.h@{Message.h}!MSG\_OBJECT\_DESTROYED@{MSG\_OBJECT\_DESTROYED}}}\mbox{\Hypertarget{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013a311f72b257c7c04048e12e36c0ca2cf3}\label{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013a311f72b257c7c04048e12e36c0ca2cf3}} 
+M\+S\+G\+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+D\+E\+S\+T\+R\+O\+Y\+ED&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 9 of file Message.\+h.
+

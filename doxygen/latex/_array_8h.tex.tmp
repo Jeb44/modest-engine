@@ -1,0 +1,31 @@
+\hypertarget{_array_8h}{}\doxysection{include/common/datastructures/\+Array.h File Reference}
+\label{_array_8h}\index{include/common/datastructures/Array.h@{include/common/datastructures/Array.h}}
+{\ttfamily \#include \char`\"{}common/typedef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/assert.\+h\char`\"{}}\newline
+Include dependency graph for Array.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_array}{Array$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_array_8h_a675d3ea5dd8d4f6c74c32a9542449016}{I\+N\+I\+T\+\_\+\+M\+A\+X\+\_\+\+S\+I\+ZE}}~10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_array_8h_a675d3ea5dd8d4f6c74c32a9542449016}\label{_array_8h_a675d3ea5dd8d4f6c74c32a9542449016}} 
+\index{Array.h@{Array.h}!INIT\_MAX\_SIZE@{INIT\_MAX\_SIZE}}
+\index{INIT\_MAX\_SIZE@{INIT\_MAX\_SIZE}!Array.h@{Array.h}}
+\doxysubsubsection{\texorpdfstring{INIT\_MAX\_SIZE}{INIT\_MAX\_SIZE}}
+{\footnotesize\ttfamily \#define I\+N\+I\+T\+\_\+\+M\+A\+X\+\_\+\+S\+I\+ZE~10}
+
+
+
+Definition at line 8 of file Array.\+h.
+

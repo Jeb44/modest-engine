@@ -1,0 +1,159 @@
+\hypertarget{class_handle_manager}{}\doxysection{Handle\+Manager Class Reference}
+\label{class_handle_manager}\index{HandleManager@{HandleManager}}
+
+
+{\ttfamily \#include $<$Handle\+Manager.\+h$>$}
+
+Inheritance diagram for Handle\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_handle_manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_handle_manager_a873df15114027bd8dfde47d201476b77}{$\sim$\+Handle\+Manager}} ()
+\item 
+virtual void \mbox{\hyperlink{class_handle_manager_a106d6b42416532f1a265d9f4fc7a3903}{Init}} ()
+\item 
+virtual void \mbox{\hyperlink{class_handle_manager_a82170369a4704d47bd02a0ebb9d85e55}{Update}} (sf\+::\+Time delta\+Time)
+\item 
+virtual \mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}} $\ast$ \mbox{\hyperlink{class_handle_manager_adada49a64c4d822bffe4e6978b48e795}{Get\+Parent}} () const
+\item 
+virtual void \mbox{\hyperlink{class_handle_manager_aedf887c659f18b82b9e10dc1e9fc123d}{Send\+To\+Children}} (const \mbox{\hyperlink{class_message}{Message}} \&msg)
+\item 
+void \mbox{\hyperlink{class_handle_manager_ab667c34f7a757233a6ebcd30a9be97e6}{Reset}} ()
+\item 
+\mbox{\hyperlink{struct_handle}{Handle}} \mbox{\hyperlink{class_handle_manager_aabadcd205ea82849dee36936e388cced}{Add}} (void $\ast$ptr, \mbox{\hyperlink{typedef_8h_a73b9c5f9230ecec957692d3792d21772}{U32}} type)
+\item 
+void \mbox{\hyperlink{class_handle_manager_a3da44d5d5f445f9bdba2725fc564197d}{Update}} (\mbox{\hyperlink{struct_handle}{Handle}} handle, void $\ast$ptr)
+\item 
+void \mbox{\hyperlink{class_handle_manager_a647b48c9d29c470a51c1da8ab33c68cb}{Remove}} (\mbox{\hyperlink{struct_handle}{Handle}} handle)
+\item 
+void $\ast$ \mbox{\hyperlink{class_handle_manager_aa87d46adf56ca27c0156b4c2a6f74699}{Get}} (\mbox{\hyperlink{struct_handle}{Handle}} handle) const
+\item 
+bool \mbox{\hyperlink{class_handle_manager_aade7fa2f422e781caef3ba190a4e31de}{Get}} (\mbox{\hyperlink{struct_handle}{Handle}} handle, void $\ast$\&out) const
+\item 
+{\footnotesize template$<$typename Type $>$ }\\bool \mbox{\hyperlink{class_handle_manager_a76897de8f8c72de580bfea42c7d2de74}{Get\+As}} (\mbox{\hyperlink{struct_handle}{Handle}} handle, Type \&out) const
+\item 
+int \mbox{\hyperlink{class_handle_manager_afd75cf2acd07a88f1bd84878e1edc74f}{Get\+Count}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 15 of file Handle\+Manager.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_handle_manager_a873df15114027bd8dfde47d201476b77}\label{class_handle_manager_a873df15114027bd8dfde47d201476b77}} 
+\index{HandleManager@{HandleManager}!````~HandleManager@{$\sim$HandleManager}}
+\index{````~HandleManager@{$\sim$HandleManager}!HandleManager@{HandleManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$HandleManager()}{~HandleManager()}}
+{\footnotesize\ttfamily virtual Handle\+Manager\+::$\sim$\+Handle\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_handle_manager_aabadcd205ea82849dee36936e388cced}\label{class_handle_manager_aabadcd205ea82849dee36936e388cced}} 
+\index{HandleManager@{HandleManager}!Add@{Add}}
+\index{Add@{Add}!HandleManager@{HandleManager}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_handle}{Handle}} Handle\+Manager\+::\+Add (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{typedef_8h_a73b9c5f9230ecec957692d3792d21772}{U32}}}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_handle_manager_aa87d46adf56ca27c0156b4c2a6f74699}\label{class_handle_manager_aa87d46adf56ca27c0156b4c2a6f74699}} 
+\index{HandleManager@{HandleManager}!Get@{Get}}
+\index{Get@{Get}!HandleManager@{HandleManager}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void$\ast$ Handle\+Manager\+::\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_handle}{Handle}}}]{handle }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_handle_manager_aade7fa2f422e781caef3ba190a4e31de}\label{class_handle_manager_aade7fa2f422e781caef3ba190a4e31de}} 
+\index{HandleManager@{HandleManager}!Get@{Get}}
+\index{Get@{Get}!HandleManager@{HandleManager}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Handle\+Manager\+::\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_handle}{Handle}}}]{handle,  }\item[{void $\ast$\&}]{out }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_handle_manager_a76897de8f8c72de580bfea42c7d2de74}\label{class_handle_manager_a76897de8f8c72de580bfea42c7d2de74}} 
+\index{HandleManager@{HandleManager}!GetAs@{GetAs}}
+\index{GetAs@{GetAs}!HandleManager@{HandleManager}}
+\doxysubsubsection{\texorpdfstring{GetAs()}{GetAs()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+bool Handle\+Manager\+::\+Get\+As (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_handle}{Handle}}}]{handle,  }\item[{Type \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 44 of file Handle\+Manager.\+h.
+
+\mbox{\Hypertarget{class_handle_manager_afd75cf2acd07a88f1bd84878e1edc74f}\label{class_handle_manager_afd75cf2acd07a88f1bd84878e1edc74f}} 
+\index{HandleManager@{HandleManager}!GetCount@{GetCount}}
+\index{GetCount@{GetCount}!HandleManager@{HandleManager}}
+\doxysubsubsection{\texorpdfstring{GetCount()}{GetCount()}}
+{\footnotesize\ttfamily int Handle\+Manager\+::\+Get\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_handle_manager_adada49a64c4d822bffe4e6978b48e795}\label{class_handle_manager_adada49a64c4d822bffe4e6978b48e795}} 
+\index{HandleManager@{HandleManager}!GetParent@{GetParent}}
+\index{GetParent@{GetParent}!HandleManager@{HandleManager}}
+\doxysubsubsection{\texorpdfstring{GetParent()}{GetParent()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}}$\ast$ Handle\+Manager\+::\+Get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_system_adb5b3a44e5eba1d6ac7de33f5e1d3f4f}{System}}.
+
+\mbox{\Hypertarget{class_handle_manager_a106d6b42416532f1a265d9f4fc7a3903}\label{class_handle_manager_a106d6b42416532f1a265d9f4fc7a3903}} 
+\index{HandleManager@{HandleManager}!Init@{Init}}
+\index{Init@{Init}!HandleManager@{HandleManager}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily virtual void Handle\+Manager\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_system_abff0859f96ab659a73d6d743de11c932}{System}}.
+
+\mbox{\Hypertarget{class_handle_manager_a647b48c9d29c470a51c1da8ab33c68cb}\label{class_handle_manager_a647b48c9d29c470a51c1da8ab33c68cb}} 
+\index{HandleManager@{HandleManager}!Remove@{Remove}}
+\index{Remove@{Remove}!HandleManager@{HandleManager}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily void Handle\+Manager\+::\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_handle}{Handle}}}]{handle }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_handle_manager_ab667c34f7a757233a6ebcd30a9be97e6}\label{class_handle_manager_ab667c34f7a757233a6ebcd30a9be97e6}} 
+\index{HandleManager@{HandleManager}!Reset@{Reset}}
+\index{Reset@{Reset}!HandleManager@{HandleManager}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void Handle\+Manager\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_handle_manager_aedf887c659f18b82b9e10dc1e9fc123d}\label{class_handle_manager_aedf887c659f18b82b9e10dc1e9fc123d}} 
+\index{HandleManager@{HandleManager}!SendToChildren@{SendToChildren}}
+\index{SendToChildren@{SendToChildren}!HandleManager@{HandleManager}}
+\doxysubsubsection{\texorpdfstring{SendToChildren()}{SendToChildren()}}
+{\footnotesize\ttfamily virtual void Handle\+Manager\+::\+Send\+To\+Children (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_message}{Message}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_system_aff9bdbc1b3975b67cfd8bdd48b729b7f}{System}}.
+
+\mbox{\Hypertarget{class_handle_manager_a3da44d5d5f445f9bdba2725fc564197d}\label{class_handle_manager_a3da44d5d5f445f9bdba2725fc564197d}} 
+\index{HandleManager@{HandleManager}!Update@{Update}}
+\index{Update@{Update}!HandleManager@{HandleManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Handle\+Manager\+::\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_handle}{Handle}}}]{handle,  }\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_handle_manager_a82170369a4704d47bd02a0ebb9d85e55}\label{class_handle_manager_a82170369a4704d47bd02a0ebb9d85e55}} 
+\index{HandleManager@{HandleManager}!Update@{Update}}
+\index{Update@{Update}!HandleManager@{HandleManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Handle\+Manager\+::\+Update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_system_a4ec653817663b8c243caa9c82b19d006}{System}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/resource/\mbox{\hyperlink{_handle_manager_8h}{Handle\+Manager.\+h}}\end{DoxyCompactItemize}

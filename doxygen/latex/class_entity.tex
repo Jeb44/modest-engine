@@ -1,0 +1,107 @@
+\hypertarget{class_entity}{}\doxysection{Entity Class Reference}
+\label{class_entity}\index{Entity@{Entity}}
+
+
+{\ttfamily \#include $<$Entity.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_a980f368aa07ce358583982821533a54a}{Entity}} ()
+\item 
+virtual \mbox{\hyperlink{class_entity_a588098978eea6a3486b7361605ff3f0f}{$\sim$\+Entity}} ()
+\item 
+void \mbox{\hyperlink{class_entity_a6b8c070e62d8f7c79c0b082b8ac46a03}{On\+Init}} ()
+\item 
+void \mbox{\hyperlink{class_entity_a119016b69bebb369f1e08853fcc33f3e}{On\+Start}} ()
+\item 
+void \mbox{\hyperlink{class_entity_af49f1edf894497e1e95851d712e8e2fa}{On\+Update}} ()
+\item 
+void \mbox{\hyperlink{class_entity_a2060a943afec907e9eccaea57e79df15}{On\+End}} ()
+\item 
+void \mbox{\hyperlink{class_entity_a2e1c9266c234a122222ff410e7490c07}{Add\+Component}} (\mbox{\hyperlink{class_i_entity_component}{I\+Entity\+Component}} $\ast$component)
+\item 
+bool \mbox{\hyperlink{class_entity_a88446a4e86167ff8e519d8188b4dbf22}{Has\+Component}} (\mbox{\hyperlink{class_i_entity_component}{I\+Entity\+Component}} $\ast$component)
+\item 
+bool \mbox{\hyperlink{class_entity_a890d83bf075da20fe6738dccbbad8084}{Remove\+Component}} (\mbox{\hyperlink{class_i_entity_component}{I\+Entity\+Component}} $\ast$component)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_i_entity_component}{I\+Entity\+Component}} $\ast$ $>$ \mbox{\hyperlink{class_entity_acb2f1616bb68369d3419fa839c54c577}{Get\+Components}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 14 of file Entity.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_entity_a980f368aa07ce358583982821533a54a}\label{class_entity_a980f368aa07ce358583982821533a54a}} 
+\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}}
+{\footnotesize\ttfamily Entity\+::\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_entity_a588098978eea6a3486b7361605ff3f0f}\label{class_entity_a588098978eea6a3486b7361605ff3f0f}} 
+\index{Entity@{Entity}!````~Entity@{$\sim$Entity}}
+\index{````~Entity@{$\sim$Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{$\sim$Entity()}{~Entity()}}
+{\footnotesize\ttfamily virtual Entity\+::$\sim$\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_entity_a2e1c9266c234a122222ff410e7490c07}\label{class_entity_a2e1c9266c234a122222ff410e7490c07}} 
+\index{Entity@{Entity}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{AddComponent()}{AddComponent()}}
+{\footnotesize\ttfamily void Entity\+::\+Add\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_entity_component}{I\+Entity\+Component}} $\ast$}]{component }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entity_acb2f1616bb68369d3419fa839c54c577}\label{class_entity_acb2f1616bb68369d3419fa839c54c577}} 
+\index{Entity@{Entity}!GetComponents@{GetComponents}}
+\index{GetComponents@{GetComponents}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{GetComponents()}{GetComponents()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_i_entity_component}{I\+Entity\+Component}}$\ast$$>$ Entity\+::\+Get\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entity_a88446a4e86167ff8e519d8188b4dbf22}\label{class_entity_a88446a4e86167ff8e519d8188b4dbf22}} 
+\index{Entity@{Entity}!HasComponent@{HasComponent}}
+\index{HasComponent@{HasComponent}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{HasComponent()}{HasComponent()}}
+{\footnotesize\ttfamily bool Entity\+::\+Has\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_entity_component}{I\+Entity\+Component}} $\ast$}]{component }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entity_a2060a943afec907e9eccaea57e79df15}\label{class_entity_a2060a943afec907e9eccaea57e79df15}} 
+\index{Entity@{Entity}!OnEnd@{OnEnd}}
+\index{OnEnd@{OnEnd}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{OnEnd()}{OnEnd()}}
+{\footnotesize\ttfamily void Entity\+::\+On\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entity_a6b8c070e62d8f7c79c0b082b8ac46a03}\label{class_entity_a6b8c070e62d8f7c79c0b082b8ac46a03}} 
+\index{Entity@{Entity}!OnInit@{OnInit}}
+\index{OnInit@{OnInit}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{OnInit()}{OnInit()}}
+{\footnotesize\ttfamily void Entity\+::\+On\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entity_a119016b69bebb369f1e08853fcc33f3e}\label{class_entity_a119016b69bebb369f1e08853fcc33f3e}} 
+\index{Entity@{Entity}!OnStart@{OnStart}}
+\index{OnStart@{OnStart}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{OnStart()}{OnStart()}}
+{\footnotesize\ttfamily void Entity\+::\+On\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entity_af49f1edf894497e1e95851d712e8e2fa}\label{class_entity_af49f1edf894497e1e95851d712e8e2fa}} 
+\index{Entity@{Entity}!OnUpdate@{OnUpdate}}
+\index{OnUpdate@{OnUpdate}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{OnUpdate()}{OnUpdate()}}
+{\footnotesize\ttfamily void Entity\+::\+On\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entity_a890d83bf075da20fe6738dccbbad8084}\label{class_entity_a890d83bf075da20fe6738dccbbad8084}} 
+\index{Entity@{Entity}!RemoveComponent@{RemoveComponent}}
+\index{RemoveComponent@{RemoveComponent}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{RemoveComponent()}{RemoveComponent()}}
+{\footnotesize\ttfamily bool Entity\+::\+Remove\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_entity_component}{I\+Entity\+Component}} $\ast$}]{component }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\mbox{\hyperlink{_entity_8h}{Entity.\+h}}\end{DoxyCompactItemize}

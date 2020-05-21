@@ -1,0 +1,92 @@
+\hypertarget{class_message}{}\doxysection{Message Class Reference}
+\label{class_message}\index{Message@{Message}}
+
+
+{\ttfamily \#include $<$Message.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_message_a5acac10e553225f8a14383e5736c76ec}{Message}} (\mbox{\hyperlink{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013}{Message\+Type}} type, \mbox{\hyperlink{_message_8h_add340b23dbfd771dd9fceea9c5a31c08}{Bubble}} bubble=\mbox{\hyperlink{_message_8h_add340b23dbfd771dd9fceea9c5a31c08a3c040f18eac052699757b71dcb52b51f}{Bubble\+::\+B\+U\+B\+B\+L\+E\+\_\+\+N\+O\+PE}})
+\item 
+virtual \mbox{\hyperlink{class_message_acee46f6aed7e93e244460565079a5c48}{$\sim$\+Message}} ()
+\item 
+virtual void \mbox{\hyperlink{class_message_a83f1e2ef79815939e7c370cdc5fd7ec1}{Send}} (\mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}} \&handler) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013}{Message\+Type}} \mbox{\hyperlink{class_message_ad00e422b792e72859a9671b63090a538}{m\+\_\+type}}
+\item 
+\mbox{\hyperlink{_message_8h_add340b23dbfd771dd9fceea9c5a31c08}{Bubble}} \mbox{\hyperlink{class_message_a43029e8486223c7354677919ca6fade5}{m\+\_\+bubble}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_message_a69c9ff2ee0e43cf4c265fee9abf4a031}{Dispatch}} (\mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}} \&handler) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 25 of file Message.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_message_a5acac10e553225f8a14383e5736c76ec}\label{class_message_a5acac10e553225f8a14383e5736c76ec}} 
+\index{Message@{Message}!Message@{Message}}
+\index{Message@{Message}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{Message()}{Message()}}
+{\footnotesize\ttfamily Message\+::\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013}{Message\+Type}}}]{type,  }\item[{\mbox{\hyperlink{_message_8h_add340b23dbfd771dd9fceea9c5a31c08}{Bubble}}}]{bubble = {\ttfamily \mbox{\hyperlink{_message_8h_add340b23dbfd771dd9fceea9c5a31c08a3c040f18eac052699757b71dcb52b51f}{Bubble\+::\+B\+U\+B\+B\+L\+E\+\_\+\+N\+O\+PE}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_message_acee46f6aed7e93e244460565079a5c48}\label{class_message_acee46f6aed7e93e244460565079a5c48}} 
+\index{Message@{Message}!````~Message@{$\sim$Message}}
+\index{````~Message@{$\sim$Message}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{$\sim$Message()}{~Message()}}
+{\footnotesize\ttfamily virtual Message\+::$\sim$\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_message_a69c9ff2ee0e43cf4c265fee9abf4a031}\label{class_message_a69c9ff2ee0e43cf4c265fee9abf4a031}} 
+\index{Message@{Message}!Dispatch@{Dispatch}}
+\index{Dispatch@{Dispatch}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{Dispatch()}{Dispatch()}}
+{\footnotesize\ttfamily virtual void Message\+::\+Dispatch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}} \&}]{handler }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_message_a83f1e2ef79815939e7c370cdc5fd7ec1}\label{class_message_a83f1e2ef79815939e7c370cdc5fd7ec1}} 
+\index{Message@{Message}!Send@{Send}}
+\index{Send@{Send}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{Send()}{Send()}}
+{\footnotesize\ttfamily virtual void Message\+::\+Send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}} \&}]{handler }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_message_a43029e8486223c7354677919ca6fade5}\label{class_message_a43029e8486223c7354677919ca6fade5}} 
+\index{Message@{Message}!m\_bubble@{m\_bubble}}
+\index{m\_bubble@{m\_bubble}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{m\_bubble}{m\_bubble}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_message_8h_add340b23dbfd771dd9fceea9c5a31c08}{Bubble}} Message\+::m\+\_\+bubble}
+
+
+
+Definition at line 31 of file Message.\+h.
+
+\mbox{\Hypertarget{class_message_ad00e422b792e72859a9671b63090a538}\label{class_message_ad00e422b792e72859a9671b63090a538}} 
+\index{Message@{Message}!m\_type@{m\_type}}
+\index{m\_type@{m\_type}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{m\_type}{m\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_message_8h_ac6606ebe91c8ac66a2c314c79f5ab013}{Message\+Type}} Message\+::m\+\_\+type}
+
+
+
+Definition at line 30 of file Message.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/message/\mbox{\hyperlink{_message_8h}{Message.\+h}}\end{DoxyCompactItemize}

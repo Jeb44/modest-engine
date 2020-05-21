@@ -1,0 +1,104 @@
+\hypertarget{class_i_message_handler}{}\doxysection{I\+Message\+Handler Class Reference}
+\label{class_i_message_handler}\index{IMessageHandler@{IMessageHandler}}
+
+
+{\ttfamily \#include $<$I\+Message\+Handler.\+h$>$}
+
+Inheritance diagram for I\+Message\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_message_handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_i_message_handler_acf859516c45818c95e0f3ad888167be9}{Set\+Parent}} (\mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}} \&parent)
+\item 
+virtual \mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}} $\ast$ \mbox{\hyperlink{class_i_message_handler_a67c374617672f139ace985f046ab7641}{Get\+Parent}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_i_message_handler_a789ebcfa345d147090dd68013c48a3ab}{Send\+To\+Children}} (const \mbox{\hyperlink{class_message}{Message}} \&msg)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_message_handler_a5dfea322ad05ce659b87ff3a55d7da87}{Handle\+Message}} (const \mbox{\hyperlink{class_message}{Message}} \&msg)
+\item 
+virtual void \mbox{\hyperlink{class_i_message_handler_a47fe16c0d61600e0d317935bae4eed5c}{Handle\+Message}} (const Key\+Message \&msg)
+\item 
+virtual void \mbox{\hyperlink{class_i_message_handler_ada9fef9879d873627ddaef94b41989d5}{Handle\+Message}} (const Mouse\+Message \&msg)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}} $\ast$ \mbox{\hyperlink{class_i_message_handler_a4e662ecdf9579a0b72169535ee628b27}{m\+\_\+parent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 11 of file I\+Message\+Handler.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_message_handler_a67c374617672f139ace985f046ab7641}\label{class_i_message_handler_a67c374617672f139ace985f046ab7641}} 
+\index{IMessageHandler@{IMessageHandler}!GetParent@{GetParent}}
+\index{GetParent@{GetParent}!IMessageHandler@{IMessageHandler}}
+\doxysubsubsection{\texorpdfstring{GetParent()}{GetParent()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}}$\ast$ I\+Message\+Handler\+::\+Get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_m_e_1_1_engine_a955aafac99ce46dd30e33cc2dc4e449d}{M\+E\+::\+Engine}}, \mbox{\hyperlink{class_handle_manager_adada49a64c4d822bffe4e6978b48e795}{Handle\+Manager}}, \mbox{\hyperlink{class_factory_ab1f4d82984e09eee61a606849a412b6c}{Factory}}, and \mbox{\hyperlink{class_system_adb5b3a44e5eba1d6ac7de33f5e1d3f4f}{System}}.
+
+\mbox{\Hypertarget{class_i_message_handler_a47fe16c0d61600e0d317935bae4eed5c}\label{class_i_message_handler_a47fe16c0d61600e0d317935bae4eed5c}} 
+\index{IMessageHandler@{IMessageHandler}!HandleMessage@{HandleMessage}}
+\index{HandleMessage@{HandleMessage}!IMessageHandler@{IMessageHandler}}
+\doxysubsubsection{\texorpdfstring{HandleMessage()}{HandleMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual void I\+Message\+Handler\+::\+Handle\+Message (\begin{DoxyParamCaption}\item[{const Key\+Message \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_i_message_handler_a5dfea322ad05ce659b87ff3a55d7da87}\label{class_i_message_handler_a5dfea322ad05ce659b87ff3a55d7da87}} 
+\index{IMessageHandler@{IMessageHandler}!HandleMessage@{HandleMessage}}
+\index{HandleMessage@{HandleMessage}!IMessageHandler@{IMessageHandler}}
+\doxysubsubsection{\texorpdfstring{HandleMessage()}{HandleMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual void I\+Message\+Handler\+::\+Handle\+Message (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_message}{Message}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_i_message_handler_ada9fef9879d873627ddaef94b41989d5}\label{class_i_message_handler_ada9fef9879d873627ddaef94b41989d5}} 
+\index{IMessageHandler@{IMessageHandler}!HandleMessage@{HandleMessage}}
+\index{HandleMessage@{HandleMessage}!IMessageHandler@{IMessageHandler}}
+\doxysubsubsection{\texorpdfstring{HandleMessage()}{HandleMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual void I\+Message\+Handler\+::\+Handle\+Message (\begin{DoxyParamCaption}\item[{const Mouse\+Message \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_i_message_handler_a789ebcfa345d147090dd68013c48a3ab}\label{class_i_message_handler_a789ebcfa345d147090dd68013c48a3ab}} 
+\index{IMessageHandler@{IMessageHandler}!SendToChildren@{SendToChildren}}
+\index{SendToChildren@{SendToChildren}!IMessageHandler@{IMessageHandler}}
+\doxysubsubsection{\texorpdfstring{SendToChildren()}{SendToChildren()}}
+{\footnotesize\ttfamily virtual void I\+Message\+Handler\+::\+Send\+To\+Children (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_message}{Message}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_m_e_1_1_engine_a62ba088f89dc7b831601fd1028fec29d}{M\+E\+::\+Engine}}, \mbox{\hyperlink{class_handle_manager_aedf887c659f18b82b9e10dc1e9fc123d}{Handle\+Manager}}, \mbox{\hyperlink{class_factory_aa4fa24735c2f2963cadbb2cb34efa3b3}{Factory}}, and \mbox{\hyperlink{class_system_aff9bdbc1b3975b67cfd8bdd48b729b7f}{System}}.
+
+\mbox{\Hypertarget{class_i_message_handler_acf859516c45818c95e0f3ad888167be9}\label{class_i_message_handler_acf859516c45818c95e0f3ad888167be9}} 
+\index{IMessageHandler@{IMessageHandler}!SetParent@{SetParent}}
+\index{SetParent@{SetParent}!IMessageHandler@{IMessageHandler}}
+\doxysubsubsection{\texorpdfstring{SetParent()}{SetParent()}}
+{\footnotesize\ttfamily virtual void I\+Message\+Handler\+::\+Set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}} \&}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_i_message_handler_a4e662ecdf9579a0b72169535ee628b27}\label{class_i_message_handler_a4e662ecdf9579a0b72169535ee628b27}} 
+\index{IMessageHandler@{IMessageHandler}!m\_parent@{m\_parent}}
+\index{m\_parent@{m\_parent}!IMessageHandler@{IMessageHandler}}
+\doxysubsubsection{\texorpdfstring{m\_parent}{m\_parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}}$\ast$ I\+Message\+Handler\+::m\+\_\+parent\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 32 of file I\+Message\+Handler.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/message/\mbox{\hyperlink{_i_message_handler_8h}{I\+Message\+Handler.\+h}}\end{DoxyCompactItemize}

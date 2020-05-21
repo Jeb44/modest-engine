@@ -1,0 +1,87 @@
+\hypertarget{class_system}{}\doxysection{System Class Reference}
+\label{class_system}\index{System@{System}}
+
+
+{\ttfamily \#include $<$System.\+h$>$}
+
+Inheritance diagram for System\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_system}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_system_abff0859f96ab659a73d6d743de11c932}{Init}} ()
+\item 
+virtual void \mbox{\hyperlink{class_system_a4ec653817663b8c243caa9c82b19d006}{Update}} (sf\+::\+Time delta\+Time)
+\item 
+virtual \mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}} $\ast$ \mbox{\hyperlink{class_system_adb5b3a44e5eba1d6ac7de33f5e1d3f4f}{Get\+Parent}} () const
+\item 
+virtual void \mbox{\hyperlink{class_system_aff9bdbc1b3975b67cfd8bdd48b729b7f}{Send\+To\+Children}} (const \mbox{\hyperlink{class_message}{Message}} \&msg)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 11 of file System.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_system_adb5b3a44e5eba1d6ac7de33f5e1d3f4f}\label{class_system_adb5b3a44e5eba1d6ac7de33f5e1d3f4f}} 
+\index{System@{System}!GetParent@{GetParent}}
+\index{GetParent@{GetParent}!System@{System}}
+\doxysubsubsection{\texorpdfstring{GetParent()}{GetParent()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}}$\ast$ System\+::\+Get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_message_handler_a67c374617672f139ace985f046ab7641}{I\+Message\+Handler}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_handle_manager_adada49a64c4d822bffe4e6978b48e795}{Handle\+Manager}}, and \mbox{\hyperlink{class_factory_ab1f4d82984e09eee61a606849a412b6c}{Factory}}.
+
+\mbox{\Hypertarget{class_system_abff0859f96ab659a73d6d743de11c932}\label{class_system_abff0859f96ab659a73d6d743de11c932}} 
+\index{System@{System}!Init@{Init}}
+\index{Init@{Init}!System@{System}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily virtual void System\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_handle_manager_a106d6b42416532f1a265d9f4fc7a3903}{Handle\+Manager}}, and \mbox{\hyperlink{class_factory_aea006d296286d216cee1a3b08e012aa9}{Factory}}.
+
+\mbox{\Hypertarget{class_system_aff9bdbc1b3975b67cfd8bdd48b729b7f}\label{class_system_aff9bdbc1b3975b67cfd8bdd48b729b7f}} 
+\index{System@{System}!SendToChildren@{SendToChildren}}
+\index{SendToChildren@{SendToChildren}!System@{System}}
+\doxysubsubsection{\texorpdfstring{SendToChildren()}{SendToChildren()}}
+{\footnotesize\ttfamily virtual void System\+::\+Send\+To\+Children (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_message}{Message}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_message_handler_a789ebcfa345d147090dd68013c48a3ab}{I\+Message\+Handler}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_handle_manager_aedf887c659f18b82b9e10dc1e9fc123d}{Handle\+Manager}}, and \mbox{\hyperlink{class_factory_aa4fa24735c2f2963cadbb2cb34efa3b3}{Factory}}.
+
+\mbox{\Hypertarget{class_system_a4ec653817663b8c243caa9c82b19d006}\label{class_system_a4ec653817663b8c243caa9c82b19d006}} 
+\index{System@{System}!Update@{Update}}
+\index{Update@{Update}!System@{System}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void System\+::\+Update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_handle_manager_a82170369a4704d47bd02a0ebb9d85e55}{Handle\+Manager}}, and \mbox{\hyperlink{class_factory_a70a3077635f2971a3302f78de7db8bb0}{Factory}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\mbox{\hyperlink{_system_8h}{System.\+h}}\end{DoxyCompactItemize}

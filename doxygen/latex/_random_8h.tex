@@ -1,0 +1,200 @@
+\hypertarget{_random_8h}{}\doxysection{include/common/\+Random.h File Reference}
+\label{_random_8h}\index{include/common/Random.h@{include/common/Random.h}}
+{\ttfamily \#include \char`\"{}common/typedef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/assert.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/\+Locator.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_random}{Random}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_random_8h_a23bb8f216c68b2decd23711ca53bdd09}{I\+N\+T\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+\+M\+AX}}~20
+\item 
+\#define \mbox{\hyperlink{_random_8h_a362296c19e6b138c0e100882ce78ad63}{I\+N\+T\+\_\+\+S\+E\+Q\+\_\+\+T\+O\+T\+A\+L\+\_\+\+C\+H\+E\+C\+KS}}~3
+\item 
+\#define \mbox{\hyperlink{_random_8h_ad69716312610a199bbf9a5b410ca6049}{I\+N\+T\+\_\+\+S\+E\+Q\+\_\+\+M\+A\+X\+\_\+\+I\+N\+C\+\_\+\+D\+EC}}~3
+\item 
+\#define \mbox{\hyperlink{_random_8h_ab22939dfed0daf84f2515e335ff03c2e}{I\+N\+T\+\_\+\+M\+E\+D\+I\+A\+N\+\_\+\+T\+O\+T\+A\+L\+\_\+\+C\+H\+E\+C\+KS}}~8
+\item 
+\#define \mbox{\hyperlink{_random_8h_a556ef3dfee4d5f2e66143ec5b7a4c917}{I\+N\+T\+\_\+\+M\+E\+D\+I\+A\+N\+\_\+\+M\+A\+X\+\_\+\+D\+E\+V\+I\+A\+T\+I\+O\+NS}}~5
+\item 
+\#define \mbox{\hyperlink{_random_8h_ae8fc339602ed985adc103f56a6cd8b39}{I\+N\+T\+\_\+\+P\+A\+I\+R\+\_\+\+T\+O\+T\+A\+L\+\_\+\+C\+H\+E\+C\+KS}}~9
+\item 
+\#define \mbox{\hyperlink{_random_8h_a143957d9ef915d86dabf8544ae4c6346}{I\+N\+T\+\_\+\+S\+A\+M\+E\+\_\+\+N\+U\+M\+B\+E\+R\+S\+\_\+\+T\+O\+T\+A\+L\+\_\+\+C\+H\+E\+C\+KS}}~10
+\item 
+\#define \mbox{\hyperlink{_random_8h_a80839e497a06fa26023fa0b86405f565}{I\+N\+T\+\_\+\+M\+A\+X\+\_\+\+S\+A\+M\+E\+\_\+\+N\+U\+M\+B\+E\+RS}}~4
+\item 
+\#define \mbox{\hyperlink{_random_8h_a37c071d1cddf2bf604ff88f03732bed7}{F\+L\+T\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+\+M\+AX}}~20
+\item 
+\#define \mbox{\hyperlink{_random_8h_a681730ed4963a72927870ba9f9d816e0}{F\+L\+T\+\_\+\+P\+A\+I\+R\+\_\+\+M\+I\+N\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+CE}}~0.\+02f
+\item 
+\#define \mbox{\hyperlink{_random_8h_a92a52b2851c0055b348f24ab145a07f8}{F\+L\+T\+\_\+\+T\+R\+I\+O\+\_\+\+M\+I\+N\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+CE}}~0.\+1f
+\item 
+\#define \mbox{\hyperlink{_random_8h_ae9da4d5239ce5ea3560b5f80c3849dbe}{F\+L\+T\+\_\+\+S\+E\+Q\+\_\+\+T\+O\+T\+A\+L\+\_\+\+C\+H\+E\+C\+KS}}~4
+\item 
+\#define \mbox{\hyperlink{_random_8h_a12f191e6c7e1fa1cd95577bf8acf7cb7}{F\+L\+T\+\_\+\+S\+E\+Q\+\_\+\+M\+A\+X\+\_\+\+I\+N\+C\+\_\+\+D\+EC}}~4
+\item 
+\#define \mbox{\hyperlink{_random_8h_a60accddf1e6949e8c759a5ac3b5e642a}{F\+L\+T\+\_\+\+M\+E\+D\+I\+A\+N\+\_\+\+T\+O\+T\+A\+L\+\_\+\+C\+H\+E\+C\+KS}}~8
+\item 
+\#define \mbox{\hyperlink{_random_8h_ae471078cda9978ef35df6e0cf99dde6b}{F\+L\+T\+\_\+\+M\+E\+D\+I\+A\+N\+\_\+\+M\+A\+X\+\_\+\+D\+E\+V\+I\+A\+T\+I\+O\+NS}}~5
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_random_8h_a37c071d1cddf2bf604ff88f03732bed7}\label{_random_8h_a37c071d1cddf2bf604ff88f03732bed7}} 
+\index{Random.h@{Random.h}!FLT\_ITERATIONS\_MAX@{FLT\_ITERATIONS\_MAX}}
+\index{FLT\_ITERATIONS\_MAX@{FLT\_ITERATIONS\_MAX}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{FLT\_ITERATIONS\_MAX}{FLT\_ITERATIONS\_MAX}}
+{\footnotesize\ttfamily \#define F\+L\+T\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+\+M\+AX~20}
+
+
+
+Definition at line 23 of file Random.\+h.
+
+\mbox{\Hypertarget{_random_8h_ae471078cda9978ef35df6e0cf99dde6b}\label{_random_8h_ae471078cda9978ef35df6e0cf99dde6b}} 
+\index{Random.h@{Random.h}!FLT\_MEDIAN\_MAX\_DEVIATIONS@{FLT\_MEDIAN\_MAX\_DEVIATIONS}}
+\index{FLT\_MEDIAN\_MAX\_DEVIATIONS@{FLT\_MEDIAN\_MAX\_DEVIATIONS}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{FLT\_MEDIAN\_MAX\_DEVIATIONS}{FLT\_MEDIAN\_MAX\_DEVIATIONS}}
+{\footnotesize\ttfamily \#define F\+L\+T\+\_\+\+M\+E\+D\+I\+A\+N\+\_\+\+M\+A\+X\+\_\+\+D\+E\+V\+I\+A\+T\+I\+O\+NS~5}
+
+
+
+Definition at line 29 of file Random.\+h.
+
+\mbox{\Hypertarget{_random_8h_a60accddf1e6949e8c759a5ac3b5e642a}\label{_random_8h_a60accddf1e6949e8c759a5ac3b5e642a}} 
+\index{Random.h@{Random.h}!FLT\_MEDIAN\_TOTAL\_CHECKS@{FLT\_MEDIAN\_TOTAL\_CHECKS}}
+\index{FLT\_MEDIAN\_TOTAL\_CHECKS@{FLT\_MEDIAN\_TOTAL\_CHECKS}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{FLT\_MEDIAN\_TOTAL\_CHECKS}{FLT\_MEDIAN\_TOTAL\_CHECKS}}
+{\footnotesize\ttfamily \#define F\+L\+T\+\_\+\+M\+E\+D\+I\+A\+N\+\_\+\+T\+O\+T\+A\+L\+\_\+\+C\+H\+E\+C\+KS~8}
+
+
+
+Definition at line 28 of file Random.\+h.
+
+\mbox{\Hypertarget{_random_8h_a681730ed4963a72927870ba9f9d816e0}\label{_random_8h_a681730ed4963a72927870ba9f9d816e0}} 
+\index{Random.h@{Random.h}!FLT\_PAIR\_MIN\_DIFFERENCE@{FLT\_PAIR\_MIN\_DIFFERENCE}}
+\index{FLT\_PAIR\_MIN\_DIFFERENCE@{FLT\_PAIR\_MIN\_DIFFERENCE}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{FLT\_PAIR\_MIN\_DIFFERENCE}{FLT\_PAIR\_MIN\_DIFFERENCE}}
+{\footnotesize\ttfamily \#define F\+L\+T\+\_\+\+P\+A\+I\+R\+\_\+\+M\+I\+N\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+CE~0.\+02f}
+
+
+
+Definition at line 24 of file Random.\+h.
+
+\mbox{\Hypertarget{_random_8h_a12f191e6c7e1fa1cd95577bf8acf7cb7}\label{_random_8h_a12f191e6c7e1fa1cd95577bf8acf7cb7}} 
+\index{Random.h@{Random.h}!FLT\_SEQ\_MAX\_INC\_DEC@{FLT\_SEQ\_MAX\_INC\_DEC}}
+\index{FLT\_SEQ\_MAX\_INC\_DEC@{FLT\_SEQ\_MAX\_INC\_DEC}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{FLT\_SEQ\_MAX\_INC\_DEC}{FLT\_SEQ\_MAX\_INC\_DEC}}
+{\footnotesize\ttfamily \#define F\+L\+T\+\_\+\+S\+E\+Q\+\_\+\+M\+A\+X\+\_\+\+I\+N\+C\+\_\+\+D\+EC~4}
+
+
+
+Definition at line 27 of file Random.\+h.
+
+\mbox{\Hypertarget{_random_8h_ae9da4d5239ce5ea3560b5f80c3849dbe}\label{_random_8h_ae9da4d5239ce5ea3560b5f80c3849dbe}} 
+\index{Random.h@{Random.h}!FLT\_SEQ\_TOTAL\_CHECKS@{FLT\_SEQ\_TOTAL\_CHECKS}}
+\index{FLT\_SEQ\_TOTAL\_CHECKS@{FLT\_SEQ\_TOTAL\_CHECKS}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{FLT\_SEQ\_TOTAL\_CHECKS}{FLT\_SEQ\_TOTAL\_CHECKS}}
+{\footnotesize\ttfamily \#define F\+L\+T\+\_\+\+S\+E\+Q\+\_\+\+T\+O\+T\+A\+L\+\_\+\+C\+H\+E\+C\+KS~4}
+
+
+
+Definition at line 26 of file Random.\+h.
+
+\mbox{\Hypertarget{_random_8h_a92a52b2851c0055b348f24ab145a07f8}\label{_random_8h_a92a52b2851c0055b348f24ab145a07f8}} 
+\index{Random.h@{Random.h}!FLT\_TRIO\_MIN\_DIFFERENCE@{FLT\_TRIO\_MIN\_DIFFERENCE}}
+\index{FLT\_TRIO\_MIN\_DIFFERENCE@{FLT\_TRIO\_MIN\_DIFFERENCE}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{FLT\_TRIO\_MIN\_DIFFERENCE}{FLT\_TRIO\_MIN\_DIFFERENCE}}
+{\footnotesize\ttfamily \#define F\+L\+T\+\_\+\+T\+R\+I\+O\+\_\+\+M\+I\+N\+\_\+\+D\+I\+F\+F\+E\+R\+E\+N\+CE~0.\+1f}
+
+
+
+Definition at line 25 of file Random.\+h.
+
+\mbox{\Hypertarget{_random_8h_a23bb8f216c68b2decd23711ca53bdd09}\label{_random_8h_a23bb8f216c68b2decd23711ca53bdd09}} 
+\index{Random.h@{Random.h}!INT\_ITERATIONS\_MAX@{INT\_ITERATIONS\_MAX}}
+\index{INT\_ITERATIONS\_MAX@{INT\_ITERATIONS\_MAX}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{INT\_ITERATIONS\_MAX}{INT\_ITERATIONS\_MAX}}
+{\footnotesize\ttfamily \#define I\+N\+T\+\_\+\+I\+T\+E\+R\+A\+T\+I\+O\+N\+S\+\_\+\+M\+AX~20}
+
+
+
+Definition at line 14 of file Random.\+h.
+
+\mbox{\Hypertarget{_random_8h_a80839e497a06fa26023fa0b86405f565}\label{_random_8h_a80839e497a06fa26023fa0b86405f565}} 
+\index{Random.h@{Random.h}!INT\_MAX\_SAME\_NUMBERS@{INT\_MAX\_SAME\_NUMBERS}}
+\index{INT\_MAX\_SAME\_NUMBERS@{INT\_MAX\_SAME\_NUMBERS}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{INT\_MAX\_SAME\_NUMBERS}{INT\_MAX\_SAME\_NUMBERS}}
+{\footnotesize\ttfamily \#define I\+N\+T\+\_\+\+M\+A\+X\+\_\+\+S\+A\+M\+E\+\_\+\+N\+U\+M\+B\+E\+RS~4}
+
+
+
+Definition at line 21 of file Random.\+h.
+
+\mbox{\Hypertarget{_random_8h_a556ef3dfee4d5f2e66143ec5b7a4c917}\label{_random_8h_a556ef3dfee4d5f2e66143ec5b7a4c917}} 
+\index{Random.h@{Random.h}!INT\_MEDIAN\_MAX\_DEVIATIONS@{INT\_MEDIAN\_MAX\_DEVIATIONS}}
+\index{INT\_MEDIAN\_MAX\_DEVIATIONS@{INT\_MEDIAN\_MAX\_DEVIATIONS}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{INT\_MEDIAN\_MAX\_DEVIATIONS}{INT\_MEDIAN\_MAX\_DEVIATIONS}}
+{\footnotesize\ttfamily \#define I\+N\+T\+\_\+\+M\+E\+D\+I\+A\+N\+\_\+\+M\+A\+X\+\_\+\+D\+E\+V\+I\+A\+T\+I\+O\+NS~5}
+
+
+
+Definition at line 18 of file Random.\+h.
+
+\mbox{\Hypertarget{_random_8h_ab22939dfed0daf84f2515e335ff03c2e}\label{_random_8h_ab22939dfed0daf84f2515e335ff03c2e}} 
+\index{Random.h@{Random.h}!INT\_MEDIAN\_TOTAL\_CHECKS@{INT\_MEDIAN\_TOTAL\_CHECKS}}
+\index{INT\_MEDIAN\_TOTAL\_CHECKS@{INT\_MEDIAN\_TOTAL\_CHECKS}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{INT\_MEDIAN\_TOTAL\_CHECKS}{INT\_MEDIAN\_TOTAL\_CHECKS}}
+{\footnotesize\ttfamily \#define I\+N\+T\+\_\+\+M\+E\+D\+I\+A\+N\+\_\+\+T\+O\+T\+A\+L\+\_\+\+C\+H\+E\+C\+KS~8}
+
+
+
+Definition at line 17 of file Random.\+h.
+
+\mbox{\Hypertarget{_random_8h_ae8fc339602ed985adc103f56a6cd8b39}\label{_random_8h_ae8fc339602ed985adc103f56a6cd8b39}} 
+\index{Random.h@{Random.h}!INT\_PAIR\_TOTAL\_CHECKS@{INT\_PAIR\_TOTAL\_CHECKS}}
+\index{INT\_PAIR\_TOTAL\_CHECKS@{INT\_PAIR\_TOTAL\_CHECKS}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{INT\_PAIR\_TOTAL\_CHECKS}{INT\_PAIR\_TOTAL\_CHECKS}}
+{\footnotesize\ttfamily \#define I\+N\+T\+\_\+\+P\+A\+I\+R\+\_\+\+T\+O\+T\+A\+L\+\_\+\+C\+H\+E\+C\+KS~9}
+
+
+
+Definition at line 19 of file Random.\+h.
+
+\mbox{\Hypertarget{_random_8h_a143957d9ef915d86dabf8544ae4c6346}\label{_random_8h_a143957d9ef915d86dabf8544ae4c6346}} 
+\index{Random.h@{Random.h}!INT\_SAME\_NUMBERS\_TOTAL\_CHECKS@{INT\_SAME\_NUMBERS\_TOTAL\_CHECKS}}
+\index{INT\_SAME\_NUMBERS\_TOTAL\_CHECKS@{INT\_SAME\_NUMBERS\_TOTAL\_CHECKS}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{INT\_SAME\_NUMBERS\_TOTAL\_CHECKS}{INT\_SAME\_NUMBERS\_TOTAL\_CHECKS}}
+{\footnotesize\ttfamily \#define I\+N\+T\+\_\+\+S\+A\+M\+E\+\_\+\+N\+U\+M\+B\+E\+R\+S\+\_\+\+T\+O\+T\+A\+L\+\_\+\+C\+H\+E\+C\+KS~10}
+
+
+
+Definition at line 20 of file Random.\+h.
+
+\mbox{\Hypertarget{_random_8h_ad69716312610a199bbf9a5b410ca6049}\label{_random_8h_ad69716312610a199bbf9a5b410ca6049}} 
+\index{Random.h@{Random.h}!INT\_SEQ\_MAX\_INC\_DEC@{INT\_SEQ\_MAX\_INC\_DEC}}
+\index{INT\_SEQ\_MAX\_INC\_DEC@{INT\_SEQ\_MAX\_INC\_DEC}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{INT\_SEQ\_MAX\_INC\_DEC}{INT\_SEQ\_MAX\_INC\_DEC}}
+{\footnotesize\ttfamily \#define I\+N\+T\+\_\+\+S\+E\+Q\+\_\+\+M\+A\+X\+\_\+\+I\+N\+C\+\_\+\+D\+EC~3}
+
+
+
+Definition at line 16 of file Random.\+h.
+
+\mbox{\Hypertarget{_random_8h_a362296c19e6b138c0e100882ce78ad63}\label{_random_8h_a362296c19e6b138c0e100882ce78ad63}} 
+\index{Random.h@{Random.h}!INT\_SEQ\_TOTAL\_CHECKS@{INT\_SEQ\_TOTAL\_CHECKS}}
+\index{INT\_SEQ\_TOTAL\_CHECKS@{INT\_SEQ\_TOTAL\_CHECKS}!Random.h@{Random.h}}
+\doxysubsubsection{\texorpdfstring{INT\_SEQ\_TOTAL\_CHECKS}{INT\_SEQ\_TOTAL\_CHECKS}}
+{\footnotesize\ttfamily \#define I\+N\+T\+\_\+\+S\+E\+Q\+\_\+\+T\+O\+T\+A\+L\+\_\+\+C\+H\+E\+C\+KS~3}
+
+
+
+Definition at line 15 of file Random.\+h.
+

@@ -1,0 +1,9 @@
+digraph "include/common/datastructures" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_0966d06610f72609fd9aa4979c2b5a92 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="common" fontname="Helvetica", fontsize="10", URL="dir_0966d06610f72609fd9aa4979c2b5a92.html"]
+  dir_e7509d4d2ce980fdfce405055fe3ce77 [shape=box, label="datastructures", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_e7509d4d2ce980fdfce405055fe3ce77.html"];
+  }
+}

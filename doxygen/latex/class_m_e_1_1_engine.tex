@@ -1,0 +1,122 @@
+\hypertarget{class_m_e_1_1_engine}{}\doxysection{ME\+::Engine Class Reference}
+\label{class_m_e_1_1_engine}\index{ME::Engine@{ME::Engine}}
+
+
+{\ttfamily \#include $<$Engine.\+h$>$}
+
+Inheritance diagram for ME\+::Engine\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_m_e_1_1_engine}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_m_e_1_1_engine_ac0fbc0c24d7198d705f23df683a7425a}{Engine}} ()
+\item 
+virtual \mbox{\hyperlink{class_m_e_1_1_engine_a77981760666a5d3ed7d3d681438f1e57}{$\sim$\+Engine}} ()
+\item 
+void \mbox{\hyperlink{class_m_e_1_1_engine_a742f3289782df5d645893bdfdddc7374}{Start\+Up}} ()
+\item 
+void \mbox{\hyperlink{class_m_e_1_1_engine_ab73ab88a7f94ffd0723ad220534f3f6f}{Shut\+Down}} ()
+\item 
+virtual \mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}} $\ast$ \mbox{\hyperlink{class_m_e_1_1_engine_a955aafac99ce46dd30e33cc2dc4e449d}{Get\+Parent}} () const
+\item 
+virtual void \mbox{\hyperlink{class_m_e_1_1_engine_a62ba088f89dc7b831601fd1028fec29d}{Send\+To\+Children}} (const \mbox{\hyperlink{class_message}{Message}} \&msg)
+\item 
+void \mbox{\hyperlink{class_m_e_1_1_engine_a5288f7cb9c18e88c6054afcf521ace3d}{Main\+Loop}} ()
+\item 
+void \mbox{\hyperlink{class_m_e_1_1_engine_a7faedcdaff785fa1b403b4bfd4883ed3}{Update}} (sf\+::\+Time delta\+Time)
+\item 
+void \mbox{\hyperlink{class_m_e_1_1_engine_a063a08151d5ac3ca9e4dba8a3770fee7}{Add\+System}} (\mbox{\hyperlink{class_system}{System}} $\ast$system)
+\item 
+void \mbox{\hyperlink{class_m_e_1_1_engine_a803a50b1655244ecf3c0cd90b757dfc2}{Send\+Message}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 28 of file Engine.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_m_e_1_1_engine_ac0fbc0c24d7198d705f23df683a7425a}\label{class_m_e_1_1_engine_ac0fbc0c24d7198d705f23df683a7425a}} 
+\index{ME::Engine@{ME::Engine}!Engine@{Engine}}
+\index{Engine@{Engine}!ME::Engine@{ME::Engine}}
+\doxysubsubsection{\texorpdfstring{Engine()}{Engine()}}
+{\footnotesize\ttfamily M\+E\+::\+Engine\+::\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_m_e_1_1_engine_a77981760666a5d3ed7d3d681438f1e57}\label{class_m_e_1_1_engine_a77981760666a5d3ed7d3d681438f1e57}} 
+\index{ME::Engine@{ME::Engine}!````~Engine@{$\sim$Engine}}
+\index{````~Engine@{$\sim$Engine}!ME::Engine@{ME::Engine}}
+\doxysubsubsection{\texorpdfstring{$\sim$Engine()}{~Engine()}}
+{\footnotesize\ttfamily virtual M\+E\+::\+Engine\+::$\sim$\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_m_e_1_1_engine_a063a08151d5ac3ca9e4dba8a3770fee7}\label{class_m_e_1_1_engine_a063a08151d5ac3ca9e4dba8a3770fee7}} 
+\index{ME::Engine@{ME::Engine}!AddSystem@{AddSystem}}
+\index{AddSystem@{AddSystem}!ME::Engine@{ME::Engine}}
+\doxysubsubsection{\texorpdfstring{AddSystem()}{AddSystem()}}
+{\footnotesize\ttfamily void M\+E\+::\+Engine\+::\+Add\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system}{System}} $\ast$}]{system }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_m_e_1_1_engine_a955aafac99ce46dd30e33cc2dc4e449d}\label{class_m_e_1_1_engine_a955aafac99ce46dd30e33cc2dc4e449d}} 
+\index{ME::Engine@{ME::Engine}!GetParent@{GetParent}}
+\index{GetParent@{GetParent}!ME::Engine@{ME::Engine}}
+\doxysubsubsection{\texorpdfstring{GetParent()}{GetParent()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_i_message_handler}{I\+Message\+Handler}}$\ast$ M\+E\+::\+Engine\+::\+Get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_message_handler_a67c374617672f139ace985f046ab7641}{I\+Message\+Handler}}.
+
+\mbox{\Hypertarget{class_m_e_1_1_engine_a5288f7cb9c18e88c6054afcf521ace3d}\label{class_m_e_1_1_engine_a5288f7cb9c18e88c6054afcf521ace3d}} 
+\index{ME::Engine@{ME::Engine}!MainLoop@{MainLoop}}
+\index{MainLoop@{MainLoop}!ME::Engine@{ME::Engine}}
+\doxysubsubsection{\texorpdfstring{MainLoop()}{MainLoop()}}
+{\footnotesize\ttfamily void M\+E\+::\+Engine\+::\+Main\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_m_e_1_1_engine_a803a50b1655244ecf3c0cd90b757dfc2}\label{class_m_e_1_1_engine_a803a50b1655244ecf3c0cd90b757dfc2}} 
+\index{ME::Engine@{ME::Engine}!SendMessage@{SendMessage}}
+\index{SendMessage@{SendMessage}!ME::Engine@{ME::Engine}}
+\doxysubsubsection{\texorpdfstring{SendMessage()}{SendMessage()}}
+{\footnotesize\ttfamily void M\+E\+::\+Engine\+::\+Send\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_m_e_1_1_engine_a62ba088f89dc7b831601fd1028fec29d}\label{class_m_e_1_1_engine_a62ba088f89dc7b831601fd1028fec29d}} 
+\index{ME::Engine@{ME::Engine}!SendToChildren@{SendToChildren}}
+\index{SendToChildren@{SendToChildren}!ME::Engine@{ME::Engine}}
+\doxysubsubsection{\texorpdfstring{SendToChildren()}{SendToChildren()}}
+{\footnotesize\ttfamily virtual void M\+E\+::\+Engine\+::\+Send\+To\+Children (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_message}{Message}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_message_handler_a789ebcfa345d147090dd68013c48a3ab}{I\+Message\+Handler}}.
+
+\mbox{\Hypertarget{class_m_e_1_1_engine_ab73ab88a7f94ffd0723ad220534f3f6f}\label{class_m_e_1_1_engine_ab73ab88a7f94ffd0723ad220534f3f6f}} 
+\index{ME::Engine@{ME::Engine}!ShutDown@{ShutDown}}
+\index{ShutDown@{ShutDown}!ME::Engine@{ME::Engine}}
+\doxysubsubsection{\texorpdfstring{ShutDown()}{ShutDown()}}
+{\footnotesize\ttfamily void M\+E\+::\+Engine\+::\+Shut\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_m_e_1_1_engine_a742f3289782df5d645893bdfdddc7374}\label{class_m_e_1_1_engine_a742f3289782df5d645893bdfdddc7374}} 
+\index{ME::Engine@{ME::Engine}!StartUp@{StartUp}}
+\index{StartUp@{StartUp}!ME::Engine@{ME::Engine}}
+\doxysubsubsection{\texorpdfstring{StartUp()}{StartUp()}}
+{\footnotesize\ttfamily void M\+E\+::\+Engine\+::\+Start\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_m_e_1_1_engine_a7faedcdaff785fa1b403b4bfd4883ed3}\label{class_m_e_1_1_engine_a7faedcdaff785fa1b403b4bfd4883ed3}} 
+\index{ME::Engine@{ME::Engine}!Update@{Update}}
+\index{Update@{Update}!ME::Engine@{ME::Engine}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void M\+E\+::\+Engine\+::\+Update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\mbox{\hyperlink{_engine_8h}{Engine.\+h}}\end{DoxyCompactItemize}

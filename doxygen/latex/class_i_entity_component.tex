@@ -1,0 +1,109 @@
+\hypertarget{class_i_entity_component}{}\doxysection{I\+Entity\+Component Class Reference}
+\label{class_i_entity_component}\index{IEntityComponent@{IEntityComponent}}
+
+
+{\ttfamily \#include $<$I\+Entity\+Component.\+h$>$}
+
+Inheritance diagram for I\+Entity\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_entity_component}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_entity_component_ad4c95a0682d289938b78f28cb99706bf}{I\+Entity\+Component}} ()
+\item 
+virtual \mbox{\hyperlink{class_i_entity_component_a9d3f4359693ceb05af13de16009a33e0}{$\sim$\+I\+Entity\+Component}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_entity_component_a83d85aca98b86bdb3097a31fdf76f1f8}{On\+Init}} (\mbox{\hyperlink{class_entity}{Entity}} \&go)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_entity_component_a48554b580e3489b2e34598e49065952d}{On\+Start}} (\mbox{\hyperlink{class_entity}{Entity}} \&go)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_entity_component_af81795432b8c1d84ad5cd9fd25ca0a9a}{On\+Update}} (\mbox{\hyperlink{class_entity}{Entity}} \&go)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_entity_component_a9623c0986242273904ef439d3644c5c2}{On\+Fixed\+Update}} (\mbox{\hyperlink{class_entity}{Entity}} \&go)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_entity_component_a36ac7eb788adb33f51e0a99c244e9622}{On\+End}} (\mbox{\hyperlink{class_entity}{Entity}} \&go)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 9 of file I\+Entity\+Component.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_entity_component_ad4c95a0682d289938b78f28cb99706bf}\label{class_i_entity_component_ad4c95a0682d289938b78f28cb99706bf}} 
+\index{IEntityComponent@{IEntityComponent}!IEntityComponent@{IEntityComponent}}
+\index{IEntityComponent@{IEntityComponent}!IEntityComponent@{IEntityComponent}}
+\doxysubsubsection{\texorpdfstring{IEntityComponent()}{IEntityComponent()}}
+{\footnotesize\ttfamily I\+Entity\+Component\+::\+I\+Entity\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_i_entity_component_a9d3f4359693ceb05af13de16009a33e0}\label{class_i_entity_component_a9d3f4359693ceb05af13de16009a33e0}} 
+\index{IEntityComponent@{IEntityComponent}!````~IEntityComponent@{$\sim$IEntityComponent}}
+\index{````~IEntityComponent@{$\sim$IEntityComponent}!IEntityComponent@{IEntityComponent}}
+\doxysubsubsection{\texorpdfstring{$\sim$IEntityComponent()}{~IEntityComponent()}}
+{\footnotesize\ttfamily virtual I\+Entity\+Component\+::$\sim$\+I\+Entity\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_entity_component_a36ac7eb788adb33f51e0a99c244e9622}\label{class_i_entity_component_a36ac7eb788adb33f51e0a99c244e9622}} 
+\index{IEntityComponent@{IEntityComponent}!OnEnd@{OnEnd}}
+\index{OnEnd@{OnEnd}!IEntityComponent@{IEntityComponent}}
+\doxysubsubsection{\texorpdfstring{OnEnd()}{OnEnd()}}
+{\footnotesize\ttfamily virtual void I\+Entity\+Component\+::\+On\+End (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity}{Entity}} \&}]{go }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_sprite_component_a9afca7e63e4bdf673b35ac8f1a6962ee}{Sprite\+Component}}, and \mbox{\hyperlink{class_test_component_a5cbee7e8fcf8694e7a41a0ae04dcf5a5}{Test\+Component}}.
+
+\mbox{\Hypertarget{class_i_entity_component_a9623c0986242273904ef439d3644c5c2}\label{class_i_entity_component_a9623c0986242273904ef439d3644c5c2}} 
+\index{IEntityComponent@{IEntityComponent}!OnFixedUpdate@{OnFixedUpdate}}
+\index{OnFixedUpdate@{OnFixedUpdate}!IEntityComponent@{IEntityComponent}}
+\doxysubsubsection{\texorpdfstring{OnFixedUpdate()}{OnFixedUpdate()}}
+{\footnotesize\ttfamily virtual void I\+Entity\+Component\+::\+On\+Fixed\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity}{Entity}} \&}]{go }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_sprite_component_aa1ae4fa6c273b67600630dffdb3d14dd}{Sprite\+Component}}, and \mbox{\hyperlink{class_test_component_a67e05c8f211e0935e378ac2886b372cf}{Test\+Component}}.
+
+\mbox{\Hypertarget{class_i_entity_component_a83d85aca98b86bdb3097a31fdf76f1f8}\label{class_i_entity_component_a83d85aca98b86bdb3097a31fdf76f1f8}} 
+\index{IEntityComponent@{IEntityComponent}!OnInit@{OnInit}}
+\index{OnInit@{OnInit}!IEntityComponent@{IEntityComponent}}
+\doxysubsubsection{\texorpdfstring{OnInit()}{OnInit()}}
+{\footnotesize\ttfamily virtual void I\+Entity\+Component\+::\+On\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity}{Entity}} \&}]{go }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_sprite_component_a73f3523a84cdd3d5457a84ebf7c98dff}{Sprite\+Component}}, and \mbox{\hyperlink{class_test_component_a7848d5e0d589edcbce16421a7a0c2f86}{Test\+Component}}.
+
+\mbox{\Hypertarget{class_i_entity_component_a48554b580e3489b2e34598e49065952d}\label{class_i_entity_component_a48554b580e3489b2e34598e49065952d}} 
+\index{IEntityComponent@{IEntityComponent}!OnStart@{OnStart}}
+\index{OnStart@{OnStart}!IEntityComponent@{IEntityComponent}}
+\doxysubsubsection{\texorpdfstring{OnStart()}{OnStart()}}
+{\footnotesize\ttfamily virtual void I\+Entity\+Component\+::\+On\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity}{Entity}} \&}]{go }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_sprite_component_a8db6752c56afdc591185ac95fac7afa4}{Sprite\+Component}}, and \mbox{\hyperlink{class_test_component_a1cc135ea3b324c1aaa9bcbe980724802}{Test\+Component}}.
+
+\mbox{\Hypertarget{class_i_entity_component_af81795432b8c1d84ad5cd9fd25ca0a9a}\label{class_i_entity_component_af81795432b8c1d84ad5cd9fd25ca0a9a}} 
+\index{IEntityComponent@{IEntityComponent}!OnUpdate@{OnUpdate}}
+\index{OnUpdate@{OnUpdate}!IEntityComponent@{IEntityComponent}}
+\doxysubsubsection{\texorpdfstring{OnUpdate()}{OnUpdate()}}
+{\footnotesize\ttfamily virtual void I\+Entity\+Component\+::\+On\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity}{Entity}} \&}]{go }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_sprite_component_a19294cc00e1e8817bc13607414f87687}{Sprite\+Component}}, and \mbox{\hyperlink{class_test_component_aa425824be71f3808d1c4fbee89b59319}{Test\+Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/\mbox{\hyperlink{_i_entity_component_8h}{I\+Entity\+Component.\+h}}\end{DoxyCompactItemize}
