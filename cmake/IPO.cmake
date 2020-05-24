@@ -1,5 +1,5 @@
 # Interprocedural Optimization
-function(enable_IPO project_name)
+function(enable_IPO)
 	option(ENABLE_IPO
 		"Enable Interprocedural Optimization, aka Link Time Optimization (LTO)"
 		OFF)

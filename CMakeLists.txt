@@ -4,7 +4,7 @@
 # todo: version number in project() ?
 # todo: c++11 okay this way with variables?
 
-cmake_minimum_required (VERSION 3.9 FATAL_ERROR)
+cmake_minimum_required (VERSION 3.16 FATAL_ERROR)
 project(modest-engine
 	VERSION 0.1.2
 	DESCRIPTION "CMake root for modest-engine"
@@ -12,7 +12,7 @@ project(modest-engine
 )
 
 include(cmake/IPO.cmake)
-enable_IPO(modest-engine)
+enable_IPO()
 
 include(cmake/Doxygen.cmake)
 enable_doxygen()
@@ -25,6 +25,9 @@ target_compile_features(project_options INTERFACE cxx_std_17)
 include(cmake/CompilerWarnings.cmake)
 set_project_warnings(project_warnings)
 
+include(cmake/PCH.cmake)
+enable_PCH(project_options)
+
 set(SFML_STATIC_LIBRARIES TRUE)
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libstdc++")
 
@@ -36,6 +39,26 @@ set_project_warnings(project_warnings)
 
 include (cmake/Sanitizers.cmake)
 enable_sanitizers(project_options)
+
+
+set(CONAN_EXTRA_REQUIRES "")
+set(CONAN_EXTRA_OPTIONS "")
+
+
+
+  # set(CONAN_EXTRA_OPTIONS ${CONAN_EXTRA_OPTIONS} sfml:shared=False
+  # sfml:graphics=True sfml:audio=False sfml:window=True
+  # libalsa:disable_python=True)
+
+# if(CPP_STARTER_USE_SDL)
+#   set(CONAN_EXTRA_REQUIRES ${CONAN_EXTRA_REQUIRES}
+#                            sdl2/2.0.10@bincrafters/stable)
+#   # set(CONAN_EXTRA_OPTIONS ${CONAN_EXTRA_OPTIONS} sdl2:wayland=True)
+# endif()
+
+
+include(cmake/Conan.cmake)
+run_conan()
 
 # if ("${CMAKE_CXX_COMPLIER_ID}" STREQUAL "GNU")
 # 	set (warnings "-Wall -Wextra -Werror")
